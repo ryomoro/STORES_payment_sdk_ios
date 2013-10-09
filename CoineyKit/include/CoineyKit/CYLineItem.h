@@ -3,7 +3,7 @@
 // For licensing information, contact info@coiney.com.
 
 #import <Foundation/Foundation.h>
-#import <CoineyKit/Public/CYTypes.h>
+#import <CoineyKit/CYTypes.h>
 
 /// \~english
 /// Represents a single line item (product) in a transaction

@@ -3,7 +3,7 @@
 // For licensing information, contact info@coiney.com.
 
 #import <CoreData/CoreData.h>
-#import <CoineyKit/Public/CYTypes.h>
+#import <CoineyKit/CYTypes.h>
 
 /// \~english
 /// Represents a transaction made through coiney
