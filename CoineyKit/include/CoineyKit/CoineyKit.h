@@ -16,7 +16,7 @@
 /// Copyright © Coiney Inc. All rights reserved.
 /// For licensing information, contact info@coiney.com.
 
-#import <CoineyKit/CYTypes.h>
-#import <CoineyKit/CYCoineyViewController.h>
-#import <CoineyKit/CYTransaction.h>
-#import <CoineyKit/CYLineItem.h>
+#import <CoineyKit/Public/CYTypes.h>
+#import <CoineyKit/Public/CYCoineyViewController.h>
+#import <CoineyKit/Public/CYTransaction.h>
+#import <CoineyKit/Public/CYLineItem.h>

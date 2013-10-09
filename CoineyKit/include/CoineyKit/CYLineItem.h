@@ -3,20 +3,20 @@
 // For licensing information, contact info@coiney.com.
 
 #import <Foundation/Foundation.h>
-#import <CoineyKit/CYTypes.h>
+#import <CoineyKit/Public/CYTypes.h>
 
 /// \~english
 /// Represents a single line item (product) in a transaction
 @interface CYLineItem : NSObject
 /// \~english
 /// The currency of the item
-@property(readonly) CYCurrency currency;
+@property CYCurrency currency;
 /// \~english
 /// The price of the item in its currency
-@property(readonly) double amount;
+@property(nonatomic) double amount;
 /// \~english
 /// The name of the product
-@property(readonly) NSString *name;
+@property(copy) NSString *name;
 
 /// \~english
 /// Returns a pre-initialized line item.
