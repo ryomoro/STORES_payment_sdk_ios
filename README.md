@@ -7,7 +7,7 @@ If you follow along this tutorial, you will learn how to create a basic applicat
 ## What you need
 
  * CoineyKit
- * Xcode 4 or above (Installed in `/Applications`)
+ * Xcode 5 or above (Installed in `/Applications`)
  
 
 ## Setting up your project
@@ -111,7 +111,7 @@ If you now hook up `productNameField` & `productPriceField` to text fields in CT
 
 To know the status of the transaction you simply make yourself the delegate of your Coiney controller, and it will notify you of its progress.
 
-`CTViewController.m`
+`CTViewController.m`:
 
     #import "CTViewController.h"
     #import <CoineyKit/CoineyKit.h>
@@ -148,6 +148,49 @@ To know the status of the transaction you simply make yourself the delegate of y
         NSLog(@"Cancelled payment.");                                            // ←
     }
 
+## Look up a transaction
+
+You can use a transaction's unique identifier to query Coiney for the corresponding CYTransaction object.
+
+`CTViewController.m`:
+
+    #import "CTViewController.h"
+    #import <CoineyKit/CoineyKit.h>
+    
+    @interface CTViewController () <CYCoineyViewControllerDelegate>
+    @end
+    
+    @implementation CTViewController
+    
+    - (IBAction)makePayment:(id)aSender
+    {
+        // Create a line item to pre-populate the Coiney controller with.
+        NSString *name = _productNameField.text;
+        int price = [_productPriceField.text intValue];
+        
+        CYLineItem *lineItem = [CYLineItem itemWithAmount:price
+                                                 currency:CYCurrencyJPY name:name];
+        
+        // Create an instance of the Coiney payment controller.
+        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]];
+        coineyController.delegate = self;
+        // Present it on top of the current controller.
+        [self presentViewController:coineyController animated:YES completion:nil];
+    }
+    
+    - (void)coineyViewController:(CYCoineyViewController *)aController
+          didCompleteTransaction:(CYTransaction *)aTransaction
+    {
+        NSLog(@"Completed transaction!: %@", aTransaction);
+        
+        CYTransactionLookupBlock completionBlock = ^(id<CYTransaction> t, NSError *err) {
+        	if(t)
+        		NSLog(@"Transaction found: %@", t);
+        	else
+        		NSLog(@"Transaction not found: %@", err);
+        };
+        CYLookUpTransaction(aTransaction.identifier, completionBlock);
+    }
 
 ## And that's it!
 
