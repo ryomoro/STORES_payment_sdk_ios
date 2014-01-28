@@ -21,14 +21,11 @@ Now that your project is created, copy the contents of `CoineyKit.zip` to your p
 
 ![Folder hierarchy](readme_images/folder-hierarchy.png)
 
-The next step is to add `CoineyKitResources.bundle`, `libCoineyKit.a` and the frameworks used by CoineyKit to your project. 
+The next step is to add `CoineyKitResources.bundle` and `CoineyKit.framework` to your project.
 
-![Required frameworks](readme_images/required-frameworks.png)
+![Build settings](readme_images/build-settings.png)
 
-Now you're almost ready to make use of CoineyKit, you just need to update your target's build settings to match the below screenshots:
-
-![Linker flags](readme_images/ldflags.png)
-![Search paths](readme_images/searchpaths.png)
+Now you're almost ready to make use of CoineyKit, you just need to update your build settings with CoineyKit.xcconfig, as shown in the above screenshot.
 
 
 ## Making our first payment
@@ -44,7 +41,7 @@ Open up `CTViewController.h` and make it look like:
 And `CTViewController.m`:
 
     #import "CTViewController.h"
-    #import <CoineyKit/CoineyKit.h>
+    @import CoineyKit;
     
     @implementation CTViewController
     
@@ -59,7 +56,7 @@ And `CTViewController.m`:
 
 This is all that's required for the most basic use case. We just need to hook up a button to our `makePayment:` method, and we're ready to go.
 
-![Search paths](readme_images/action-connection.png)
+![Action connection](readme_images/action-connection.png)
 
 Now if we run the application it should appear like below:
 
@@ -74,7 +71,7 @@ When embedding CoineyKit in your application, you'll most likely want to tell Co
     #import <UIKit/UIKit.h>
     
     @interface CTViewController : UIViewController
-    @property IBOutlet UITextField *productNameField, *productPriceField;  // ←
+    @property IBOutlet UITextField *productNameField, *productPriceField;
     
     - (IBAction)makePayment:(id)aSender;
     @end
@@ -89,14 +86,14 @@ When embedding CoineyKit in your application, you'll most likely want to tell Co
     - (IBAction)makePayment:(id)aSender
     {
         // Create a line item to pre-populate the Coiney controller with.
-        NSString *name = _productNameField.text;                          // ←
-        int price = [_productPriceField.text intValue];                   // ←
+        NSString *name = _productNameField.text;
+        int price = [_productPriceField.text intValue];
         
-        CYLineItem *lineItem = [CYLineItem itemWithAmount:price                       // ←
-                                                 currency:CYCurrencyJPY name:name];   // ←
+        CYLineItem *lineItem = [CYLineItem itemWithAmount:price
+                                                 currency:CYCurrencyJPY name:name];
         
         // Create an instance of the Coiney payment controller.
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]]; // ←
+        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]];
         // Present it on top of the current controller.
         [self presentViewController:coineyController animated:YES completion:nil];
     }
@@ -114,48 +111,7 @@ To know the status of the transaction you simply make yourself the delegate of y
 `CTViewController.m`:
 
     #import "CTViewController.h"
-    #import <CoineyKit/CoineyKit.h>
-    
-    @interface CTViewController () <CYCoineyViewControllerDelegate>  // ←
-    @end                                                             // ←
-    
-    @implementation CTViewController
-    
-    - (IBAction)makePayment:(id)aSender
-    {
-        // Create a line item to pre-populate the Coiney controller with.
-        NSString *name = _productNameField.text;
-        int price = [_productPriceField.text intValue];
-        
-        CYLineItem *lineItem = [CYLineItem itemWithAmount:price
-                                                 currency:CYCurrencyJPY name:name];
-        
-        // Create an instance of the Coiney payment controller.
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]];
-        coineyController.delegate = self; // ←
-        // Present it on top of the current controller.
-        [self presentViewController:coineyController animated:YES completion:nil];
-    }
-    
-    - (void)coineyViewController:(CYCoineyViewController *)aController  // ←
-          didCompleteTransaction:(CYTransaction *)aTransaction          // ←
-    {
-        NSLog(@"Completed transaction!: %@", aTransaction);             // ←
-    }
-    
-    - (void)coineyViewControllerDidCancel:(CYCoineyViewController *)aController  // ←
-    {
-        NSLog(@"Cancelled payment.");                                            // ←
-    }
-
-## Look up a transaction
-
-You can use a transaction's unique identifier to query Coiney for the corresponding CYTransaction object.
-
-`CTViewController.m`:
-
-    #import "CTViewController.h"
-    #import <CoineyKit/CoineyKit.h>
+    @import CoineyKit;
     
     @interface CTViewController () <CYCoineyViewControllerDelegate>
     @end
@@ -182,15 +138,109 @@ You can use a transaction's unique identifier to query Coiney for the correspond
           didCompleteTransaction:(CYTransaction *)aTransaction
     {
         NSLog(@"Completed transaction!: %@", aTransaction);
+    }
+    
+    - (void)coineyViewControllerDidCancel:(CYCoineyViewController *)aController
+    {
+    	aController dismissViewControllerAnimated:YES completion:nil];
+        NSLog(@"Cancelled payment.");
+    }
+
+## Look up a transaction
+
+You can use a transaction's unique identifier to query Coiney for the corresponding CYTransaction object.
+
+`CTViewController.m`:
+
+    #import "CTViewController.h"
+    @import CoineyKit;
+    
+    @interface CTViewController () <CYCoineyViewControllerDelegate>
+    @end
+    
+    @implementation CTViewController
+    
+    - (IBAction)makePayment:(id)aSender
+    {
+        // Create a line item to pre-populate the Coiney controller with.
+        NSString *name = _productNameField.text;
+        int price = [_productPriceField.text intValue];
         
-        CYTransactionLookupBlock completionBlock = ^(id<CYTransaction> t, NSError *err) {
+        CYLineItem *lineItem = [CYLineItem itemWithAmount:price
+                                                 currency:CYCurrencyJPY name:name];
+        
+        // Create an instance of the Coiney payment controller.
+        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]];
+        coineyController.delegate = self;
+        // Present it on top of the current controller.
+        [self presentViewController:coineyController animated:YES completion:nil];
+    }
+    
+    - (void)coineyViewController:(CYCoineyViewController *)aController
+          didCompleteTransaction:(CYTransaction *)aTransaction
+    {
+        NSLog(@"Completed transaction!: %@", aTransaction);
+
+        CYLookUpTransaction(aTransaction.identifier, ^(id<CYTransaction> t, NSError *err) {
         	if(t)
         		NSLog(@"Transaction found: %@", t);
         	else
         		NSLog(@"Transaction not found: %@", err);
-        };
-        CYLookUpTransaction(aTransaction.identifier, completionBlock);
+        });
     }
+    
+## Show the details of a transaction
+
+You can use a transaction ID to bring up its detail view.  The view can contain a refund button if refunding should be allowed.
+
+`CTViewController.m`:
+
+    #import "CTViewController.h"
+    @import CoineyKit;
+    
+    @interface CTViewController () <CYCoineyViewControllerDelegate>
+    @end
+    
+    @implementation CTViewController
+    
+    - (IBAction)makePayment:(id)aSender
+    {
+        // Create a line item to pre-populate the Coiney controller with.
+        NSString *name = _productNameField.text;
+        int price = [_productPriceField.text intValue];
+        
+        CYLineItem *lineItem = [CYLineItem itemWithAmount:price
+                                                 currency:CYCurrencyJPY name:name];
+        
+        // Create an instance of the Coiney payment controller.
+        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]];
+        coineyController.delegate = self;
+        // Present it on top of the current controller.
+        [self presentViewController:coineyController animated:YES completion:nil];
+    }
+    
+    - (void)coineyViewController:(CYCoineyViewController *)aController
+          didCompleteTransaction:(id<CYTransaction>)aTransaction
+    {
+        NSLog(@"Completed transaction: %@", aTransaction);
+    
+        [aController dismissViewControllerAnimated:YES completion:nil];
+        CYLookUpTransaction(aTransaction.identifier, ^(id<CYTransaction> aTransaction, NSError *aError) {
+            if(aTransaction) {
+                CYTransactionViewController *transactionViewController =
+                    [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
+                                                   allowRefunding:YES]; // Change to NO to hide the refund button
+                // Add a navigation controller to your project to make this work
+                [self.navigationController pushViewController:transactionViewController animated:YES];
+            }
+            else
+                NSLog(@"Transaction not found: %@", aError);
+        });
+    }
+
+After making a payment and tapping Done, you will see a `CYTransactionViewController` showing the details of the transaction.  (You'll need to add a navigation controller to your test app to run the above snippet.)
+
+![App screenshot](readme_images/simshot3.png)
 
 ## And that's it!
 
