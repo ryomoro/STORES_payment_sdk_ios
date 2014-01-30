@@ -1,0 +1,7 @@
+// Project settings required to compile with libCoineyKit.a
+SDKROOT = iphoneos7.0
+
+CLANG_ENABLE_MODULES = YES
+CLANG_MODULES_AUTOLINK = YES
+
+OTHER_LDFLAGS = $(inherited) -all_load -lz
