@@ -21,7 +21,7 @@ Now that your project is created, copy the folder `CoineyKit` to your project fo
 
 ![Folder hierarchy](.readme_images/folder-hierarchy.png)
 
-The next step is to add `CoineyKitResources.bundle` and `CoineyKit.framework` to your project.
+The next step is to add `CoineyKitResources.bundle`, `CoineyKit.xcconfig` & `CoineyKit.framework` to your project.
 
 ![Build settings](.readme_images/build-settings.png)
 
