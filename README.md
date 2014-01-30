@@ -17,7 +17,7 @@ Begin by launching Xcode and creating a new project: `File → New → Project`.
 ![Template selection](.readme_images/template-selection.png)
 ![Template options](.readme_images/template-options.png)
 
-Now that your project is created, copy the contents of `CoineyKit.zip` to your project folder, resulting in path of `<Your project folder>/CoineyKit` .
+Now that your project is created, copy the folder `CoineyKit` to your project folder, resulting in path of `<Your project folder>/CoineyKit` .
 
 ![Folder hierarchy](.readme_images/folder-hierarchy.png)
 
