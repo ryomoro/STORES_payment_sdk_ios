@@ -25,7 +25,7 @@ The next step is to add `CoineyKitResources.bundle` and `CoineyKit.framework` to
 
 ![Build settings](readme_images/build-settings.png)
 
-Now you're almost ready to make use of CoineyKit, you just need to update your build settings with CoineyKit.xcconfig, as shown in the above screenshot.
+Now you're almost ready to make use of CoineyKit, you just need to update your build settings to use CoineyKit.xcconfig, as shown in the above screenshot.
 
 
 ## Making our first payment
@@ -79,7 +79,7 @@ When embedding CoineyKit in your application, you'll most likely want to tell Co
 `CTViewController.m`:
 
     #import "CTViewController.h"
-    #import <CoineyKit/CoineyKit.h>
+    @import CoineyKit;
     
     @implementation CTViewController
     
@@ -181,9 +181,9 @@ You can use a transaction's unique identifier to query Coiney for the correspond
     {
         NSLog(@"Completed transaction!: %@", aTransaction);
 
-        CYLookUpTransaction(aTransaction.identifier, ^(id<CYTransaction> t, NSError *err) {
-        	if(t)
-        		NSLog(@"Transaction found: %@", t);
+        CYLookUpTransaction(aTransaction.identifier, ^(id<CYTransaction> transaction, NSError *err) {
+        	if(transaction)
+        		NSLog(@"Transaction found: %@", transaction);
         	else
         		NSLog(@"Transaction not found: %@", err);
         });
@@ -225,17 +225,12 @@ You can use a transaction ID to bring up its detail view.  The view can contain 
         NSLog(@"Completed transaction: %@", aTransaction);
     
         [aController dismissViewControllerAnimated:YES completion:nil];
-        CYLookUpTransaction(aTransaction.identifier, ^(id<CYTransaction> aTransaction, NSError *aError) {
-            if(aTransaction) {
-                CYTransactionViewController *transactionViewController =
-                    [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
-                                                   allowRefunding:YES]; // Change to NO to hide the refund button
-                // Add a navigation controller to your project to make this work
-                [self.navigationController pushViewController:transactionViewController animated:YES];
-            }
-            else
-                NSLog(@"Transaction not found: %@", aError);
-        });
+        
+        CYTransactionViewController *transactionViewController =
+	        [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
+	                                                               allowRefunding:YES]; // Change to NO to hide the refund button
+	    // Add a navigation controller to your project to make this work
+        [self.navigationController pushViewController:transactionViewController animated:YES];
     }
 
 After making a payment and tapping Done, you will see a `CYTransactionViewController` showing the details of the transaction.  (You'll need to add a navigation controller to your test app to run the above snippet.)
