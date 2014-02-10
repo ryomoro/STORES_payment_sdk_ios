@@ -26,4 +26,5 @@
 #import <CoineyKit/CYAuthenticationViewController.h>
 #import <CoineyKit/CYTransactionViewController.h>
 #import <CoineyKit/CYTransaction.h>
+#import <CoineyKit/CYAPIError.h>
 #import <CoineyKit/CYLineItem.h>

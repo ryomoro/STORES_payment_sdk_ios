@@ -29,13 +29,18 @@
 {
     NSLog(@"Completed transaction: %@", aTransaction);
 
-    [aController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     CYTransactionViewController *transactionViewController =
         [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
                                                                allowRefunding:YES]; // Pass NO to hide the refund button
     
     [self.navigationController pushViewController:transactionViewController animated:YES];
+}
+
+- (void)coineyViewControllerDidCancel:(CYCoineyViewController *)aController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

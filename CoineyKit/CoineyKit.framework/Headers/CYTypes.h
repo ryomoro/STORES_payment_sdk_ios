@@ -89,7 +89,7 @@ static inline NSString *NSStringFromCYCardbrand(CYCardBrand const aCardBrand)
 {
     switch(aCardBrand) {
         case CYVisa:       return @"Visa";
-        case CYMasterCard: return @"Mastercard";
+        case CYMasterCard: return @"MasterCard";
         case CYAMEX:       return @"AMEX";
         case CYJCB:        return @"JCB";
         case CYDiners:     return @"Diners";

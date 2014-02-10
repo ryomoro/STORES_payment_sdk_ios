@@ -65,32 +65,39 @@
 
 /// \~english
 /// Generates a bitmap for the transaction's receipt.
+/// \param aWidth The width of the `UIImage` to be returned
+/// \return The transaction's receipt rendered as a `UIImage`
 /// \~japanese
 /// 決済のレシートをビットマップとして描画します。
-/// \param aWidth
-///   \~english The width of the `UIImage` to be returned
-///   \~japanese 生成する `UIImage` の幅
-- (UIImage *)imageRepresentationWithWidth:(float const)aWidth;
-    
+/// \param aWidth 生成する `UIImage` の幅
+/// \return 描画した `UIImage`
+- (UIImage *)receiptImageWithWidth:(float const)aWidth;
+
 /// \~english
 /// Generates a ReceiptML string with the transaction data.
+/// \return The transaction data in ReceiptML format.
 /// \~japanese
 /// 決済データを ReceiptML 形式で返します。
-- (NSString *)receiptMLRepresentation;
+/// \return ReceiptML 形式の決済データ
+- (NSString *)receipt;
 @end
 
+/// \~english
+/// A block object type for doing something with a looked up transaction.
+/// Parameters are: the relevant transaction, or an error in case lookup failed.
+/// \~japanese
+/// `CYLookUpTransaction()` で参照した決済に対して、処理を行うためのブロック型です。
+/// パラメータには、該当する決済オブジェクトか、参照に失敗した場合はエラーが渡されます。
 typedef void (^CYTransactionLookupBlock)(id<CYTransaction> aTransaction, NSError *aError);
 
 /// \~english
 /// Queries Coiney for a given transaction identifier and if found, passes it to the completion block.
 /// If none is found nil is passed for the transaction.
+/// \param aIdentifier The identifier of the transaction to look up
+/// \param aCompletionBlock A block to be executed upon completion
 /// \~japanese
 /// 渡したIDを元に決済を参照し、ブロックを実行します。
 /// 一致するものあれば `CYTransaction` オブジェクトを、なければ `nil` をブロックに渡します。
-/// \param aIdentifier
-///   \~english The identifier of the transaction to look up
-///   \~japanese 参照する決済ID
-/// \param aCompletionBlock
-///   \~english A block to be executed upon completion
-///   \~japanese 参照後に実行するブロック
+/// \param aIdentifier 参照する決済ID
+/// \param aCompletionBlock 参照後に実行するブロック
 void CYLookUpTransaction(NSString *aIdentifier, CYTransactionLookupBlock aCompletionBlock);
