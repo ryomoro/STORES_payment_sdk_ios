@@ -1,0 +1,34 @@
+<!ELEMENT receipt (title | subtitle | ruler | line-item | total | barcode)*>
+<!ATTLIST receipt currency CDATA #IMPLIED>
+
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title font-name CDATA #IMPLIED>
+<!ATTLIST title spacing CDATA #IMPLIED>
+
+<!ELEMENT subtitle (#PCDATA)>
+<!ATTLIST subtitle font-name CDATA #IMPLIED>
+<!ATTLIST subtitle font-size CDATA #IMPLIED>
+<!ATTLIST subtitle spacing CDATA #IMPLIED>
+<!ATTLIST subtitle align CDATA #IMPLIED>
+
+<!ELEMENT ruler EMPTY>
+
+<!ELEMENT line-item (name , price)>
+<!ATTLIST line-item spacing CDATA #IMPLIED>
+
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name font-name CDATA #IMPLIED>
+<!ATTLIST name font-size CDATA #IMPLIED>
+
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price font-name CDATA #IMPLIED>
+<!ATTLIST price font-size CDATA #IMPLIED>
+
+<!ELEMENT total EMPTY>
+<!ATTLIST total font-name CDATA #IMPLIED>
+<!ATTLIST total font-size CDATA #IMPLIED>
+<!ATTLIST total spacing CDATA #IMPLIED>
+<!ATTLIST total align CDATA #IMPLIED>
+
+<!ELEMENT barcode (#PCDATA)>
+<!ATTLIST barcode spacing CDATA #IMPLIED>

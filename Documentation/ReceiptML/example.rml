@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE receipt PUBLIC "-//ReceiptML" "./receiptml-1.dtd">
+
+<receipt>
+	<title font-name="Futura-Medium">テストレシート</title>
+	
+	<subtitle>東京都港区 麻布十番1−23−4</subtitle>
+	<subtitle>(03)5555-5555</subtitle>
+	<subtitle spacing="10">2013年5月12日13:36</subtitle>
+	
+	<ruler/>
+	
+	<line-item>
+		<name>アイテム1</name>
+		<price>300</price>
+	</line-item>
+	<line-item>
+		<name>アイテム2</name>
+		<price>400</price>
+	</line-item>
+	<line-item>
+		<name>アイテム3</name>
+		<price>250</price>
+	</line-item>
+	<total/>
+	
+	<barcode spacing="10">ac:123456789</barcode>
+</receipt>
