@@ -402,7 +402,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/fyolnish/Coiney/CoineyKit-Release/CoineyKit",
+					"$(SRCROOT)/../CoineyKit",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coiney Test/Coiney Test-Prefix.pch";
@@ -419,7 +419,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/fyolnish/Coiney/CoineyKit-Release/CoineyKit",
+					"$(SRCROOT)/../CoineyKit",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coiney Test/Coiney Test-Prefix.pch";
