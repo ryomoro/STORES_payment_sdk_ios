@@ -1,0 +1,32 @@
+module CoineyKit {
+    umbrella header "Headers/CoineyKit.h"
+    export *
+    module * {
+        export *
+    }
+
+    link framework "Accelerate"
+    link framework "SystemConfiguration"
+    link framework "CoreData"
+    link framework "UIKit"
+    link framework "Foundation"
+    link framework "CoreGraphics"
+    link framework "QuartzCore"
+    link framework "ImageIO"
+    link framework "OpenGLES"
+    link framework "MobileCoreServices"
+    link framework "MediaPlayer"
+    link framework "AudioToolbox"
+    link framework "ExternalAccessory"
+    link framework "CoreText"
+    link framework "AVFoundation"
+    link framework "CoreMedia"
+    link framework "CoreLocation"
+    link framework "Security"
+    link framework "CFNetwork"
+    link framework "MessageUI"
+    link framework "CoreVideo"
+    link "z"
+    link "xml2"
+    link "iconv"
+}

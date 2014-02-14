@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4FAF632D-80A8-4C73-8E32-F5C4876230FE</string>
+	<string>0732C27D-7B5A-4765-B3A6-B18AC0B8BAC6</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Coiney Test</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,7 +14,7 @@
 		<string>ssh://github.com/Coiney/CoineyKit-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Example/Coiney Test.xcodeproj/project.xcworkspace</string>
+	<string>Coiney Test/Coiney Test.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>277F92E1-F9DB-4E68-811A-A2E236094F5F</key>
