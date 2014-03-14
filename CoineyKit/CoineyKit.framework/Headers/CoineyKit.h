@@ -28,3 +28,5 @@
 #import <CoineyKit/CYTransaction.h>
 #import <CoineyKit/CYAPIError.h>
 #import <CoineyKit/CYLineItem.h>
+#import <CoineyKit/CYPrinter.h>
+#import <CoineyKit/CYPrinter+CYReceiptPrinting.h>

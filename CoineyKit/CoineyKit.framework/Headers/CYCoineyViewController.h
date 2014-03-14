@@ -13,15 +13,12 @@
 @protocol CYCoineyViewControllerDelegate <NSObject>
 @optional
 /// \~english
-/// Called when the user has entered his username/password and logged in.
-/// If the users's credentials were saved and there was no need to show the login screen
-/// then this method is never called.
-/// \param aController The originating Coiney controller
+/// Called when the controller is on screen and ready to process
+/// transactions.
 /// \~japanese
-/// ユーザーがメールアドレスとパスワードを入力し、ログインした際に呼ばれます。
-/// 前回のログイン情報が保持され、ログインが省略された場合は、呼ばれません。
+/// `CYCoineyViewController` が表示された時点で呼ばれます。
 /// \param aController 呼び出し元の `CYCoineyViewController`
-- (void)coineyViewControllerDidAuthenticate:(CYCoineyViewController *)aController;
+- (void)coineyViewControllerDidBecomeReady:(CYCoineyViewController *)aController;
 
 /// \~english
 /// Called when the user completes a transaction.
