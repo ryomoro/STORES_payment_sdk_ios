@@ -214,6 +214,93 @@ You can use a transaction's unique identifier to query Coiney for the correspond
     		NSLog(@"Transaction not found: %@", err);
     });
 
+## Printing
+
+Receipts can be printed either by pressing the Print button in the Transaction Complete view, or by calling CoineyKit's printer API.
+
+Printing is turned off by default.  Enable it by calling `+[CYPrinter setPrintingEnabled:]`:
+
+`CTAppDelegate.m`:
+
+    - (void)applicationDidFinishLaunching:(UIApplication *)aApplication
+    {
+        [CYPrinter setPrintingEnabled:YES];
+    }
+
+The receipt's contents and format are specified using ReceiptML, whose specification can be found [here](/Coiney/CoineyKit-iOS/tree/master/Documentation/ReceiptML).
+
+The following sample code prints a receipt automatically whenever a transaction finishes.
+
+`CTViewController.m`
+    
+    #import "CTViewController.h"
+    @import CoineyKit;
+    
+    @implementation CTViewController
+    
+    - (IBAction)makePayment:(id)aSender
+    {
+        CYCoineyViewController * const coineyController = [CYCoineyViewController new];
+        [self presentViewController:coineyController animated:YES completion:nil];
+    }
+    
+    - (void)coineyViewController:(CYCoineyViewController *)aController
+          didCompleteTransaction:(id<CYTransaction>)aTransaction
+    {
+        NSLog(@"Completed transaction: %@", aTransaction);
+    
+        NSMutableString * const ml = [NSMutableString stringWithString:
+                                      @"<receipt>\n"
+                                      @"<title font-name=\"HiraKakuProN-W6\">Coiney Store</title>\n"
+                                      @"<subtitle>123-456-7890</subtitle>\n"];
+        [ml appendString:[NSString stringWithFormat:
+                         @"<subtitle>%@</subtitle>\n", [NSDate date]]];
+        [ml appendString:@"<ruler/>\n"
+                         @"<line-item>\n"
+                         @"\t<name>Item A</name>\n"];
+        [ml appendString:[NSString stringWithFormat:
+                         @"\t<price>%d</price>\n", [aTransaction.amount intValue]]];
+        [ml appendString:@"</line-item>\n"
+                         @"<total/>\n"
+                         @"<ruler/>\n"];
+        [ml appendString:[NSString stringWithFormat:
+                         @"<subtitle font-size=\"17\">%@ %@</subtitle>\n",
+                         NSStringFromCYCardbrand(aTransaction.cardBrand),
+                         aTransaction.cardSuffix]];
+        [ml appendString:@"</receipt>\n"];
+    
+        if([[CYPrinter connectedPrinters] count] == 0)
+            NSLog(@"No connected printers");
+        else {
+            // Print
+            for (CYPrinter * printer in [CYPrinter connectedPrinters]) {
+                [printer batchPrint:^{
+                    [printer printReceiptML:ml];
+                } cutWhenDone:YES];
+            }
+        }
+    }
+
+Supported printer models are:
+
+Star Micronics
+
+* SM-S210i
+* TSP650II
+
+Epson
+
+* TM-P60II
+* TM-T20II
+
+If you plan to include printer support, you must add the following entry to your Info.plist file, and obtain MFi certification from the printer manufacturer(s).  See the [MFi Program website](https://developer.apple.com/programs/mfi/) for further information.
+
+	<key>UISupportedExternalAccessoryProtocols</key>
+	<array>
+		<string>jp.star-m.starpro</string>
+		<string>com.epson.escpos</string>
+	</array>
+
 ## And that's it!
 
 If you have any further questions feel free to email <devsupport@coiney.com>.
