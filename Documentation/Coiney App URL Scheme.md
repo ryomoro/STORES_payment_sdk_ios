@@ -3,9 +3,9 @@
 Action | Parameter                | Value Description | Required? | Notes
 ------ | ------------------------ | ----------------- | --------- | -----------
 `pay`  | `amount`                 | integer           | **Yes**   |
- …     | `currency`               | ISO currency code | **Yes**   | Currently only `jpy` is supported
+ …     | `currency`               | ISO currency code | No   | Defaults to `jpy`
  …     | `callback_url`           | Escaped URL       | No        | On completion of a transaction the url will be opened, and with query parameters containing transaction information
-`open` | `transaction_identifier` | integer           | **Yes**   |
+`open` | `transaction_identifier` | String           | **Yes**   |
  …     | `callback_url`           | Escaped URL       | No        | Opened when the user dismisses the transaction |
 
 
@@ -18,6 +18,8 @@ Action | Parameter                | Value Description | Required? | Notes
 ### On Failure:
 	my-app://transaction_complete?status=failure
 
-
 ## Transaction Detail Example
 	coiney://open?transaction_identifier=abcdefg&callback_url=my-app://closed_transaction
+	
+### On Successful completion or failure:
+	my-app://closed_transaction
