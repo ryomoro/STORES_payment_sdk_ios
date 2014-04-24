@@ -215,7 +215,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CT;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Coiney;
 				TargetAttributes = {
 					C77B8376189A1BC700902B8C = {
@@ -326,7 +326,6 @@
 			baseConfigurationReference = C77B8390189A1BD800902B8C /* CoineyKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -366,7 +365,6 @@
 			baseConfigurationReference = C77B8390189A1BD800902B8C /* CoineyKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -432,7 +430,6 @@
 		C77B838C189A1BC700902B8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Coiney Test.app/Coiney Test";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -455,7 +452,6 @@
 		C77B838D189A1BC700902B8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Coiney Test.app/Coiney Test";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -490,6 +486,7 @@
 				C77B838A189A1BC700902B8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C77B838B189A1BC700902B8C /* Build configuration list for PBXNativeTarget "Coiney TestTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +495,7 @@
 				C77B838D189A1BC700902B8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
