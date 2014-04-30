@@ -38,40 +38,6 @@ Now you're almost ready to make use of CoineyKit, you just need to update your b
 
 Open up `CTViewController.h` and make it look like:
 
-    #import <UIKit/UIKit.h>
-    
-    @interface CTViewController : UIViewController
-    - (IBAction)makePayment:(id)aSender;
-    @end
-    
-And `CTViewController.m`:
-
-    #import "CTViewController.h"
-    @import CoineyKit;
-    
-    @implementation CTViewController
-    
-    - (IBAction)makePayment:(id)aSender
-    {
-        CYCoineyViewController * const coineyController = [CYCoineyViewController new];
-        [self presentViewController:coineyController animated:YES completion:nil];
-    }
-    
-    @end
-    
-
-This is all that's required for the most basic use case. We just need to hook up a button to our `makePayment:` method, and we're ready to go.
-
-![Action connection](.readme_images/action-connection.png)
-
-Now if we run the application it should appear like below:
-
-![App screenshot](.readme_images/simshot1.png)
-
-## Do something a little more realistic
-
-When embedding CoineyKit in your application, you'll most likely want to tell CoineyKit what products you are charging for, and to be notified once the user completes or cancels the payment. Good news: this is trivial to do, simply augment `CTViewController.*` like below:
-
 `CTViewController.h`:
 
     #import <UIKit/UIKit.h>
@@ -106,14 +72,20 @@ When embedding CoineyKit in your application, you'll most likely want to tell Co
     }
     
     @end
-    
-If you now hook up `productNameField` & `productPriceField` to text fields in CTViewController.xib, we will have a functional product input form.
 
-![App screenshot](.readme_images/simshot2.png)
+Now hook up a button to your `makePayment:` method, and text fields to `productNameField` & `productPriceField`.
+
+![Action connection](.readme_images/action-connection.png)
+
+If we run the application it should appear like below:
+
+![App screenshot](.readme_images/simshot1.png)
+
+Swipe your card to make a transaction. That's all that's required for the basic use case.
 
 ## Get notified of the transaction status
 
-To know the status of the transaction you simply make yourself the delegate of your Coiney controller, and it will notify you of its progress.
+To know the status of the transaction you simply make yourself the delegate of your Coiney controller, and it will notify you when a transaction is completed or canceled.
 
 `CTViewController.m`:
 
