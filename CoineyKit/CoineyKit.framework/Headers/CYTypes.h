@@ -28,6 +28,11 @@ typedef NS_ENUM(NSInteger, CYCurrency) {
 /// \~japanese
 /// クレジットカードブランドを表します。
 typedef NS_ENUM(NSInteger, CYCardBrand) {
+    /// \~english
+    /// Unknown
+    /// \~japanese
+    /// 不明なブランド
+    CYUnknownCardBrand,
     /// \~
     /// Mastercard
     CYMasterCard,
@@ -48,12 +53,7 @@ typedef NS_ENUM(NSInteger, CYCardBrand) {
     /// Diners Club International
     /// \~japanese
     /// ダイナース
-    CYDiners,
-    /// \~english
-    /// Unknown
-    /// \~japanese
-    /// 不明なブランド
-    CYUnknownCardBrand
+    CYDiners
 };
 
 /// \~english
