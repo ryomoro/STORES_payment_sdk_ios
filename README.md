@@ -177,14 +177,34 @@ After making a payment and tapping Done, you will see a `CYTransactionViewContro
 
 ## Looking up a transaction
 
-You can use a transaction's unique identifier to query Coiney for the corresponding CYTransaction object.
+You can use a transaction's unique identifier to query the corresponding CYTransaction object, and show it in a view controller.
 
     CYLookUpTransaction(transactionIdentifier, ^(id<CYTransaction> transaction, NSError *err) {
-    	if(transaction)
-    		NSLog(@"Transaction found: %@", transaction);
+        if(transaction)
+            NSLog(@"Transaction found: %@", transaction);
+            CYTransactionViewController *transactionViewController =
+                [CYTransactionViewController transactionViewControllerWithTransaction:transaction
+                                                                       allowRefunding:YES]; // Pass NO to hide the refund button
+                                                                          
+            transactionViewController.navigationItem.rightBarButtonItem =
+                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone   
+                                                              target:self
+                                                              action:@selector(dismissTransactionViewController)];
+            UINavigationController *navigationController = [UINavigationController new];
+            navigationController.viewControllers = @[transactionViewController];
+            [navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
+            [self presentViewController:navigationController animated:YES completion:nil];
+        }
     	else
     		NSLog(@"Transaction not found: %@", err);
     });
+    
+    ...
+    
+    - (void)dismissTransactionViewController
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 
 ## Printing
 
