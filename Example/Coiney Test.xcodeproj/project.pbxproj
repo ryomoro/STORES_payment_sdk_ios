@@ -16,24 +16,9 @@
 		C77B836D189A1BC700902B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B836B189A1BC700902B8C /* Main.storyboard */; };
 		C77B8370189A1BC700902B8C /* CTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C77B836F189A1BC700902B8C /* CTViewController.m */; };
 		C77B8372189A1BC700902B8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77B8371189A1BC700902B8C /* Images.xcassets */; };
-		C77B8379189A1BC700902B8C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B8378189A1BC700902B8C /* XCTest.framework */; };
-		C77B837A189A1BC700902B8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B8359189A1BC700902B8C /* Foundation.framework */; };
-		C77B837B189A1BC700902B8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B835D189A1BC700902B8C /* UIKit.framework */; };
-		C77B8383189A1BC700902B8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C77B8381189A1BC700902B8C /* InfoPlist.strings */; };
-		C77B8385189A1BC700902B8C /* Coiney_TestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C77B8384189A1BC700902B8C /* Coiney_TestTests.m */; };
 		C77B8392189A1BD800902B8C /* CoineyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B838F189A1BD800902B8C /* CoineyKit.framework */; };
 		C77B8394189A1BD800902B8C /* CoineyKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C77B8391189A1BD800902B8C /* CoineyKitResources.bundle */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C77B837C189A1BC700902B8C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C77B834E189A1BC700902B8C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C77B8355189A1BC700902B8C;
-			remoteInfo = "Coiney Test";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C77B8356189A1BC700902B8C /* Coiney Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coiney Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +35,6 @@
 		C77B836E189A1BC700902B8C /* CTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTViewController.h; sourceTree = "<group>"; };
 		C77B836F189A1BC700902B8C /* CTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTViewController.m; sourceTree = "<group>"; };
 		C77B8371189A1BC700902B8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C77B8377189A1BC700902B8C /* Coiney TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coiney TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77B8378189A1BC700902B8C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C77B8380189A1BC700902B8C /* Coiney TestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coiney TestTests-Info.plist"; sourceTree = "<group>"; };
 		C77B8382189A1BC700902B8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -72,16 +56,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C77B8374189A1BC700902B8C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C77B8379189A1BC700902B8C /* XCTest.framework in Frameworks */,
-				C77B837B189A1BC700902B8C /* UIKit.framework in Frameworks */,
-				C77B837A189A1BC700902B8C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -100,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				C77B8356189A1BC700902B8C /* Coiney Test.app */,
-				C77B8377189A1BC700902B8C /* Coiney TestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +92,7 @@
 		C77B835F189A1BC700902B8C /* Coiney Test */ = {
 			isa = PBXGroup;
 			children = (
+				DCA095A119A21553008FDA1C /* iPad */,
 				C77B8368189A1BC700902B8C /* CTAppDelegate.h */,
 				C77B8369189A1BC700902B8C /* CTAppDelegate.m */,
 				C77B836E189A1BC700902B8C /* CTViewController.h */,
@@ -170,6 +144,13 @@
 			path = ../CoineyKit;
 			sourceTree = "<group>";
 		};
+		DCA095A119A21553008FDA1C /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,24 +171,6 @@
 			productReference = C77B8356189A1BC700902B8C /* Coiney Test.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C77B8376189A1BC700902B8C /* Coiney TestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C77B838B189A1BC700902B8C /* Build configuration list for PBXNativeTarget "Coiney TestTests" */;
-			buildPhases = (
-				C77B8373189A1BC700902B8C /* Sources */,
-				C77B8374189A1BC700902B8C /* Frameworks */,
-				C77B8375189A1BC700902B8C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C77B837D189A1BC700902B8C /* PBXTargetDependency */,
-			);
-			name = "Coiney TestTests";
-			productName = "Coiney TestTests";
-			productReference = C77B8377189A1BC700902B8C /* Coiney TestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,11 +180,6 @@
 				CLASSPREFIX = CT;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Coiney;
-				TargetAttributes = {
-					C77B8376189A1BC700902B8C = {
-						TestTargetID = C77B8355189A1BC700902B8C;
-					};
-				};
 			};
 			buildConfigurationList = C77B8351189A1BC700902B8C /* Build configuration list for PBXProject "Coiney Test" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -237,7 +195,6 @@
 			projectRoot = "";
 			targets = (
 				C77B8355189A1BC700902B8C /* Coiney Test */,
-				C77B8376189A1BC700902B8C /* Coiney TestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -254,14 +211,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C77B8375189A1BC700902B8C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C77B8383189A1BC700902B8C /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -275,23 +224,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C77B8373189A1BC700902B8C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C77B8385189A1BC700902B8C /* Coiney_TestTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C77B837D189A1BC700902B8C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C77B8355189A1BC700902B8C /* Coiney Test */;
-			targetProxy = C77B837C189A1BC700902B8C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C77B8362189A1BC700902B8C /* InfoPlist.strings */ = {
@@ -354,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -387,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -405,7 +338,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coiney Test/Coiney Test-Prefix.pch";
 				INFOPLIST_FILE = "Coiney Test/Coiney Test-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -422,48 +357,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coiney Test/Coiney Test-Prefix.pch";
 				INFOPLIST_FILE = "Coiney Test/Coiney Test-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		C77B838C189A1BC700902B8C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Coiney Test.app/Coiney Test";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Coiney Test/Coiney Test-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Coiney TestTests/Coiney TestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		C77B838D189A1BC700902B8C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Coiney Test.app/Coiney Test";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Coiney Test/Coiney Test-Prefix.pch";
-				INFOPLIST_FILE = "Coiney TestTests/Coiney TestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -484,15 +381,6 @@
 			buildConfigurations = (
 				C77B8389189A1BC700902B8C /* Debug */,
 				C77B838A189A1BC700902B8C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C77B838B189A1BC700902B8C /* Build configuration list for PBXNativeTarget "Coiney TestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C77B838C189A1BC700902B8C /* Debug */,
-				C77B838D189A1BC700902B8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
