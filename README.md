@@ -219,7 +219,7 @@ Printing is turned off by default.  Enable it by calling `+[CYPrinter setPrintin
         [CYPrinter setPrintingEnabled:YES];
     }
 
-The receipt's contents and format are specified using ReceiptML, whose specification can be found [here](/Coiney/CoineyKit-iOS/tree/master/Documentation/ReceiptML).
+The receipt's contents and format are specified using ReceiptML, whose specification can be found [here](/Documentation/ReceiptML).
 
 The following sample code prints a receipt automatically whenever a transaction finishes.
 
