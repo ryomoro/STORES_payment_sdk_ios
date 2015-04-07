@@ -293,6 +293,8 @@ If you plan to include printer support, you must add the following entry to your
 		<string>com.epson.escpos</string>
 	</array>
 
+If you plan to do any printing _without_ using CoineyKit, be sure to set `[CYPrinter setPrintingEnabled:NO]`, since Bluetooth accessories cannot be shared between CoineyKit and your app.  Then, to print a receipt for a Coiney transaction, obtain the transaction information from the relevant `CYTransaction` object, and print using your printing implementation.
+
 ## And that's it!
 
 If you have any further questions feel free to email <devsupport@coiney.com>.
