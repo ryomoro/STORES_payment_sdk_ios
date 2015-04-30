@@ -29,4 +29,5 @@ module CoineyKit {
     link "z"
     link "xml2"
     link "iconv"
+    link "stdc++"
 }

@@ -10,31 +10,31 @@
 	<string>Coiney Test</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>277F92E1-F9DB-4E68-811A-A2E236094F5F</key>
-		<string>ssh://github.com/Coiney/CoineyKit-iOS.git</string>
+		<key>90C9151686F845E8FE47B79D8AD71858BE18B64D</key>
+		<string>github.com:Coiney/CoineyKit-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Coiney Test/Coiney Test.xcodeproj/project.xcworkspace</string>
+	<string>Example/Coiney Test.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>277F92E1-F9DB-4E68-811A-A2E236094F5F</key>
+		<key>90C9151686F845E8FE47B79D8AD71858BE18B64D</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/Coiney/CoineyKit-iOS.git</string>
+	<string>github.com:Coiney/CoineyKit-iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>277F92E1-F9DB-4E68-811A-A2E236094F5F</string>
+	<string>90C9151686F845E8FE47B79D8AD71858BE18B64D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>277F92E1-F9DB-4E68-811A-A2E236094F5F</string>
+			<string>90C9151686F845E8FE47B79D8AD71858BE18B64D</string>
 			<key>IDESourceControlWCCName</key>
-			<string>CoineyKit-Release</string>
+			<string>CoineyKit-iOS</string>
 		</dict>
 	</array>
 </dict>

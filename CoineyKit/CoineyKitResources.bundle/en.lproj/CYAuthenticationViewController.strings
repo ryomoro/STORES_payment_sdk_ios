@@ -1,0 +1,15 @@
+
+/* Class = "IBUITextField"; placeholder = "メール"; ObjectID = "pBq-4M-1e1"; */
+"pBq-4M-1e1.placeholder" = "example@coiney.com";
+
+/* Class = "IBUITextField"; placeholder = "パスワード"; ObjectID = "gH4-uC-2pf"; */
+"gH4-uC-2pf.placeholder" = "• • • • •";
+
+/* Class = "IBUIButton"; normalTitle = "ログイン"; ObjectID = "7Ii-Po-cll"; */
+"7Ii-Po-cll.normalTitle" = "Log In";
+
+/* Class = "IBUIButton"; normalTitle = "お申し込み"; ObjectID = "DxA-Ks-8uT"; */
+"DxA-Ks-8uT.normalTitle" = "Sign Up";
+
+/* Class = "IBUIButton"; normalTitle = "パスワード再設定"; ObjectID = "dyx-5o-9mH"; */
+"dyx-5o-9mH.normalTitle" = "Reset Password";

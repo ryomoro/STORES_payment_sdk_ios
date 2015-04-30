@@ -18,6 +18,7 @@
 		C77B8372189A1BC700902B8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77B8371189A1BC700902B8C /* Images.xcassets */; };
 		C77B8392189A1BD800902B8C /* CoineyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B838F189A1BD800902B8C /* CoineyKit.framework */; };
 		C77B8394189A1BD800902B8C /* CoineyKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C77B8391189A1BD800902B8C /* CoineyKitResources.bundle */; };
+		DC617F1B1AF2419A00D22FA1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC617F1A1AF2419A00D22FA1 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		C77B838F189A1BD800902B8C /* CoineyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoineyKit.framework; sourceTree = "<group>"; };
 		C77B8390189A1BD800902B8C /* CoineyKit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CoineyKit.xcconfig; sourceTree = "<group>"; };
 		C77B8391189A1BD800902B8C /* CoineyKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CoineyKitResources.bundle; sourceTree = "<group>"; };
+		DC617F1A1AF2419A00D22FA1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		DC617F291AF2618100D22FA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC617F1B1AF2419A00D22FA1 /* libsqlite3.dylib in Frameworks */,
 				C77B835C189A1BC700902B8C /* CoreGraphics.framework in Frameworks */,
 				C77B835E189A1BC700902B8C /* UIKit.framework in Frameworks */,
 				C77B8392189A1BD800902B8C /* CoineyKit.framework in Frameworks */,
@@ -81,6 +85,7 @@
 		C77B8358189A1BC700902B8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC617F1A1AF2419A00D22FA1 /* libsqlite3.dylib */,
 				C77B8359189A1BC700902B8C /* Foundation.framework */,
 				C77B835B189A1BC700902B8C /* CoreGraphics.framework */,
 				C77B835D189A1BC700902B8C /* UIKit.framework */,
@@ -239,6 +244,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C77B836C189A1BC700902B8C /* Base */,
+				DC617F291AF2618100D22FA1 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -338,7 +344,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coiney Test/Coiney Test-Prefix.pch";
 				INFOPLIST_FILE = "Coiney Test/Coiney Test-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -357,7 +363,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coiney Test/Coiney Test-Prefix.pch";
 				INFOPLIST_FILE = "Coiney Test/Coiney Test-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

@@ -1,0 +1,306 @@
+
+/* Class = "IBUIButton"; normalTitle = "マネージャー"; ObjectID = "0mm-9X-w6Z"; */
+"0mm-9X-w6Z.normalTitle" = "Manager";
+
+/* Class = "IBUILabel"; text = "合計"; ObjectID = "1Ru-95-8c1"; */
+"1Ru-95-8c1.text" = "Total";
+
+/* Class = "IBUILabel"; text = "マネージャーをオンにすると、ユーザーの追加、他ユーザーの取引閲覧、\n売上取消・返品をおこなうことができます。"; ObjectID = "1e0-dH-vWr"; */
+"1e0-dH-vWr.text" = "Managers can add users, see other users'\ntransactions and make refunds.";
+
+/* Class = "IBUILabel"; text = "ヘルプ"; ObjectID = "1xb-UY-V25"; */
+"1xb-UY-V25.text" = "Help";
+
+/* Class = "IBUILabel"; text = "商品の種類を追加"; ObjectID = "2EO-94-oFp"; */
+"2EO-94-oFp.text" = "New Price";
+
+/* Class = "IBUILabel"; text = "メール"; ObjectID = "47C-8b-DOb"; */
+"47C-8b-DOb.text" = "Email";
+
+/* Class = "IBUISearchBar"; placeholder = "商品、金額、下４桁"; ObjectID = "6yh-hH-MRh"; */
+"6yh-hH-MRh.placeholder" = "Product, Price, or Last 4 Digits";
+
+/* Class = "IBUITextField"; placeholder = "商品種類"; ObjectID = "5hH-J4-nsU"; */
+"5hH-J4-nsU.placeholder" = "Price Name";
+
+/* Class = "IBUINavigationItem"; title = "お知らせ"; ObjectID = "6Ea-q3-Xs1"; */
+"6Ea-q3-Xs1.title" = "News";
+
+/* Class = "IBUILabel"; text = "ショップ名"; ObjectID = "8BP-wS-d9m"; */
+"8BP-wS-d9m.text" = "Shop Name";
+
+/* Class = "IBUIButton"; normalTitle = "このユーザーを削除"; ObjectID = "8TF-3s-2is"; */
+"8TF-3s-2is.normalTitle" = "Delete User";
+
+/* Class = "IBUINavigationItem"; title = "読み取り練習"; ObjectID = "8hy-HJ-Ezx"; */
+"8hy-HJ-Ezx.title" = "Swipe Practice";
+
+/* Class = "IBUIButton"; normalTitle = "利用規約"; ObjectID = "8lq-I7-hk6"; */
+"8lq-I7-hk6.normalTitle" = "Terms and Conditions";
+
+/* Class = "IBUIButton"; normalTitle = "サービスガイド"; ObjectID = "9K6-0g-KLd"; */
+"9K6-0g-KLd.normalTitle" = "Online Support Center";
+
+/* Class = "IBUILabel"; text = "入金済み"; ObjectID = "AM5-xz-Zc6"; */
+"AM5-xz-Zc6.text" = "Deposited";
+
+/* Class = "IBUIButton"; normalTitle = "このアプリを評価"; ObjectID = "APf-DC-Du6"; */
+"APf-DC-Du6.normalTitle" = "Review on the App Store";
+
+/* Class = "IBUILabel"; text = "取引"; ObjectID = "AXa-mo-6u9"; */
+"AXa-mo-6u9.text" = "Transactions";
+
+/* Class = "IBUILabel"; text = "商品を追加"; ObjectID = "B0G-yu-XoK"; */
+"B0G-yu-XoK.text" = "Add Product";
+
+/* Class = "IBUINavigationItem"; title = "スタッフ追加"; ObjectID = "BAN-q9-j7n"; */
+"BAN-q9-j7n.title" = "Add Staff";
+
+/* Class = "IBUILabel"; text = "オンにすると当月末までの売上が翌月20日に自動的に入金されます。"; ObjectID = "BCn-W7-eX3"; */
+"BCn-W7-eX3.text" = "Enable for automatic withdrawals on the 20th of every month.";
+
+/* Class = "IBUILabel"; text = "売り上げの確認や取消、各種設定の\n変更ができます。"; ObjectID = "CnQ-Pf-Vlq"; */
+"CnQ-Pf-Vlq.text" = "You can view and refund past transactions,\nchange account settings, and more.";
+
+/* Class = "IBUILabel"; text = "確認中…"; ObjectID = "DIg-u8-0HI"; */
+"DIg-u8-0HI.text" = "Calibrating…";
+
+/* Class = "IBUITextField"; placeholder = "商品名"; ObjectID = "DjH-Mg-ZCP"; */
+"DjH-Mg-ZCP.placeholder" = "Items";
+
+/* Class = "IBUINavigationItem"; title = "フィードバック"; ObjectID = "EMJ-13-8gf"; */
+"EMJ-13-8gf.title" = "Feedback";
+
+/* Class = "IBUIBarButtonItem"; title = "履歴"; ObjectID = "GNx-Ia-wHc"; */
+"GNx-Ia-wHc.title" = "History";
+
+/* Class = "IBUILabel"; text = "カートに商品を追加して"; ObjectID = "HRD-Os-ZC9"; */
+"HRD-Os-ZC9.text" = "Working with Products";
+
+/* Class = "IBUILabel"; text = "サポートの電話番号は0120-343-577、受付時間は平日10:00〜18:00です。"; ObjectID = "HTY-df-NDR"; */
+"HTY-df-NDR.text" = "The support phone number is 0120-343-577, open weekdays 10 am to 6 pm.";
+
+/* Class = "IBUINavigationItem"; title = "引き出し"; ObjectID = "IAJ-xR-ChW"; */
+"Ygm-DA-2ns.title" = "Deposit History";
+
+/* Class = "IBUILabel"; text = "Coineyでお客さまとのお会計が \nあんぜん 、 あんしん 、 かんたんに。\nさあ、始めましょう！"; ObjectID = "Iqr-6g-vmi"; */
+"Iqr-6g-vmi.text" = "This tutorial will\nhelp you get started.";
+
+/* Class = "IBUIButton"; normalTitle = "メールアドレス"; ObjectID = "JEn-bn-Fu1"; */
+"JEn-bn-Fu1.normalTitle" = "Email";
+
+/* Class = "IBUILabel"; text = "アカウント"; ObjectID = "LBF-KX-eh7"; */
+"LBF-KX-eh7.text" = "Account";
+
+/* Class = "IBUILabel"; text = "合計"; ObjectID = "LBi-U3-gWA"; */
+"LBi-U3-gWA.text" = "Total";
+
+/* Class = "IBUILabel"; text = "引き出しがありません。"; ObjectID = "OeK-2K-DIV"; */
+"uvc-lH-YCX.text" = "No deposits to display";
+
+/* Class = "IBUILabel"; text = "電話番号"; ObjectID = "RLg-rf-zA7"; */
+"RLg-rf-zA7.text" = "Phone";
+
+/* Class = "IBUIButton"; normalTitle = "レシート自動印刷"; ObjectID = "S4b-jA-NtD"; */
+"S4b-jA-NtD.normalTitle" = "Print Receipts Automatically";
+
+/* Class = "IBUIButton"; normalTitle = "マネージャー"; ObjectID = "SaD-x2-1rz"; */
+"SaD-x2-1rz.normalTitle" = "Manager";
+
+/* Class = "IBUILabel"; text = "まだ取引がありません。"; ObjectID = "T1M-yb-Zqz"; */
+"bpO-kG-Fqa.text" = "No transactions to display";
+
+/* Class = "IBUILabel"; text = "コメント"; ObjectID = "Taj-0G-uYe"; */
+"Taj-0G-uYe.text" = "Comment";
+
+/* Class = "IBUILabel"; text = "支払い"; ObjectID = "TsP-c1-hgR"; */
+"TsP-c1-hgR.text" = "Payment";
+
+/* Class = "IBUIButton"; normalTitle = "レシート"; ObjectID = "Uno-AP-rmP"; */
+"Uno-AP-rmP.normalTitle" = "Receipt Settings";
+
+/* Class = "IBUIButton"; normalTitle = "スタッフ追加"; ObjectID = "E5T-ES-TmQ"; */
+"E5T-ES-TmQ.normalTitle" = "Add Staff";
+
+/* Class = "IBUIButton"; normalTitle = "スタッフ"; ObjectID = "Vmh-aO-DBP"; */
+"Vmh-aO-DBP.normalTitle" = "Staff";
+
+/* Class = "IBUILabel"; text = "今月の売上"; ObjectID = "WtF-qE-l3j"; */
+"WtF-qE-l3j.text" = "Sales this month";
+
+/* Class = "IBUINavigationItem"; title = "取引情報"; ObjectID = "WXa-zS-kok"; */
+"WXa-zS-kok.title" = "Transaction Details";
+
+/* Class = "IBUITextField"; placeholder = "招待メッセージを入力"; ObjectID = "XJ4-bT-npy"; */
+"XJ4-bT-npy.placeholder" = "Enter a Message";
+
+/* Class = "IBUILabel"; text = "※実際に決済はおこなわれません"; ObjectID = "YCb-yk-tu4"; */
+"YCb-yk-tu4.text" = "(Your card will not be charged.)";
+
+/* Class = "IBUILabel"; text = "スタッフの登録がありません。"; ObjectID = "YVs-CU-dRx"; */
+"UF2-q5-1sl.text" = "No staff to display";
+
+/* Class = "IBUIButton"; normalTitle = "お問い合わせ"; ObjectID = "a0H-cs-ED0"; */
+"a0H-cs-ED0.normalTitle" = "Support";
+
+/* Class = "IBUILabel"; text = "メールアドレス"; ObjectID = "a4d-Fj-x0Z"; */
+"a4d-Fj-x0Z.text" = "Email";
+
+/* Class = "IBUINavigationItem"; title = "商品"; ObjectID = "agb-JJ-lhb"; */
+"agb-JJ-lhb.title" = "Products";
+
+/* Class = "IBUINavigationItem"; title = "ヘルプ"; ObjectID = "c0Q-7b-EDA"; */
+"c0Q-7b-EDA.title" = "Help";
+
+/* Class = "IBUILabel"; text = "ウェブでも色々できます"; ObjectID = "c1y-UJ-Ol0"; */
+"c1y-UJ-Ol0.text" = "Do More at coiney.com";
+
+/* Class = "IBUILabel"; text = "サイズ、色、素材などの商品バリエーションを追加できます。"; ObjectID = "cW5-SK-V7f"; */
+"cW5-SK-V7f.text" = "You can add prices for different sizes, colors, or materials.";
+
+/* Class = "IBUIButton"; normalTitle = "アカウント"; ObjectID = "cYl-hM-sbF"; */
+"cYl-hM-sbF.normalTitle" = "Active";
+
+/* Class = "IBUIButton"; normalTitle = "ログアウト"; ObjectID = "cZi-bu-gFi"; */
+"cZi-bu-gFi.normalTitle" = "Log Out";
+
+/* Class = "IBUIButton"; normalTitle = "使い方の動画"; ObjectID = "cze-xC-tcE"; */
+"cze-xC-tcE.normalTitle" = "Introduction Video";
+
+/* Class = "IBUINavigationItem"; title = "取引履歴"; ObjectID = "dDe-18-hh3"; */
+"dDe-18-hh3.title" = "Transactions";
+
+/* Class = "IBUIButton"; normalTitle = "テスト印刷"; ObjectID = "dSL-gd-eTn"; */
+"dSL-gd-eTn.normalTitle" = "Print Test Receipt";
+
+/* Class = "IBUINavigationItem"; title = "スタッフ"; ObjectID = "dWh-m1-CTC"; */
+"QNg-yw-kDU.title" = "Staff";
+
+/* Class = "IBUILabel"; text = "プリンターとの接続は\nホーム画面→設定→Bluetoothから行います。"; ObjectID = "dbs-6W-WNx"; */
+"dbs-6W-WNx.text" = "To connect a Bluetooth printer, open:\nHome→Settings→Bluetooth";
+
+/* Class = "IBUILabel"; text = "メッセージ (オプション)"; ObjectID = "e7N-lx-mYY"; */
+"e7N-lx-mYY.text" = "Invitation Message (Optional)";
+
+/* Class = "IBUITextField"; placeholder = "name@company.com"; ObjectID = "eHu-KA-Y48"; */
+"eHu-KA-Y48.placeholder" = "name@company.com";
+
+/* Class = "IBUIButton"; normalTitle = "サービス (アプリ) について要望を報告"; ObjectID = "fBx-cv-oFO"; */
+"fBx-cv-oFO.normalTitle" = "Send Us Feedback";
+
+/* Class = "IBUILabel"; text = "お知らせ"; ObjectID = "fdc-2L-8x6"; */
+"fdc-2L-8x6.text" = "News";
+
+/* Class = "IBUILabel"; text = "マネージャーをオンにすると、ユーザーの追加、他ユーザーの取引閲覧、\n売上取消・返品をおこなうことができます。"; ObjectID = "hmr-M8-pZY"; */
+"hmr-M8-pZY.text" = "Managers can add users, see other users'\ntransactions, and make refunds.";
+
+/* Class = "IBUIButton"; normalTitle = "カード読み取り練習"; ObjectID = "i92-S9-Qyf"; */
+"i92-S9-Qyf.normalTitle" = "Swipe Practice";
+
+/* Class = "IBUIButton"; normalTitle = "名前"; ObjectID = "jIX-2T-4YR"; */
+"jIX-2T-4YR.normalTitle" = "Name";
+
+/* Class = "IBUILabel"; text = "クレジットカードを準備して\n読み取り練習をしましょう！"; ObjectID = "jhK-Es-dEN"; */
+"jhK-Es-dEN.text" = "Get a credit card and\npractice swiping a few times!";
+
+/* Class = "IBUILabel"; text = "基本情報"; ObjectID = "k5c-Vm-gfC"; */
+"k5c-Vm-gfC.text" = "Shop Information";
+
+/* Class = "IBUIButton"; normalTitle = "サインレス"; ObjectID = "kTw-ru-D67"; */
+"kTw-ru-D67.normalTitle" = "Signless Transactions";
+
+/* Class = "IBUINavigationItem"; title = "引き出し"; ObjectID = "l2n-xe-1mR"; */
+"l2n-xe-1mR.title" = "Balance";
+
+/* Class = "IBUIButton"; normalTitle = "プライバシーポリシー"; ObjectID = "lJ3-B4-Zxa"; */
+"lJ3-B4-Zxa.normalTitle" = "Privacy Policy";
+
+/* Class = "IBUINavigationItem"; title = "利用規約"; ObjectID = "lLV-LA-Pz9"; */
+"lLV-LA-Pz9.title" = "Terms and Conditions";
+
+/* Class = "IBUILabel"; text = "住所"; ObjectID = "lN4-pb-vkN"; */
+"lN4-pb-vkN.text" = "Address";
+
+/* Class = "IBUILabel"; text = "リーダーを挿してください"; ObjectID = "lWO-Mu-aF2"; */
+"lWO-Mu-aF2.text" = "Insert Your Reader";
+
+/* Class = "IBUIButton"; normalTitle = "メールにてお問い合わせ"; ObjectID = "lgq-Qc-1e8"; */
+"lgq-Qc-1e8.normalTitle" = "By Email";
+
+/* Class = "IBUIButton"; normalTitle = "キャンセル"; ObjectID = "mE3-o2-AGi"; */
+"mE3-o2-AGi.normalTitle" = "Cancel";
+
+/* Class = "IBUILabel"; text = "オンにすると決済金額が%@以下の場合にサインがスキップされます。"; ObjectID = "mJS-G8-EFl"; */
+"mJS-G8-EFl.text" = "If enabled, signing will not be required for transactions under %@.";
+
+/* Class = "IBUIBarButtonItem"; title = "送信"; ObjectID = "mKo-Zm-QGA"; */
+"mKo-Zm-QGA.title" = "Send";
+
+/* Class = "IBUINavigationItem"; title = "設定"; ObjectID = "mOI-FS-AaM"; */
+"mOI-FS-AaM.title" = "Settings";
+
+/* Class = "IBUIButton"; normalTitle = "ヒントを見る"; ObjectID = "nmp-sh-Lp2"; */
+"nmp-sh-Lp2.normalTitle" = "Tips";
+
+/* Class = "IBUILabel"; text = "確定"; ObjectID = "oWi-Ef-1AG"; */
+"oWi-Ef-1AG.text" = "Closed";
+
+/* Class = "IBUINavigationItem"; title = "レシート"; ObjectID = "p5V-fA-VTQ"; */
+"p5V-fA-VTQ.title" = "Receipt Settings";
+
+/* Class = "IBUIButton"; normalTitle = "取引禁止商品ガイドライン"; ObjectID = "pZL-JF-yW6"; */
+"pZL-JF-yW6.normalTitle" = "Prohibited Merchandise";
+
+/* Class = "IBUILabel"; text = "URL"; ObjectID = "ptg-Lr-67A"; */
+"ptg-Lr-67A.text" = "URL";
+
+/* Class = "IBUILabel"; text = "+"; ObjectID = "q6l-Vr-3Pd"; */
+"q6l-Vr-3Pd.text" = "+";
+
+/* Class = "IBUIButton"; normalTitle = "削除"; ObjectID = "sYY-rC-Oxw"; */
+"sYY-rC-Oxw.normalTitle" = "Delete";
+
+/* Class = "IBUIButton"; normalTitle = "保存"; ObjectID = "tzW-C4-5ga"; */
+"tzW-C4-5ga.normalTitle" = "Save";
+
+/* Class = "IBUILabel"; text = "有効"; ObjectID = "uEE-aW-UM3"; */
+"uEE-aW-UM3.text" = "Active";
+
+/* Class = "IBUILabel"; text = "スタッフを追加するには\n右上の \"+\" をタップしてください。"; ObjectID = "ube-V4-cfa"; */
+"gg4-rw-4ou.text" = "Tap the \"+\" button to\ninvite a staff member.";
+
+/* Class = "IBUILabel"; text = "「カチッ」となるまでしっかりと\nイヤホンジャックに挿しこみます。"; ObjectID = "viZ-s9-d3l"; */
+"viZ-s9-d3l.text" = "Plug your reader firmly\ninto the headphone jack.";
+
+/* Class = "IBUIButton"; normalTitle = "自動引き出し"; ObjectID = "w6q-2q-IGe"; */
+"w6q-2q-IGe.normalTitle" = "Automatic Withdrawals";
+
+/* Class = "IBUILabel"; text = "権限設定"; ObjectID = "yy8-Ua-dSQ"; */
+"yy8-Ua-dSQ.text" = "Permissions";
+
+/* Class = "IBUINavigationItem"; title = "スタッフ情報"; ObjectID = "zf1-6u-Rej"; */
+"zf1-6u-Rej.title" = "Staff Details";
+
+/* Class = "IBUILabel"; text = "ようこそ！"; ObjectID = "zfp-eF-QpL"; */
+"zfp-eF-QpL.text" = "Welcome!";
+
+/* Class = "IBUILabel"; text = "規約・禁止事項"; ObjectID = "zl5-yJ-hmd"; */
+"zl5-yJ-hmd.text" = "Legal";
+
+/* Class = "IBUILabel"; text = "コメントを入力するとレシートにメッセージを表示できます。"; ObjectID = "83t-j4-ZgB"; */
+"83t-j4-ZgB.text" = "Comment entered here will appear in the receipt.";
+
+/* Class = "IBUINavigationItem"; title = "売上"; ObjectID = "3S0-A9-1Rl"; */
+"3S0-A9-1Rl.title" = "Transactions";
+
+/* Class = "IBUIButton"; normalTitle = "加盟店情報"; ObjectID = "HRR-ao-zhU"; */
+"HRR-ao-zhU.normalTitle" = "Merchant Information";
+
+/* Class = "IBUINavigationItem"; title = "加盟店情報"; ObjectID = "keu-p3-mHK"; */
+"keu-p3-mHK.title" = "Merchant Information";
+
+/* Class = "IBUILabel"; text = "お問い合わせ"; ObjectID = "0BT-iS-Xlr"; */
+"0BT-iS-Xlr.text" = "Support";
+
+/* Class = "IBUILabel"; text = "レシートコメント"; ObjectID = "QxY-4a-u84"; */
+"QxY-4a-u84.text" = "Comment";

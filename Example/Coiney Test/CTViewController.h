@@ -4,4 +4,5 @@
 @property(weak, nonatomic) IBOutlet UITextField *productNameField, *productPriceField;
 
 - (IBAction)makePayment:(id)aSender;
+- (IBAction)deauthenticate:(id)aSender;
 @end

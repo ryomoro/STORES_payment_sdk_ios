@@ -12,9 +12,9 @@
     NSString *name = _productNameField.text;
     NSInteger price = [_productPriceField.text integerValue];
 
-    CYLineItem *lineItem = [CYLineItem itemWithAmount:price
-                                             currency:CYCurrencyJPY
-                                                 name:name];
+    CYItem *lineItem = [CYItem itemWithTotal:price
+                                    currency:CYCurrencyJPY
+                                        memo:name];
 
     // Create an instance of the Coiney payment controller.
     CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]];
@@ -22,6 +22,11 @@
     
     // Present it on top of the current controller.
     [self presentViewController:coineyController animated:YES completion:nil];
+}
+
+- (IBAction)deauthenticate:(id)aSender
+{
+    [CYAuthenticationViewController deauthenticate];
 }
 
 - (void)coineyViewController:(CYCoineyViewController *)aController
@@ -42,5 +47,4 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 @end

@@ -1,0 +1,42 @@
+
+/* Class = "IBUILabel"; text = "カードの端から端まで"; ObjectID = "5LA-I1-IoR"; */
+"5LA-I1-IoR.text" = "From End to End of the Card";
+
+/* Class = "IBUILabel"; text = "カードが劣化・破損していたりすると\n読み取ることができません。"; ObjectID = "5UZ-yz-K32"; */
+"5UZ-yz-K32.text" = "If a card is worn or damaged,\nit may not be readable.";
+
+/* Class = "IBUILabel"; text = "カードは表向きに"; ObjectID = "Cc6-Z5-6od"; */
+"Cc6-Z5-6od.text" = "Card Face Up";
+
+/* Class = "IBUILabel"; text = "カード状態の確認"; ObjectID = "Lpz-rg-qwN"; */
+"Lpz-rg-qwN.text" = "Check the Credit Card";
+
+/* Class = "IBUIButton"; normalTitle = "お問い合わせ"; ObjectID = "Xte-f7-p6g"; */
+"Xte-f7-p6g.normalTitle" = "Support";
+
+/* Class = "IBUILabel"; text = "シュッと素早く"; ObjectID = "gox-hC-mZJ"; */
+"gox-hC-mZJ.text" = "Quick Swipe";
+
+/* Class = "IBUILabel"; text = "カード裏の磁気面がCoineyリーダーのロゴがある面と、\n反対側にセットしてスライドしましょう。"; ObjectID = "his-Re-hHp"; */
+"his-Re-hHp.text" = "Ensure the front of the card is facing the\nside of the reader with the Coiney logo.";
+
+/* Class = "IBUILabel"; text = "リーダーを再接続"; ObjectID = "hzh-Q2-ynD"; */
+"hzh-Q2-ynD.text" = "Re-connect Your Reader";
+
+/* Class = "IBUILabel"; text = "端から端までしっかり最後まで\nまっすぐにスライドしましょう。"; ObjectID = "iM3-OZ-5KZ"; */
+"iM3-OZ-5KZ.text" = "Swipe firmly and straight\nfrom end to end.";
+
+/* Class = "IBUILabel"; text = "カードをリーダーの底にあたるように\n差し込んで水平にスライドしてください。"; ObjectID = "md7-ce-VOV"; */
+"md7-ce-VOV.text" = "Insert the card fully into the\nslot and swipe straight.";
+
+/* Class = "IBUILabel"; text = "水平にスライド"; ObjectID = "qix-84-xzS"; */
+"qix-84-xzS.text" = "Slide Horizontally";
+
+/* Class = "IBUILabel"; text = "リーダーを一度抜いてから、イヤホンジャック内に\nほこりなどが入っていないか確認してみてください。"; ObjectID = "xLO-wO-DoP"; */
+"xLO-wO-DoP.text" = "Disconnect your reader and\nclean your headphone jack if necessary.";
+
+/* Class = "IBUILabel"; text = "うまく読み取れない場合はコイニーサポートセンターまで\nお気軽にお問い合わせください。"; ObjectID = "xmk-4D-b3G"; */
+"xmk-4D-b3G.text" = "If you're having trouble swiping a card\nplease contact our support center.";
+
+/* Class = "IBUILabel"; text = "読み取りスピードが遅いかもしれません。\nシュッと素早くスライドしてください。"; ObjectID = "ykc-9w-ufi"; */
+"ykc-9w-ufi.text" = "Your swipes may be too slow.\nPlease swipe quickly.";

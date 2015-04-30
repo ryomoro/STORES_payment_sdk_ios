@@ -2,7 +2,7 @@
 // Copyright © Coiney Inc. All rights reserved.
 // For licensing information, contact info@coiney.com.
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 #import <CoineyKit/CYTransaction.h>
 
 /// \~english
@@ -15,13 +15,13 @@
 /// The transaction object of the controller
 /// \~japanese
 /// コントローラの決済オブジェクト
-@property(readonly, nonatomic) id<CYTransaction> transaction;
+@property(nonatomic, readonly, nonatomic) id<CYTransaction> transaction;
 
 /// \~english
 /// Whether refunding is allowed
 /// \~japanese
-/// 返金可能かどうか
-@property(readonly, nonatomic, getter=allowsRefunding) BOOL allowRefunding;
+/// 返品可能かどうか
+@property(nonatomic, readonly, nonatomic, getter=allowsRefunding) BOOL allowRefunding;
 
 /// \~english
 /// Returns a controller populated with the information from `aTransaction`
@@ -30,7 +30,7 @@
 /// \~japanese
 /// 特定の決済の詳細画面を返します。
 /// \param aTransaction コントローラに設定する `CYTransaction` オブジェクト
-/// \param aAllowRefunds 返金可能にするかどうか
+/// \param aAllowRefunds 返品可能にするかどうか
 + (instancetype)transactionViewControllerWithTransaction:(id<CYTransaction>)aTransaction
                                           allowRefunding:(BOOL)aAllowRefunds;
 @end

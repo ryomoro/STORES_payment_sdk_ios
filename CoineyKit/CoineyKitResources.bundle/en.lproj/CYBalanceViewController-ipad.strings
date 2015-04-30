@@ -1,0 +1,24 @@
+
+/* Class = "IBUILabel"; text = "売上の内訳"; ObjectID = "0ha-aJ-ZCP"; */
+"0ha-aJ-ZCP.text" = "Summary";
+
+/* Class = "IBUILabel"; text = "- 振込手数料"; ObjectID = "3JN-AT-CrD"; */
+"3JN-AT-CrD.text" = "- Deposit fee";
+
+/* Class = "IBUIButton"; normalTitle = "振込依頼"; ObjectID = "JfL-iG-1o1"; */
+"JfL-iG-1o1.normalTitle" = "Request Withdrawal";
+
+/* Class = "IBUILabel"; text = "- 加盟店手数料"; ObjectID = "WcG-tk-QCi"; */
+"WcG-tk-QCi.text" = "- Transaction fee";
+
+/* Class = "IBUILabel"; text = "入金予定額"; ObjectID = "aVC-pR-8q7"; */
+"aVC-pR-8q7.text" = "Balance";
+
+/* Class = "IBUILabel"; text = "売上の内訳がありません。"; ObjectID = "sb6-5i-Sxr"; */
+"sb6-5i-Sxr.text" = "No summary to show";
+
+/* Class = "IBUILabel"; text = "売上合計"; ObjectID = "vhe-Zt-ppp"; */
+"vhe-Zt-ppp.text" = "Transactions";
+
+/* Class = "IBUILabel"; text = "JCB、アメリカン・エキスプレス、ダイナースクラブ、ディスカバーの決済については、株式会社ジェーシービーへお問い合わせください。"; ObjectID = "RGr-5x-dMv"; */
+"RGr-5x-dMv.text" = "Please ask JCB Co., Ltd. about transactions made with JCB, American Express, Diners Club, and Discover cards.";

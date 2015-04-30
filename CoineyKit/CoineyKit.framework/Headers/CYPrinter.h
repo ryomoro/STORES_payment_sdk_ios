@@ -3,38 +3,38 @@
 // For licensing information, contact info@coiney.com.
 
 // Implements support for ESC/POS based bluetooth printers
-@import Foundation;
+#import <Foundation/Foundation.h>
 
-NSString * const kCYPrinterConnectedNotification,
-         * const kCYPrinterDisconnectedNotification,
-         * const kCYPrinterBeganPrintingNotification,
-         * const kCYPrinterEndedPrintingNotification;
+extern NSString * const kCYPrinterConnectedNotification,
+                * const kCYPrinterDisconnectedNotification,
+                * const kCYPrinterBeganPrintingNotification,
+                * const kCYPrinterEndedPrintingNotification;
 
 /// \~english
 /// Receipt printer interface
 /// \~japanese
 /// レシートプリンタ用インタフェース
 @interface CYPrinter : NSObject
-@property(readonly, getter=isConnected) BOOL connected;
+@property(nonatomic, readonly, getter=isConnected) BOOL connected;
 
 
 /// \~english
 /// Paper width in pixels
 /// \~japanese
 /// ピクセル数で表した用紙幅
-@property(readonly) NSInteger bitmapWidth;
+@property(nonatomic, readonly) NSInteger bitmapWidth;
 
 /// \~english
 /// Paper width in characters
 /// \~japanese
 /// 文字数で表した用紙幅
-@property(readonly) NSInteger lineLength;
+@property(nonatomic, readonly) NSInteger lineLength;
 
 /// \~english
 /// Name of printer for displaying to user
 /// \~japanese
 /// ユーザー表示用のプリンタ名称
-@property(readonly) NSString *displayName;
+@property(nonatomic, readonly) NSString *displayName;
 
 /// \~english
 /// Whether printing is enabled in CoineyKit. Default is off.
@@ -59,9 +59,6 @@ NSString * const kCYPrinterConnectedNotification,
 /// \~japanese
 /// 印字スピード等の理由で、ビットマップモードでの印字が現実的でない場合は、YESを返します。(サポート対象外というわけではありません)
 + (BOOL)bitmapPrintingIsImpractical;
-
-+ (instancetype)new  __attribute__((unavailable("+new not available; use +connectedPrinters")));
-- (id)init           __attribute__((unavailable("-init not available; use +connectedPrinters")));
 
 /// \~english
 /// Executes a collection of print instructions

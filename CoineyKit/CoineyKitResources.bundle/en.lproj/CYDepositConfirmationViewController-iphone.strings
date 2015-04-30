@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "取引情報を取得できません"; ObjectID = "3ms-Wi-AiL"; */
+"3ms-Wi-AiL.text" = "Unable to load transaction information";
+
+/* Class = "UILabel"; text = "名義"; ObjectID = "65s-F2-tua"; */
+"65s-F2-tua.text" = "Name";
+
+/* Class = "UILabel"; text = "金融機関名"; ObjectID = "DAX-bc-iDS"; */
+"DAX-bc-iDS.text" = "Bank";
+
+/* Class = "UILabel"; text = "入金予定額"; ObjectID = "Okx-5a-rOe"; */
+"Okx-5a-rOe.text" = "Amount";
+
+/* Class = "UILabel"; text = "ご依頼から2営業日以内に入金いたします。"; ObjectID = "pNN-ga-vo1"; */
+"pNN-ga-vo1.text" = "Please allow two business days for your request to be processed.";
+
+/* Class = "UILabel"; text = "支店名"; ObjectID = "pRv-lY-2P9"; */
+"pRv-lY-2P9.text" = "Branch";
+
+/* Class = "UILabel"; text = "口座番号"; ObjectID = "ptl-dk-97V"; */
+"ptl-dk-97V.text" = "Account";
+
+/* Class = "UIButton"; normalTitle = "振込依頼を実行"; ObjectID = "xyK-7f-aRU"; */
+"xyK-7f-aRU.normalTitle" = "Send Deposit Request";

@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "2回払い"; ObjectID = "1uC-hO-fkM"; */
+"1uC-hO-fkM.text" = "Two Installments";
+
+/* Class = "UIButton"; normalTitle = "終了"; ObjectID = "2Sh-bb-A9W"; */
+"2Sh-bb-A9W.normalTitle" = "Done";
+
+/* Class = "UIButton"; normalTitle = "レシートを印刷"; ObjectID = "F14-sx-myo"; */
+"F14-sx-myo.normalTitle" = "Print Receipt";
+
+/* Class = "UILabel"; text = "決済が完了しました"; ObjectID = "QQE-jH-GzS"; */
+"QQE-jH-GzS.text" = "Transaction Complete";
+
+/* Class = "UILabel"; text = "合計"; ObjectID = "VWW-KE-k7U"; */
+"VWW-KE-k7U.text" = "Total";
+
+/* Class = "UILabel"; text = "メモ"; ObjectID = "Vbd-g4-Zwa"; */
+"Vbd-g4-Zwa.text" = "Memo";
+
+/* Class = "UIButton"; normalTitle = "入力完了"; ObjectID = "dMy-Vy-8rG"; */
+"dMy-Vy-8rG.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "リボ払い"; ObjectID = "pt4-Ox-1fc"; */
+"pt4-Ox-1fc.text" = "Revolving";
+
+/* Class = "UILabel"; text = "支払い回数"; ObjectID = "wcA-1O-0Dy"; */
+"wcA-1O-0Dy.text" = "Payment Method";
+
+/* Class = "UILabel"; text = "ありがとうございました！"; ObjectID = "wfA-M1-vYW"; */
+"wfA-M1-vYW.text" = "Thank You!";
+
+/* Class = "UILabel"; text = "1回払い"; ObjectID = "y0I-3g-1zK"; */
+"y0I-3g-1zK.text" = "Single";
+
+/* Class = "UITextField"; placeholder = "メールで送信"; ObjectID = "y6m-YK-zpm"; */
+"y6m-YK-zpm.placeholder" = "Send email";

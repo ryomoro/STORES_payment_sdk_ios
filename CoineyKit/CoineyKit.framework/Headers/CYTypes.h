@@ -2,7 +2,7 @@
 // Copyright © Coiney Inc. All rights reserved.
 // For licensing information, contact info@coiney.com.
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 /// \~english
 /// Represents a currency.
@@ -53,7 +53,33 @@ typedef NS_ENUM(NSInteger, CYCardBrand) {
     /// Diners Club International
     /// \~japanese
     /// ダイナース
-    CYDiners
+    CYDiners,
+    /// \~english
+    /// Discover
+    /// \~japanese
+    /// ディスカバー
+    CYDiscover,
+    /// \~english
+    /// Saison
+    /// \~japanese
+    /// セゾン
+    CYSaison
+};
+
+typedef NS_OPTIONS(NSInteger, CYCardBrandMask) {
+    CYCardBrandMaskMasterCard = 1 << CYMasterCard,
+    CYCardBrandMaskVisa       = 1 << CYVisa,
+    CYCardBrandMaskAMEX       = 1 << CYAMEX,
+    CYCardBrandMaskJCB        = 1 << CYJCB,
+    CYCardBrandMaskDiners     = 1 << CYDiners,
+    CYCardBrandMaskDiscover   = 1 << CYDiscover,
+    CYCardBrandMaskSaison     = 1 << CYSaison
+};
+
+typedef NS_ENUM(NSInteger, CYFinancingType) {
+    CYFinancingNone,
+    CYFinancingRevolving,
+    CYFinancing2Installments
 };
 
 /// \~english
@@ -88,12 +114,15 @@ static inline CYCurrency CYCurrencyFromString(NSString * const aCurrencyCode)
 static inline NSString *NSStringFromCYCardbrand(CYCardBrand const aCardBrand)
 {
     switch(aCardBrand) {
-        case CYVisa:       return @"Visa";
+        case CYVisa:       return @"VISA";
         case CYMasterCard: return @"MasterCard";
         case CYAMEX:       return @"AMEX";
         case CYJCB:        return @"JCB";
         case CYDiners:     return @"Diners";
+        case CYDiscover:   return @"Discover";
+        case CYSaison:     return @"Saison";
         case CYUnknownCardBrand:
             return @"Unknown";
     }
 }
+

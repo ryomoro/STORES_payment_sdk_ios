@@ -1,6 +1,6 @@
 # CoineyKit
 
-Thanks for showing interest in CoineyKit, we work hard to make it as easy to integrate as possible; but if you have any issues at all, please create a ticket using our [Issue Tracker](https://github.com/Coiney/CoineyKit-iOS/issues).
+Thanks for showing interest in CoineyKit. We work hard to make it as easy to integrate as possible, but if you have any issues at all, please create a ticket using our [Issue Tracker](https://github.com/Coiney/CoineyKit-iOS/issues).
 
 -------
 
@@ -13,7 +13,7 @@ If you follow along this tutorial, you will learn how to create a basic applicat
 ## What you need
 
  * CoineyKit
- * Xcode 5 or above (Installed in `/Applications`)
+ * Xcode 6 or above (Installed in `/Applications`)
  
 
 ## Setting up your project
@@ -29,50 +29,59 @@ Now that your project is created, copy the folder `CoineyKit` to your project fo
 
 The next step is to add `CoineyKitResources.bundle`, `CoineyKit.xcconfig` & `CoineyKit.framework` to your project. (If you use git it's a good idea to add CoineyKit as a submodule, that way you'll always know if it is up to date or not)
 
-![Build settings](.readme_images/build-settings.png)
+Drag and drop `CoineyKit.xcconfig` and `CoineyKitResources.bundle` into the project navigator in Xcode.  Select "CoineyKit" as your Debug and Release configuration files.
+
+![Configurations](.readme_images/configuration.png)
+
+Go to your target's General settings, and add `CoineyKit.framework`, as well as the following:
+
+ * libxml2.dylib
+ * libsqlite3.dylib
+
+![Libraries and Frameworks](.readme_images/frameworks-libs.png)
 
 Now you're almost ready to make use of CoineyKit, you just need to update your build settings to use CoineyKit.xcconfig, as shown in the above screenshot.
 
 
 ## Making our first payment
 
-Open up `CTViewController.h` and make it look like:
+Open up `ViewController.h` and make it look like:
 
-`CTViewController.h`:
+`ViewController.h`:
 
     #import <UIKit/UIKit.h>
     
-    @interface CTViewController : UIViewController
-    @property(weak, nonatomic) IBOutlet UITextField *productNameField, *productPriceField;
+    @interface ViewController : UIViewController
+    @property(weak, nonatomic) IBOutlet UITextField *productMemoField, *productPriceField;
     
     - (IBAction)makePayment:(id)aSender;
     @end
 
-`CTViewController.m`:
+`ViewController.m`:
 
-    #import "CTViewController.h"
+    #import "ViewController.h"
     @import CoineyKit;
-    
-    @implementation CTViewController
-    
+
+    @implementation ViewController
+
     - (IBAction)makePayment:(id)aSender
     {
         // Create a line item to pre-populate the Coiney controller with.
-        NSString *name = _productNameField.text;
+        NSString *memo = _productMemoField.text;
         int price = [_productPriceField.text intValue];
-        
-        CYLineItem *lineItem = [CYLineItem itemWithAmount:price
-                                                 currency:CYCurrencyJPY name:name];
-        
+    
+        CYItem *item = [CYItem itemWithTotal:price
+                                    currency:CYCurrencyJPY
+                                        memo:memo];
+    
         // Create an instance of the Coiney payment controller.
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]];
-        
+        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
+    
         // Present it on top of the current controller.
         [self presentViewController:coineyController animated:YES completion:nil];
     }
-    
     @end
-
+    
 Now hook up a button to your `makePayment:` method, and text fields to `productNameField` & `productPriceField`.
 
 ![Action connection](.readme_images/action-connection.png)
@@ -87,28 +96,28 @@ Swipe your card to make a transaction. That's all that's required for the basic 
 
 To know the status of the transaction you simply make yourself the delegate of your Coiney controller, and it will notify you when a transaction is completed or canceled.
 
-`CTViewController.m`:
+`ViewController.m`:
 
-    #import "CTViewController.h"
+    #import "ViewController.h"
     @import CoineyKit;
     
-    @interface CTViewController () <CYCoineyViewControllerDelegate>
+    @interface ViewController () <CYCoineyViewControllerDelegate>
     @end
     
-    @implementation CTViewController
+    @implementation ViewController
     
     - (IBAction)makePayment:(id)aSender
     {
         // Create a line item to pre-populate the Coiney controller with.
-        NSString *name = _productNameField.text;
+        NSString *memo = _productMemoField.text;
         NSInteger price = [_productPriceField.text integerValue];
         
-        CYLineItem *lineItem = [CYLineItem itemWithAmount:price
-                                                 currency:CYCurrencyJPY 
-                                                     name:name];
+        CYItem *item = [CYItem itemWithTotal:price
+                                    currency:CYCurrencyJPY
+                                        memo:memo];
         
         // Create an instance of the Coiney payment controller.
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]];
+        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
         coineyController.delegate = self;
         // Present it on top of the current controller.
         [self presentViewController:coineyController animated:YES completion:nil];
@@ -122,36 +131,37 @@ To know the status of the transaction you simply make yourself the delegate of y
     
     - (void)coineyViewControllerDidCancel:(CYCoineyViewController *)aController
     {
-    	[aController dismissViewControllerAnimated:YES completion:nil];
+        [aController dismissViewControllerAnimated:YES completion:nil];
         NSLog(@"Cancelled payment.");
     }
-
+    @end
     
 ## Show the details of a transaction
 
 You can use a transaction ID to bring up its detail view.  The view can contain a refund button if refunding should be allowed.
 
-`CTViewController.m`:
+`ViewController.m`:
 
-    #import "CTViewController.h"
+    #import "ViewController.h"
     @import CoineyKit;
     
-    @interface CTViewController () <CYCoineyViewControllerDelegate>
+    @interface ViewController () <CYCoineyViewControllerDelegate>
     @end
     
-    @implementation CTViewController
+    @implementation ViewController
     
     - (IBAction)makePayment:(id)aSender
     {
         // Create a line item to pre-populate the Coiney controller with.
-        NSString *name = _productNameField.text;
+        NSString *memo = _productMemoField.text;
         int price = [_productPriceField.text intValue];
         
-        CYLineItem *lineItem = [CYLineItem itemWithAmount:price
-                                                 currency:CYCurrencyJPY name:name];
+        CYItem *item = [CYItem itemWithTotal:price
+                                        currency:CYCurrencyJPY
+                                            memo:memo];
         
         // Create an instance of the Coiney payment controller.
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]];
+        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
         coineyController.delegate = self;
         // Present it on top of the current controller.
         [self presentViewController:coineyController animated:YES completion:nil];
@@ -161,17 +171,31 @@ You can use a transaction ID to bring up its detail view.  The view can contain 
           didCompleteTransaction:(id<CYTransaction>)aTransaction
     {
         NSLog(@"Completed transaction: %@", aTransaction);
-    
+        
         [aController dismissViewControllerAnimated:YES completion:nil];
         
         CYTransactionViewController *transactionViewController =
-	        [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
-	                                                               allowRefunding:YES]; // Pass NO to hide the refund button
-	    // Add a navigation controller to your storyboard to make this work
-        [self.navigationController pushViewController:transactionViewController animated:YES];
+        [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
+                                                               allowRefunding:YES]; // Pass NO to hide the refund button
+        transactionViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                       target:self
+                                                                       action:@selector(done:)];
+        UINavigationController *navigationController = [[UINavigationController alloc]
+                                                           initWithRootViewController:transactionViewController];
+        [navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
+        [self presentViewController:navigationController
+                           animated:YES
+                         completion:nil];
     }
+    
+    - (void)done:(id)aSender
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    @end
 
-After making a payment and tapping Done, you will see a `CYTransactionViewController` showing the details of the transaction.  (You'll need to add a navigation controller to your test app to run the above snippet.)
+After making a payment and tapping Done, you will see a `CYTransactionViewController` showing the details of the transaction.
 
 ![App screenshot](.readme_images/simshot3.png)
 
@@ -189,7 +213,7 @@ You can use a transaction's unique identifier to query the corresponding CYTrans
             transactionViewController.navigationItem.rightBarButtonItem =
                 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone   
                                                               target:self
-                                                              action:@selector(dismissTransactionViewController)];
+                                                              action:@selector(done:)];
             UINavigationController *navigationController = [UINavigationController new];
             navigationController.viewControllers = @[transactionViewController];
             [navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
@@ -201,7 +225,7 @@ You can use a transaction's unique identifier to query the corresponding CYTrans
     
     ...
     
-    - (void)dismissTransactionViewController
+    - (void)done:(id)aSender
     {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
@@ -212,7 +236,7 @@ Receipts can be printed either by pressing the Print button in the Transaction C
 
 Printing is turned off by default.  Enable it by calling `+[CYPrinter setPrintingEnabled:]`:
 
-`CTAppDelegate.m`:
+`AppDelegate.m`:
 
     - (void)applicationDidFinishLaunching:(UIApplication *)aApplication
     {
@@ -223,12 +247,12 @@ The receipt's contents and format are specified using ReceiptML, whose specifica
 
 The following sample code prints a receipt automatically whenever a transaction finishes.
 
-`CTViewController.m`
+`ViewController.m`
     
-    #import "CTViewController.h"
+    #import "ViewController.h"
     @import CoineyKit;
     
-    @implementation CTViewController
+    @implementation ViewController
     
     - (IBAction)makePayment:(id)aSender
     {
@@ -293,7 +317,9 @@ If you plan to include printer support, you must add the following entry to your
 		<string>com.epson.escpos</string>
 	</array>
 
-If you plan to do any printing _without_ using CoineyKit, be sure to set `[CYPrinter setPrintingEnabled:NO]`, since Bluetooth accessories cannot be shared between CoineyKit and your app.  Then, to print a receipt for a Coiney transaction, obtain the transaction information from the relevant `CYTransaction` object, and print using your printing implementation.
+If you plan to do any printing that _doesn't_ use CYPrinter, i.e. if you plan to implement printing in your own app, be sure to set `[CYPrinter setPrintingEnabled:NO]`.  This is because Bluetooth accessories cannot be shared between CoineyKit and your app.  
+
+To print a receipt for a Coiney transaction, obtain the transaction information from the relevant `CYTransaction` object, and print using your printing implementation.
 
 ## And that's it!
 

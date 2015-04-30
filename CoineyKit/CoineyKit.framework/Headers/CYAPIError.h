@@ -2,9 +2,9 @@
 // Copyright © Coiney Inc. All rights reserved.
 // For licensing information, contact info@coiney.com.
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 @interface CYAPIError : NSError
-@property(readonly) NSString *cy_localizedDescription;
-@property(readonly) NSString *cy_localizedTitle;
+@property(nonatomic, readonly) NSString *cy_localizedDescription;
+@property(nonatomic, readonly) NSString *cy_localizedTitle;
 @end

@@ -33,6 +33,11 @@
 /// 決済の日時
 @property(nonatomic, readonly) NSDate *chargeDate;
 /// \~english
+/// Returns the date/time of the refund, or nil if not refunded.
+/// \~japanese
+/// 返品の日時（未返品であればnil）
+@property(nonatomic, readonly) NSDate *refundDate;
+/// \~english
 /// The currency of the transaction amount
 /// \~japanese
 /// 決済の通貨
@@ -41,7 +46,7 @@
 /// The amount of the transaction in its currency
 /// \~japanese
 /// 決済額
-@property(nonatomic, readonly) NSNumber *amount;
+@property(nonatomic, nonatomic, readonly) int64_t amount;
 /// \~english
 /// The brand of credit card used to make the transaction
 /// \~japanese
@@ -53,10 +58,15 @@
 /// カード番号の下4桁
 @property(nonatomic, readonly) NSString *cardSuffix;
 /// \~english
+/// Method of credit card financing (installments, revolving, etc.)
+/// \~japanese
+/// 支払区分
+@property(nonatomic, readonly) CYFinancingType financing;
+/// \~english
 /// Returns whether or not the transaction has been refunded
 /// \~japanese
-/// 返金済みかどうか
-@property(nonatomic, readonly) BOOL isRefunded;
+/// 返品済みかどうか
+@property(nonatomic, readonly, getter=isRefunded) BOOL refunded;
 /// \~english
 /// Returns the approval code from the acquirer
 /// \~japanese

@@ -2,7 +2,7 @@
 // Copyright © Coiney Inc. All rights reserved.
 // For licensing information, contact info@coiney.com.
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 /// \~english
 /// Block signature for checking authentication status.
@@ -30,4 +30,23 @@ typedef void (^CYAuthenticationStatusBlock)(BOOL aIsAuthenticated);
 + (void)checkAuthenticationStatus:(CYAuthenticationStatusBlock)aCompletionBlock
                  inViewController:(UIViewController *)aParentViewController;
 
+/// \~english
+/// Deletes any stored credentials, so the user is required to log in the next time a
+/// `CYCoineyViewController` is shown.
+/// \~japanese
+/// 保持されているログイン情報をクリアします。
++ (void)deauthenticate;
+
 @end
+
+/// \~english
+/// Text for pre-populating the username field.
+/// \~japanese
+/// `CYAuthenticationViewController` 表示時に、メールアドレス欄に予め記入する文字列
+NSString *CYAuthenticationControllerDefaultEmail;
+
+/// \~english
+/// Text for pre-populating the password field.
+/// \~japanese
+/// `CYAuthenticationViewController` 表示時に、パスワード欄に予め記入する文字列
+NSString *CYAuthenticationControllerDefaultPassword;

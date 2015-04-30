@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Make Payment"; ObjectID = "NDj-pl-wuN"; */
+"NDj-pl-wuN.normalTitle" = "Make Payment";
+
+/* Class = "UITextField"; placeholder = "Product Name"; ObjectID = "Wts-T3-r22"; */
+"Wts-T3-r22.placeholder" = "Product Name";
+
+/* Class = "UINavigationItem"; title = "Pay"; ObjectID = "aIY-QK-HKK"; */
+"aIY-QK-HKK.title" = "Pay";
+
+/* Class = "UITextField"; placeholder = "Price (¥)"; ObjectID = "qZE-Zs-kaV"; */
+"qZE-Zs-kaV.placeholder" = "Price (¥)";

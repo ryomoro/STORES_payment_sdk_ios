@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "売上取消・返品額"; ObjectID = "3ms-Wi-AiL"; */
+"3ms-Wi-AiL.text" = "Amount";
+
+/* Class = "UILabel"; text = "ご注意ください"; ObjectID = "DAX-bc-iDS"; */
+"DAX-bc-iDS.text" = "Warning";
+
+/* Class = "UILabel"; text = "「売上取消・返品」をしたお取引は売上から削除され、再計上できません。"; ObjectID = "pRv-lY-2P9"; */
+"pRv-lY-2P9.text" = "Once a transaction has been refunded, it cannot be restored.";
+
+/* Class = "UIButton"; normalTitle = "売上取消・返品を実行"; ObjectID = "xyK-7f-aRU"; */
+"xyK-7f-aRU.normalTitle" = "Refund";
+
+/* Class = "UIButton"; normalTitle = "キャンセル"; ObjectID = "5va-Q7-lCI"; */
+"5va-Q7-lCI.normalTitle" = "Cancel";

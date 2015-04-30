@@ -1,0 +1,6 @@
+
+/* Class = "IBUILabel"; text = "お支払い方法"; ObjectID = "WdR-Jg-JXh"; */
+"WdR-Jg-JXh.text" = "Payment:";
+
+/* Class = "IBUILabel"; text = "1回払い"; ObjectID = "yj7-nE-XUW"; */
+"yj7-nE-XUW.text" = "Single";

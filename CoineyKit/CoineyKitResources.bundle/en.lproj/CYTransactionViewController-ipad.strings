@@ -1,0 +1,36 @@
+
+/* Class = "IBUIButton"; normalTitle = "取引番号"; ObjectID = "AdF-wL-Zh0"; */
+"AdF-wL-Zh0.normalTitle" = "Transaction ID";
+
+/* Class = "IBUIButton"; normalTitle = "レシートを印刷"; ObjectID = "JmN-1W-pQf"; */
+"JmN-1W-pQf.normalTitle" = "Print Receipt";
+
+/* Class = "IBUIButton"; normalTitle = "承認番号"; ObjectID = "Mbk-QB-pnv"; */
+"Mbk-QB-pnv.normalTitle" = "Approval Code";
+
+/* Class = "IBUIButton"; normalTitle = "スタッフ"; ObjectID = "eB3-fb-BYo"; */
+"eB3-fb-BYo.normalTitle" = "Staff";
+
+/* Class = "IBUIButton"; normalTitle = "返品済み"; ObjectID = "h65-4B-ZZy"; */
+"gtV-fw-C2i.normalTitle" = "Refunded";
+
+/* Class = "IBUIButton"; normalTitle = "売上取消・返品"; ObjectID = "h65-4B-ZZy"; */
+"h65-4B-ZZy.normalTitle" = "Refund";
+
+/* Class = "IBUIButton"; normalTitle = "取引日時"; ObjectID = "j3f-ho-ERa"; */
+"j3f-ho-ERa.normalTitle" = "Date";
+
+/* Class = "IBUIButton"; normalTitle = "支払区分"; ObjectID = "gf4-hy-chk"; */
+"gf4-hy-chk.normalTitle" = "Payment Method";
+
+/* Class = "IBUILabel"; text = "取引情報"; ObjectID = "tx4-rW-cgR"; */
+"tx4-rW-cgR.text" = "Details";
+
+/* Class = "IBUILabel"; text = "合計"; ObjectID = "uVN-wg-i0h"; */
+"uVN-wg-i0h.text" = "Total";
+
+/* Class = "IBUITextField"; placeholder = "メールで送信"; ObjectID = "yev-Be-dDz"; */
+"yev-Be-dDz.placeholder" = "Send Email";
+
+/* Class = "IBUILabel"; text = "商品"; ObjectID = "hvY-7d-UKe"; */
+"hvY-7d-UKe.text" = "Products";

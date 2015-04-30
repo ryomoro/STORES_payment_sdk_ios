@@ -2,8 +2,10 @@
 // Copyright © Coiney Inc. All rights reserved.
 // For licensing information, contact info@coiney.com.
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 #import <CoineyKit/CYTransaction.h>
+#import <CoineyKit/CYContainerViewController.h>
+
 @class CYCoineyViewController;
 
 /// \~english
@@ -45,8 +47,8 @@
 /// handles the entire process of making a payment using Coiney.
 /// \~japanese
 /// コイニーによる一連の決済フローを提供します。
-@interface CYCoineyViewController : UIViewController
-@property(weak) id<CYCoineyViewControllerDelegate> delegate;
+@interface CYCoineyViewController : CYContainerViewController
+@property(nonatomic, weak) id<CYCoineyViewControllerDelegate> delegate;
 
 /// \~english
 /// Returns an initialized controller
@@ -54,5 +56,5 @@
 /// \~japanese
 /// 項目で初期化された `CYCoineyViewController` を返します。
 /// \param aLineItems 初期化するための項目一覧
-- (id)initWithLineItems:(NSArray *)aLineItems;
+- (instancetype)initWithLineItems:(NSArray *)aLineItems;
 @end
