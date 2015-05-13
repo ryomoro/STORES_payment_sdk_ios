@@ -39,8 +39,14 @@
     CYTransactionViewController *transactionViewController =
         [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
                                                                allowRefunding:YES]; // Pass NO to hide the refund button
-    
-    [self.navigationController pushViewController:transactionViewController animated:YES];
+    transactionViewController.navigationItem.rightBarButtonItem =
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                      target:self
+                                                      action:@selector(coineyViewControllerDidCancel:)];
+    UINavigationController *navigationController =
+        [[UINavigationController alloc] initWithRootViewController:transactionViewController];
+    navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 - (void)coineyViewControllerDidCancel:(CYCoineyViewController *)aController
