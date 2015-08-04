@@ -3,7 +3,7 @@
 "2um-jQ-SAr.title" = "Receipt Settings";
 
 /* Class = "IBUINavigationItem"; title = "メール通知"; ObjectID = "3YG-ax-vV8"; */
-"3YG-ax-vV8.title" = "Email Notifications";
+"3YG-ax-vV8.title" = "E-mail Notifications";
 
 /* Class = "IBUIBarButtonItem"; title = "送信"; ObjectID = "4H4-4J-grH"; */
 "4H4-4J-grH.title" = "Send";
@@ -12,7 +12,7 @@
 "4WS-PL-ZeZ.title" = "Help";
 
 /* Class = "IBUIButton"; normalTitle = "メールにてお問い合わせ"; ObjectID = "6fU-SN-dMP"; */
-"6fU-SN-dMP.normalTitle" = "By Email";
+"6fU-SN-dMP.normalTitle" = "By E-mail";
 
 /* Class = "IBUILabel"; text = "Coineyでお客さまとのお会計が \nあんぜん 、 あんしん 、 かんたんに。\nさあ、始めましょう！"; ObjectID = "7nu-vI-zqq"; */
 "7nu-vI-zqq.text" = "This tutorial will\nhelp you get started.";
@@ -43,6 +43,9 @@
 
 /* Class = "IBUIButton"; normalTitle = "レシート"; ObjectID = "Ee3-M9-69W"; */
 "Ee3-M9-69W.normalTitle" = "Receipt Settings";
+
+/* Class = "IBUITextField"; placeholder = "メールアドレス"; ObjectID = "qEh-Wf-Liu"; */
+"qEh-Wf-Liu.placeholder" = "E-mail";
 
 /* Class = "IBUITextField"; placeholder = "メッセージ (オプション）"; ObjectID = "F3S-8v-Std"; */
 "F3S-8v-Std.placeholder" = "Invitation Message (Optional）";
@@ -126,7 +129,7 @@
 "YW7-dN-OA9.normalTitle" = "Phone";
 
 /* Class = "IBUIButton"; normalTitle = "メール"; ObjectID = "Ytq-ZZ-XzY"; */
-"Ytq-ZZ-XzY.normalTitle" = "Email";
+"Ytq-ZZ-XzY.normalTitle" = "E-mail";
 
 /* Class = "IBUILabel"; text = "アカウント"; ObjectID = "YyC-xv-8Im"; */
 "YyC-xv-8Im.text" = "Account";
@@ -167,6 +170,9 @@
 /* Class = "IBUILabel"; text = "今月の売上"; ObjectID = "ck1-3T-5It"; */
 "ck1-3T-5It.text" = "Sales this month";
 
+/* Class = "IBUILabel"; text = "読み込み中"; ObjectID = "P9d-GV-nD8"; */
+"P9d-GV-nD8.text" = "Loading";
+
 /* Class = "IBUITextField"; placeholder = "商品名"; ObjectID = "cur-FV-yc6"; */
 "cur-FV-yc6.placeholder" = "Product Name";
 
@@ -189,7 +195,7 @@
 "ejC-WH-q2S.title" = "Settings";
 
 /* Class = "IBUIButton"; normalTitle = "メール"; ObjectID = "ek0-E6-atp"; */
-"ek0-E6-atp.normalTitle" = "Email";
+"ek0-E6-atp.normalTitle" = "E-mail";
 
 /* Class = "IBUILabel"; text = "ウェブでも色々できます"; ObjectID = "euR-2R-wgb"; */
 "euR-2R-wgb.text" = "Do More at coiney.com";

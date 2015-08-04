@@ -69,7 +69,7 @@
 "wfA-M1-vYW.text" = "Thank You!";
 
 /* Class = "IBUITextField"; placeholder = "メールで送信"; ObjectID = "y6m-YK-zpm"; */
-"y6m-YK-zpm.placeholder" = "Send email";
+"y6m-YK-zpm.placeholder" = "Send e-mail";
 
 /* Class = "IBUILabel"; text = "カートに商品はありません"; ObjectID = "ynk-5Q-Sl1"; */
 "ynk-5Q-Sl1.text" = "No items";

@@ -30,7 +30,7 @@
 "uVN-wg-i0h.text" = "Total";
 
 /* Class = "IBUITextField"; placeholder = "メールで送信"; ObjectID = "yev-Be-dDz"; */
-"yev-Be-dDz.placeholder" = "Send Email";
+"yev-Be-dDz.placeholder" = "Send e-mail";
 
 /* Class = "IBUILabel"; text = "商品"; ObjectID = "hvY-7d-UKe"; */
 "hvY-7d-UKe.text" = "Products";

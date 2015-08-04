@@ -51,10 +51,10 @@
 @property(nonatomic, weak) id<CYCoineyViewControllerDelegate> delegate;
 
 /// \~english
-/// Returns an initialized controller
+/// Returns an initialized controller. The total price of line items must be between kCYMinAmount and kCYMaxAmount.
 /// \param aLineItems The line items to pre-populate the product entry view with
 /// \~japanese
-/// 項目で初期化された `CYCoineyViewController` を返します。
+/// 項目で初期化された `CYCoineyViewController` を返します。項目の合計額は kCYMinAmount 以上、kCYMaxAmount 以下になること。
 /// \param aLineItems 初期化するための項目一覧
 - (instancetype)initWithLineItems:(NSArray *)aLineItems;
 @end

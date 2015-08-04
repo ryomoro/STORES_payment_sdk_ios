@@ -24,7 +24,7 @@
 "ncn-hX-VUh.text" = "Details";
 
 /* Class = "IBUITextField"; placeholder = "メールで送信"; ObjectID = "oC8-Ea-144"; */
-"oC8-Ea-144.placeholder" = "Send Email";
+"oC8-Ea-144.placeholder" = "Send e-mail";
 
 /* Class = "IBUIButton"; normalTitle = "取引日時"; ObjectID = "v9o-0h-6Sx"; */
 "v9o-0h-6Sx.normalTitle" = "Date";

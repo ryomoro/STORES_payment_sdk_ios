@@ -111,3 +111,9 @@ typedef void (^CYTransactionLookupBlock)(id<CYTransaction> aTransaction, NSError
 /// \param aIdentifier 参照する決済ID
 /// \param aCompletionBlock 参照後に実行するブロック
 void CYLookUpTransaction(NSString *aIdentifier, CYTransactionLookupBlock aCompletionBlock);
+
+/// \~english
+/// Minimum and maximum transaction amounts.
+/// \~japanese
+/// 決済の最低額 (¥100) と最高額 (¥9,999,999)
+extern const NSUInteger kCYMinAmount, kCYMaxAmount;

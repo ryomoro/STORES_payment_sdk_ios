@@ -73,3 +73,9 @@
 
 /* Class = "IBUILabel"; text = "会社"; ObjectID = "zWm-s2-1W6"; */
 "zWm-s2-1W6.text" = "Company";
+
+/* Class = "IBUILabel"; text = "利用可能なカード"; ObjectID = "5DC-DO-LRb"; */
+"5DC-DO-LRb.text" = "Accepted Cards";
+
+/* Class = "IBUILabel"; text = "株式会社ジェーシービーとのご契約に関する\n内容 (ご利用可能なカードブランドや振込金額\nなど) については、株式会社ジェービーに\nお問い合わせください。"; ObjectID = "OeB-AL-DyA"; */
+"OeB-AL-DyA.text" = "Refer to your contract with JCB Co., Ltd.\nfor accepted cards and balance\ninformation.";

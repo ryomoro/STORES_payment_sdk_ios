@@ -73,3 +73,9 @@
 
 /* Class = "UILabel"; text = "郵便番号"; ObjectID = "yye-7V-nwP"; */
 "yye-7V-nwP.text" = "Postal Code";
+
+/* Class = "UILabel"; text = "利用可能なカード"; ObjectID = "M1G-Kf-olf"; */
+"M1G-Kf-olf.text" = "Accepted Cards";
+
+/* Class = "UILabel"; text = "株式会社ジェーシービーとのご契約に関する内容 (ご利用可能なカードブランドや振込金額など) については、株式会社ジェーシービーにお問い合わせください。"; ObjectID = "veE-jb-B9G"; */
+"veE-jb-B9G.text" = "Refer to your contract with JCB Co., Ltd. for accepted cards and\nbalance information.";

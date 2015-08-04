@@ -45,7 +45,7 @@
 "Hqo-Qg-8Y1.text" = "Memo";
 
 /* Class = "IBUITextField"; placeholder = "メールで送信"; ObjectID = "IWe-cd-ZBt"; */
-"IWe-cd-ZBt.placeholder" = "Send email";
+"IWe-cd-ZBt.placeholder" = "Send e-mail";
 
 /* Class = "IBUIButton"; normalTitle = "-"; ObjectID = "PwY-TT-pD6"; */
 "PwY-TT-pD6.normalTitle" = "-";
