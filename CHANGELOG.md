@@ -1,3 +1,11 @@
+## 4.0.3 (2015-08-26)
+
+変更点
+
+* 決済画面でキャンセルボタンを押した際に、coineyViewControllerDidCancel: デリゲートメソッドが呼ばれないバグを修正
+
+For internal use: Krona@275caf2	
+
 ## 4.0.2 (2015-08-04)
 
 変更点
