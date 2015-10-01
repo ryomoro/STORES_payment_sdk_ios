@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "確認中…"; ObjectID = "4hf-0f-kBk"; */
+"4hf-0f-kBk.text" = "Calibrating…";
+
+/* Class = "UILabel"; text = "クレジットカードを準備して\n読み取り練習をしましょう！"; ObjectID = "CZL-7A-Qg5"; */
+"CZL-7A-Qg5.text" = "Get a credit card and\npractice swiping a few times!";
+
+/* Class = "UILabel"; text = "※実際に決済はおこなわれません"; ObjectID = "D37-Vn-h67"; */
+"D37-Vn-h67.text" = "(Your card will not be charged.)";
+
+/* Class = "UIButton"; normalTitle = "ヒントを見る"; ObjectID = "wD5-pl-dgd"; */
+"wD5-pl-dgd.normalTitle" = "Tips";

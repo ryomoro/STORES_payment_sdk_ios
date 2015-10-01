@@ -62,9 +62,6 @@
 /* Class = "IBUILabel"; text = "売り上げの確認や取消、各種設定の\n変更ができます。"; ObjectID = "CnQ-Pf-Vlq"; */
 "CnQ-Pf-Vlq.text" = "You can view and refund past transactions,\nchange account settings, and more.";
 
-/* Class = "IBUILabel"; text = "確認中…"; ObjectID = "DIg-u8-0HI"; */
-"DIg-u8-0HI.text" = "Calibrating…";
-
 /* Class = "IBUITextField"; placeholder = "商品名"; ObjectID = "DjH-Mg-ZCP"; */
 "DjH-Mg-ZCP.placeholder" = "Items";
 
@@ -137,9 +134,6 @@
 /* Class = "IBUITextField"; placeholder = "招待メッセージを入力"; ObjectID = "XJ4-bT-npy"; */
 "XJ4-bT-npy.placeholder" = "Enter a Message";
 
-/* Class = "IBUILabel"; text = "※実際に決済はおこなわれません"; ObjectID = "YCb-yk-tu4"; */
-"YCb-yk-tu4.text" = "(Your card will not be charged.)";
-
 /* Class = "IBUILabel"; text = "スタッフの登録がありません。"; ObjectID = "YVs-CU-dRx"; */
 "UF2-q5-1sl.text" = "No staff to display";
 
@@ -197,14 +191,17 @@
 /* Class = "IBUILabel"; text = "マネージャーをオンにすると、ユーザーの追加、他ユーザーの取引閲覧、\n売上取消・返品をおこなうことができます。"; ObjectID = "hmr-M8-pZY"; */
 "hmr-M8-pZY.text" = "Managers can add users, see other users'\ntransactions, and make refunds.";
 
-/* Class = "IBUIButton"; normalTitle = "カード読み取り練習"; ObjectID = "i92-S9-Qyf"; */
-"i92-S9-Qyf.normalTitle" = "Swipe Practice";
+/* Class = "IBUIButton"; normalTitle = "接続確認・読み取りテスト"; ObjectID = "i92-S9-Qyf"; */
+"i92-S9-Qyf.normalTitle" = "Reader Practice";
+
+/* Class = "IBUINavigationItem"; title = "接続確認・読み取りテスト"; ObjectID = "Y90-1v-DW6"; */
+"Y90-1v-DW6.title" = "Reader Practice";
+
+/* Class = "IBUINavigationItem"; title = "接続確認・読み取りテスト"; ObjectID = "8SZ-cW-kqV"; */
+"8SZ-cW-kqV.title" = "Reader Practice";
 
 /* Class = "IBUIButton"; normalTitle = "名前"; ObjectID = "jIX-2T-4YR"; */
 "jIX-2T-4YR.normalTitle" = "Name";
-
-/* Class = "IBUILabel"; text = "クレジットカードを準備して\n読み取り練習をしましょう！"; ObjectID = "jhK-Es-dEN"; */
-"jhK-Es-dEN.text" = "Get a credit card and\npractice swiping a few times!";
 
 /* Class = "IBUILabel"; text = "基本情報"; ObjectID = "k5c-Vm-gfC"; */
 "k5c-Vm-gfC.text" = "Shop Information";
@@ -214,6 +211,9 @@
 
 /* Class = "IBUINavigationItem"; title = "引き出し"; ObjectID = "l2n-xe-1mR"; */
 "l2n-xe-1mR.title" = "Balance";
+
+/* Class = "IBUINavigationItem"; title = "接続確認・読み取りテスト"; ObjectID = "GsH-yf-2C5"; */
+"GsH-yf-2C5.title" = "Reader Practice";
 
 /* Class = "IBUIButton"; normalTitle = "プライバシーポリシー"; ObjectID = "lJ3-B4-Zxa"; */
 "lJ3-B4-Zxa.normalTitle" = "Privacy Policy";
@@ -241,9 +241,6 @@
 
 /* Class = "IBUINavigationItem"; title = "設定"; ObjectID = "mOI-FS-AaM"; */
 "mOI-FS-AaM.title" = "Settings";
-
-/* Class = "IBUIButton"; normalTitle = "ヒントを見る"; ObjectID = "nmp-sh-Lp2"; */
-"nmp-sh-Lp2.normalTitle" = "Tips";
 
 /* Class = "IBUILabel"; text = "確定"; ObjectID = "oWi-Ef-1AG"; */
 "oWi-Ef-1AG.text" = "Closed";

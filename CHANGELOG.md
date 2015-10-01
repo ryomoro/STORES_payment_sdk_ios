@@ -1,3 +1,72 @@
+## 4.1.0 (2015-10-02)
+
+#### 新機能
+
+* Xcode 7 + iOS 9 に対応
+* 決済完了画面のレイアウト改善
+* iOS 9 で番号直接入力時にカード番号が見切れる問題を修正 (#33)
+
+#### 注意点
+
+##### App Transport Security について
+
+App Transport Security 対応 (#32) のため、アプリの Info.plist に、下記の値を追加してください。これがないと、「ネットワークエラー」となりログインできません。
+
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+  <key>NSExceptionDomains</key>
+  <dict>
+    <key>coiney.com</key>
+    <dict>
+      <key>NSExceptionAllowsInsecureHTTPLoads</key>
+      <true/>
+      <key>NSIncludesSubdomains</key>
+      <true/>
+    </dict>
+  </dict>
+</dict>
+```
+
+今後、値の追加をしなくてもいいように、https に移行して参りますが、お手数ですが暫定策としてご対応願います。
+
+※ httpで取得するのは初回ログイン時に表示される利用規約のみで、その他決済関連の通信には https を使用しておりますのでご安心ください。
+
+##### Bitcode 対応
+
+現状、bitcode には対応しておりません。
+
+##### GenerateDSYMFile
+
+ビルド中 GenerateDSYMFile で大量のワーニングが発生する場合は、Xcode のビルド設定を下記のように変更してください。
+
+Debug Configuration:
+
+```
+DEBUG_INFORMATION_FORMAT = dwarf;
+DEPLOYMENT_POSTPROCESSING = NO;
+GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+```
+
+Release Configuration:
+
+```
+DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+DEPLOYMENT_POSTPROCESSING = YES;
+GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+```
+
+##### 動作環境
+
+* ビルドには Xcode 7.x をお使いください。
+* 対象 iOS バージョンは、引き続き、「7.0 以上」です。
+* 対応画面サイズは、引き続き、3.5"、4.0"、4.7"、5.5"、iPad です。
+
+For internal use: Krona@18facc6
+
 ## 4.0.4 (2015-09-10)
 
 変更点
@@ -23,4 +92,4 @@ For internal use: Krona@275caf2
 * 組み込み元アプリから、NSURLConnection で、http://coiney.com/ 等、ドメインのみ (パス無し) の URI に接続すると、例外が起こる問題を修正
 * カードブランドのロゴ画像を改善
 
-For internal use: Krona@49a3d0f
+For internal use: Krona@18facc6

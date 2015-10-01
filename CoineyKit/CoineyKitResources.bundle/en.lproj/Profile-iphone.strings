@@ -68,9 +68,6 @@
 /* Class = "IBUIButton"; normalTitle = "名前"; ObjectID = "JLM-Z6-IYk"; */
 "JLM-Z6-IYk.normalTitle" = "Name";
 
-/* Class = "IBUIButton"; normalTitle = "ヒントを見る"; ObjectID = "JlK-Yg-tIY"; */
-"JlK-Yg-tIY.normalTitle" = "Tips";
-
 /* Class = "IBUILabel"; text = "プリンターとの接続は\nホーム画面→設定→Bluetoothから行います。"; ObjectID = "KDW-xb-Csg"; */
 "KDW-xb-Csg.text" = "To connect a Bluetooth printer, open:\nHome→Settings→Bluetooth";
 
@@ -86,8 +83,14 @@
 /* Class = "IBUILabel"; text = "コメント"; ObjectID = "NiQ-xu-lhN"; */
 "NiQ-xu-lhN.text" = "Comment";
 
-/* Class = "IBUIButton"; normalTitle = "カード読み取り練習"; ObjectID = "Nvg-ge-knO"; */
-"Nvg-ge-knO.normalTitle" = "Swipe Practice";
+/* Class = "IBUIButton"; normalTitle = "接続確認・読み取り練習"; ObjectID = "Nvg-ge-knO"; */
+"Nvg-ge-knO.normalTitle" = "Reader Practice";
+
+/* Class = "IBUINavigationItem"; title = "接続確認・読み取りテスト"; ObjectID = "E3B-B7-mdx"; */
+"E3B-B7-mdx.title" = "Reader Practice";
+
+/* Class = "IBUINavigationItem"; title = "接続確認・読み取りテスト"; ObjectID = "LNw-xM-MYp"; */
+"LNw-xM-MYp.title" = "Reader Practice";
 
 /* Class = "IBUIButton"; normalTitle = "マネージャー "; ObjectID = "PJ0-05-E71"; */
 "PJ0-05-E71.normalTitle" = "Manager";
@@ -218,9 +221,6 @@
 /* Class = "IBUINavigationItem"; title = "引き出し"; ObjectID = "his-v2-2Na"; */
 "Bfw-eB-uI1.title" = "Deposit History";
 
-/* Class = "IBUILabel"; text = "確認中…"; ObjectID = "hzO-t4-S7F"; */
-"hzO-t4-S7F.text" = "Calibrating…";
-
 /* Class = "IBUIBarButtonItem"; title = "閉じる"; ObjectID = "jLO-FG-rzK"; */
 "jLO-FG-rzK.title" = "Close";
 
@@ -266,9 +266,6 @@
 /* Class = "IBUISearchBar"; placeholder = "商品、金額、下４桁"; ObjectID = "4aL-e7-eOI"; */
 "4aL-e7-eOI.placeholder" = "Product, Price, or Last 4 Digits";
 
-/* Class = "IBUILabel"; text = "※実際に決済はおこなわれません"; ObjectID = "t0q-Fa-eF3"; */
-"t0q-Fa-eF3.text" = "(Your card will not be charged.)";
-
 /* Class = "IBUINavigationItem"; title = "ショップ名"; ObjectID = "tQt-TN-PWz"; */
 "tQt-TN-PWz.title" = "Shop Name";
 
@@ -305,8 +302,8 @@
 /* Class = "IBUIButton"; normalTitle = "サービス (アプリ) について要望を報告"; ObjectID = "zdJ-rf-6Kk"; */
 "zdJ-rf-6Kk.normalTitle" = "Send Us Feedback";
 
-/* Class = "IBUILabel"; text = "クレジットカードを準備して\n読み取り練習をしましょう！"; ObjectID = "zgz-AS-X84"; */
-"zgz-AS-X84.text" = "Get a credit card and\npractice swiping a few times!";
+/* Class = "IBUINavigationItem"; title = "接続確認・読み取りテスト"; ObjectID = "bWw-Uj-1vM"; */
+"bWw-Uj-1vM.title" = "Reader Practice";
 
 /* Class = "IBUILabel"; text = "お知らせ"; ObjectID = "zyU-GQ-HBl"; */
 "zyU-GQ-HBl.text" = "News";

@@ -1,39 +1,9 @@
 
-/* Class = "IBUILabel"; text = "お釣り"; ObjectID = "0st-Yn-Yvu"; */
-"0st-Yn-Yvu.text" = "Change";
-
-/* Class = "IBUILabel"; text = "555-5555-5555"; ObjectID = "4nT-dN-5me"; */
-"4nT-dN-5me.text" = "555-5555-5555";
-
-/* Class = "IBUILabel"; text = "￥1,000"; ObjectID = "571-br-AOQ"; */
-"571-br-AOQ.text" = "￥1,000";
-
-/* Class = "IBUILabel"; text = "Name"; ObjectID = "5C5-8K-noT"; */
-"5C5-8K-noT.text" = "Name";
-
-/* Class = "IBUILabel"; text = "¥100"; ObjectID = "62A-XO-nQq"; */
-"62A-XO-nQq.text" = "¥100";
-
-/* Class = "IBUILabel"; text = "承認番号"; ObjectID = "7YB-dG-umV"; */
-"7YB-dG-umV.text" = "Approval Code";
-
-/* Class = "IBUILabel"; text = "¥0"; ObjectID = "8Ar-NP-SJO"; */
-"8Ar-NP-SJO.text" = "¥0";
-
 /* Class = "IBUILabel"; text = "カートに商品はありません"; ObjectID = "8vN-7Q-e12"; */
 "8vN-7Q-e12.text" = "No items";
 
 /* Class = "IBUIButton"; normalTitle = "書き直す"; ObjectID = "9H7-0v-S7j"; */
 "9H7-0v-S7j.normalTitle" = "Clear";
-
-/* Class = "IBUILabel"; text = "¥3,200"; ObjectID = "9P5-El-xcs"; */
-"9P5-El-xcs.text" = "¥3,200";
-
-/* Class = "IBUILabel"; text = "Memo"; ObjectID = "AkC-H6-rDV"; */
-"AkC-H6-rDV.text" = "Memo";
-
-/* Class = "IBUILabel"; text = "¥0"; ObjectID = "CFf-Ex-lgp"; */
-"CFf-Ex-lgp.text" = "¥0";
 
 /* Class = "IBUILabel"; text = "商品種類"; ObjectID = "Cxj-Vf-cUz"; */
 "Cxj-Vf-cUz.text" = "Price";
@@ -41,110 +11,26 @@
 /* Class = "IBUIButton"; normalTitle = "キャンセル"; ObjectID = "Ha5-qh-KRX"; */
 "Ha5-qh-KRX.normalTitle" = "Cancel";
 
-/* Class = "IBUILabel"; text = "メモ"; ObjectID = "Hqo-Qg-8Y1"; */
-"Hqo-Qg-8Y1.text" = "Memo";
-
 /* Class = "IBUITextField"; placeholder = "メールで送信"; ObjectID = "IWe-cd-ZBt"; */
 "IWe-cd-ZBt.placeholder" = "Send e-mail";
-
-/* Class = "IBUIButton"; normalTitle = "-"; ObjectID = "PwY-TT-pD6"; */
-"PwY-TT-pD6.normalTitle" = "-";
-
-/* Class = "IBUILabel"; text = "合計"; ObjectID = "QU5-A0-Uqr"; */
-"QU5-A0-Uqr.text" = "Total";
-
-/* Class = "IBUILabel"; text = "表示しているカードでお会計できます"; ObjectID = "T5E-pT-wHb"; */
-"T5E-pT-wHb.text" = "Use any of the indicated card brands.";
-
-/* Class = "IBUILabel"; text = "1"; ObjectID = "TP0-Jd-PFh"; */
-"TP0-Jd-PFh.text" = "1";
-
-/* Class = "IBUILabel"; text = "支払区分"; ObjectID = "Uhv-Sv-gLC"; */
-"Uhv-Sv-gLC.text" = "Payment Method";
-
-/* Class = "IBUILabel"; text = "12345678"; ObjectID = "WEE-bR-9uK"; */
-"WEE-bR-9uK.text" = "12345678";
-
-/* Class = "IBUILabel"; text = "1回"; ObjectID = "We6-KZ-gYS"; */
-"We6-KZ-gYS.text" = "1";
 
 /* Class = "IBUIButton"; normalTitle = "お会計する"; ObjectID = "XBz-XW-Rwd"; */
 "XBz-XW-Rwd.normalTitle" = "Check Out";
 
-/* Class = "IBUILabel"; text = "商品種類"; ObjectID = "Z0m-bi-8Iy"; */
-"Z0m-bi-8Iy.text" = "Price";
-
-/* Class = "IBUILabel"; text = "•••• •••• •••• 1234"; ObjectID = "ZuW-YC-6FS"; */
-"ZuW-YC-6FS.text" = "•••• •••• •••• 1234";
-
-/* Class = "IBUILabel"; text = "東京都渋谷区恵比寿1-20-18"; ObjectID = "aZe-8e-4JU"; */
-"aZe-8e-4JU.text" = "東京都渋谷区恵比寿1-20-18";
-
-/* Class = "IBUILabel"; text = "•••• •••• •••• 1234"; ObjectID = "ayU-dn-nN3"; */
-"ayU-dn-nN3.text" = "•••• •••• •••• 1234";
-
-/* Class = "IBUIButton"; normalTitle = "+"; ObjectID = "bCL-hm-lYp"; */
-"bCL-hm-lYp.normalTitle" = "+";
-
-/* Class = "IBUILabel"; text = "¥100"; ObjectID = "bFe-3r-ouu"; */
-"bFe-3r-ouu.text" = "¥100";
-
 /* Class = "IBUIButton"; disabledTitle = " "; ObjectID = "bHE-CK-5L4"; */
 "bHE-CK-5L4.disabledTitle" = " ";
 
-/* Class = "IBUILabel"; text = "決済が完了しました"; ObjectID = "gKr-DS-dc5"; */
-"gKr-DS-dc5.text" = "Transaction Complete";
+/* Class = "IBUILabel"; text = "決済が完了しました。レシートを送信しますか？"; ObjectID = "kDR-Gd-Mwf"; */
+"kDR-Gd-Mwf.text" = "Transaction complete.\nWould you like a receipt?";
 
-/* Class = "IBUILabel"; text = "品名"; ObjectID = "glp-cC-Bmr"; */
-"glp-cC-Bmr.text" = "品名";
-
-/* Class = "IBUILabel"; text = "大きい"; ObjectID = "i1j-RO-O4u"; */
-"i1j-RO-O4u.text" = "大きい";
-
-/* Class = "IBUILabel"; text = " お預かり"; ObjectID = "ihu-lN-ydU"; */
-"ihu-lN-ydU.text" = " Tendered";
-
-/* Class = "IBUILabel"; text = "カード裏面の3桁のセキュリティコードを\n入力してください。"; ObjectID = "k8s-XP-Kzy"; */
-"k8s-XP-Kzy.text" = "Enter the 3-digit security code\non the back of your card.";
-
-/* Class = "IBUILabel"; text = "ありがとうございました！"; ObjectID = "kDR-Gd-Mwf"; */
-"kDR-Gd-Mwf.text" = "Thank You!";
-
-/* Class = "IBUIButton"; normalTitle = "終了"; ObjectID = "kI0-nS-RDa"; */
+/* Class = "IBUIButton"; normalTitle = "完了"; ObjectID = "kI0-nS-RDa"; */
 "kI0-nS-RDa.normalTitle" = "Done";
 
-/* Class = "IBUILabel"; text = "￥900"; ObjectID = "lHt-eI-bjN"; */
-"lHt-eI-bjN.text" = "￥900";
-
-/* Class = "IBUIButton"; normalTitle = "レシートを印刷"; ObjectID = "lIc-sT-Joa"; */
+/* Class = "IBUIButton"; normalTitle = "プリンターに送信"; ObjectID = "lIc-sT-Joa"; */
 "lIc-sT-Joa.normalTitle" = "Print Receipt";
-
-/* Class = "IBUILabel"; text = "カードをスワイプしてください"; ObjectID = "m9y-3r-5uk"; */
-"m9y-3r-5uk.text" = "Swipe to Pay";
-
-/* Class = "IBUILabel"; text = "￥100"; ObjectID = "oVv-RG-tEt"; */
-"oVv-RG-tEt.text" = "￥100";
-
-/* Class = "IBUILabel"; text = "取引番号"; ObjectID = "pIY-FK-QSA"; */
-"pIY-FK-QSA.text" = "Transaction ID";
-
-/* Class = "IBUILabel"; text = "ショップ名"; ObjectID = "pW1-VF-nvT"; */
-"pW1-VF-nvT.text" = "ショップ名";
-
-/* Class = "IBUILabel"; text = "12345678"; ObjectID = "rWA-GN-EXY"; */
-"rWA-GN-EXY.text" = "12345678";
-
-/* Class = "IBUILabel"; text = "2014/04/16   11:26"; ObjectID = "tJa-ue-s7g"; */
-"tJa-ue-s7g.text" = "2014/04/16   11:26";
-
-/* Class = "IBUILabel"; text = "email@example.com"; ObjectID = "uJj-jI-7qP"; */
-"uJj-jI-7qP.text" = "email@example.com";
 
 /* Class = "IBUILabel"; text = "上記スペースにサインしてください。"; ObjectID = "y6E-KZ-vfa"; */
 "y6E-KZ-vfa.text" = "Please sign in the space above.";
 
-/* Class = "IBUILabel"; text = "お支払い方法"; ObjectID = "85h-fT-qk1"; */
-"85h-fT-qk1.text" = "Payment Method";
-
-/* Class = "IBUIButton"; normalTitle = "1回払い"; ObjectID = "5sk-4I-vtR"; */
-"5sk-4I-vtR.normalTitle" = "Single";
+/* Class = "IBUILabel"; text = "上記以外のカードもご利用いただけます。\n契約内容をご確認ください。"; ObjectID = "T5E-pT-wHb"; */
+"T5E-pT-wHb.text" = "Additional card brands may be accepted\ndepending on your contract.";
