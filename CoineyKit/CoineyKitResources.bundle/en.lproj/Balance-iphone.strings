@@ -1,0 +1,66 @@
+
+/* Class = "UILabel"; text = "入金済み"; ObjectID = "21b-AI-wRb"; */
+"21b-AI-wRb.text" = "Deposited";
+
+/* Class = "UILabel"; text = "売上の内訳"; ObjectID = "3In-vS-5oa"; */
+"3In-vS-5oa.text" = "Summary";
+
+/* Class = "UILabel"; text = "売上の内訳がありません。"; ObjectID = "7A2-CH-rJs"; */
+"7A2-CH-rJs.text" = "No summary to show";
+
+/* Class = "UILabel"; text = "JCB、アメリカン・エキスプレス、ダイナースクラブ、ディスカバーの決済については、株式会社ジェーシービーへお問い合わせ\nください。"; ObjectID = "940-5K-Zhf"; */
+"940-5K-Zhf.text" = "Please ask JCB Co., Ltd. about transactions made with JCB, American Express, Diners Club, and Discover cards.";
+
+/* Class = "UINavigationItem"; title = "入金履歴"; ObjectID = "Bfw-eB-uI1"; */
+"Bfw-eB-uI1.title" = "Deposit History";
+
+/* Class = "UILabel"; text = "引き出しがありません"; ObjectID = "FrT-WZ-8F4"; */
+"FrT-WZ-8F4.text" = "No deposits to display";
+
+/* Class = "UILabel"; text = "入金予定額"; ObjectID = "MRT-Ay-e1A"; */
+"MRT-Ay-e1A.text" = "Balance";
+
+/* Class = "UIBarButtonItem"; title = "履歴"; ObjectID = "T2Z-PW-ZLP"; */
+"T2Z-PW-ZLP.title" = "History";
+
+/* Class = "UILabel"; text = "- 加盟店手数料"; ObjectID = "Tt8-HA-FIO"; */
+"Tt8-HA-FIO.text" = "- Transaction fee";
+
+/* Class = "UILabel"; text = "売上合計"; ObjectID = "bi4-tD-Pp3"; */
+"bi4-tD-Pp3.text" = "Transactions";
+
+/* Class = "UIButton"; normalTitle = "振込依頼"; ObjectID = "oBO-us-kGx"; */
+"oBO-us-kGx.normalTitle" = "Request Withdrawal";
+
+/* Class = "UILabel"; text = "- 振込手数料"; ObjectID = "qnE-zL-QYs"; */
+"qnE-zL-QYs.text" = "- Deposit fee";
+
+/* Class = "UINavigationItem"; title = "振込先のご確認"; ObjectID = "w12-kC-KCA"; */
+"w12-kC-KCA.title" = "Deposit Confirmation";
+
+/* Class = "UINavigationItem"; title = "入金"; ObjectID = "wcr-78-Tr4"; */
+"wcr-78-Tr4.title" = "Balance";
+
+/* Class = "UILabel"; text = "取引情報を取得できません"; ObjectID = "dg0-7d-lsi"; */
+"dg0-7d-lsi.text" = "Unable to load transaction information";
+
+/* Class = "UILabel"; text = "名義"; ObjectID = "gGk-l5-Z96"; */
+"gGk-l5-Z96.text" = "Name";
+
+/* Class = "UILabel"; text = "金融機関名"; ObjectID = "ewk-cD-EcQ"; */
+"ewk-cD-EcQ.text" = "Bank";
+
+/* Class = "UILabel"; text = "入金予定額"; ObjectID = "vBz-oB-byC"; */
+"vBz-oB-byC.text" = "Amount";
+
+/* Class = "UILabel"; text = "ご依頼から2営業日以内に入金いたします。"; ObjectID = "RJ7-y4-fm1"; */
+"RJ7-y4-fm1.text" = "Please allow two business days for your request to be processed.";
+
+/* Class = "UILabel"; text = "支店名"; ObjectID = "XRh-1W-Tgr"; */
+"XRh-1W-Tgr.text" = "Branch";
+
+/* Class = "UILabel"; text = "口座番号"; ObjectID = "cFm-5B-ybh"; */
+"cFm-5B-ybh.text" = "Account";
+
+/* Class = "UIButton"; normalTitle = "振込依頼を実行"; ObjectID = "2id-4f-vYZ"; */
+"2id-4f-vYZ.normalTitle" = "Send Deposit Request";

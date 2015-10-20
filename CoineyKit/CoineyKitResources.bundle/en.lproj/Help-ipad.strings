@@ -1,0 +1,51 @@
+
+/* Class = "UILabel"; text = "お問い合わせ"; ObjectID = "0BT-iS-Xlr"; */
+"0BT-iS-Xlr.text" = "Support";
+
+/* Class = "UILabel"; text = "ヘルプ"; ObjectID = "1xb-UY-V25"; */
+"1xb-UY-V25.text" = "Help";
+
+/* Class = "UIButton"; normalTitle = "利用規約"; ObjectID = "8lq-I7-hk6"; */
+"8lq-I7-hk6.normalTitle" = "Terms and Conditions";
+
+/* Class = "UIButton"; normalTitle = "サービスガイド"; ObjectID = "9K6-0g-KLd"; */
+"9K6-0g-KLd.normalTitle" = "Online Support Center";
+
+/* Class = "UILabel"; text = "売り上げの確認や取消、各種設定の\n変更ができます。"; ObjectID = "CnQ-Pf-Vlq"; */
+"CnQ-Pf-Vlq.text" = "You can view and refund past transactions,\nchange account settings, and more.";
+
+/* Class = "UILabel"; text = "サポートの電話番号は0120-343-577、受付時間は平日10:00〜18:00です。"; ObjectID = "HTY-df-NDR"; */
+"HTY-df-NDR.text" = "The support phone number is 0120-343-577, open weekdays 10 am to 6 pm.";
+
+/* Class = "UILabel"; text = "Coineyでお客さまとのお会計が \nあんぜん 、 あんしん 、 かんたんに。\nさあ、始めましょう！"; ObjectID = "Iqr-6g-vmi"; */
+"Iqr-6g-vmi.text" = "This tutorial will\nhelp you get started.";
+
+/* Class = "UINavigationItem"; title = "ヘルプ"; ObjectID = "c0Q-7b-EDA"; */
+"c0Q-7b-EDA.title" = "Help";
+
+/* Class = "UILabel"; text = "ウェブでも色々できます"; ObjectID = "c1y-UJ-Ol0"; */
+"c1y-UJ-Ol0.text" = "Do More at coiney.com";
+
+/* Class = "UIButton"; normalTitle = "使い方の動画"; ObjectID = "cze-xC-tcE"; */
+"cze-xC-tcE.normalTitle" = "Introduction Video";
+
+/* Class = "UIButton"; normalTitle = "プライバシーポリシー"; ObjectID = "lJ3-B4-Zxa"; */
+"lJ3-B4-Zxa.normalTitle" = "Privacy Policy";
+
+/* Class = "UILabel"; text = "リーダーを挿してください"; ObjectID = "lWO-Mu-aF2"; */
+"lWO-Mu-aF2.text" = "Insert Your Reader";
+
+/* Class = "UIButton"; normalTitle = "メールにてお問い合わせ"; ObjectID = "lgq-Qc-1e8"; */
+"lgq-Qc-1e8.normalTitle" = "By E-mail";
+
+/* Class = "UIButton"; normalTitle = "取引禁止商品ガイドライン"; ObjectID = "pZL-JF-yW6"; */
+"pZL-JF-yW6.normalTitle" = "Prohibited Merchandise";
+
+/* Class = "UILabel"; text = "「カチッ」となるまでしっかりと\nイヤホンジャックに挿しこみます。"; ObjectID = "viZ-s9-d3l"; */
+"viZ-s9-d3l.text" = "Plug your reader firmly\ninto the headphone jack.";
+
+/* Class = "UILabel"; text = "ようこそ！"; ObjectID = "zfp-eF-QpL"; */
+"zfp-eF-QpL.text" = "Welcome!";
+
+/* Class = "UILabel"; text = "規約・禁止事項"; ObjectID = "zl5-yJ-hmd"; */
+"zl5-yJ-hmd.text" = "Legal";

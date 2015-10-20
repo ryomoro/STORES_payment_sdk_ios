@@ -1,24 +1,24 @@
 
-/* Class = "UILabel"; text = "「✓」ボタンを5秒長押しします。\nターミナル画面の「Bluetooth」が点滅したら\n次へ進みます。"; ObjectID = "0Ju-wl-BDa"; */
-"0Ju-wl-BDa.text" = "Hold down the ✓ button for 5 seconds.\nWhen the 'Bluetooth' on the terminal starts blinking,\npress [Next].";
+/* Class = "UILabel"; text = "「✓」ボタンを5秒長押しします。\nターミナル画面の「!Bluetooth!」が点滅したら\n次へ進みます。"; ObjectID = "0Ju-wl-BDa"; */
+"0Ju-wl-BDa.text" = "Hold down the ✓ button for 5 seconds.\nWhen the [!Bluetooth!] on the terminal starts blinking,\npress [Next].";
 
-/* Class = "UILabel"; text = "カードリーダーの電源を\n確認してください"; ObjectID = "2FA-jv-lo5"; */
+/* Class = "UILabel"; text = "ターミナルの電源を\n確認してください"; ObjectID = "2FA-jv-lo5"; */
 "2FA-jv-lo5.text" = "Make Sure Your Terminal Is\nPowered On";
 
 /* Class = "UILabel"; text = "ターミナルを\nペアリングモードにしてください"; ObjectID = "7C2-Sl-0Tu"; */
 "7C2-Sl-0Tu.text" = "Put the Terminal in\nPairing Mode";
 
-/* Class = "UILabel"; text = "IC付きのクレジットカードを用意して\n読み取りテストをおこないましょう"; ObjectID = "A3Y-93-4Sc"; */
+/* Class = "UILabel"; text = "IC付きのクレジットカードを用意して\n読み取りテストをおこないましょう。"; ObjectID = "A3Y-93-4Sc"; */
 "A3Y-93-4Sc.text" = "Get an IC credit card\nand practice reading it!";
 
-/* Class = "UILabel"; text = "画面に表示されるパスコードが同じか確認し、\nターミナルの緑色「✓」ボタンを押して\n「Bluetooth」マークの点滅が停止したら完了です。"; ObjectID = "RAT-4L-uTR"; */
-"RAT-4L-uTR.text" = "Make sure the same passcode appears.\nPress ✓ to complete the pairing process and\nthe 'Bluetooth' logo will stop blinking.";
+/* Class = "UILabel"; text = "確認したらターミナルの緑色「✓」ボタンを押し\nアプリの「ペアリングする」をタップします。\n「!Bluetooth!」マークの点滅が停止したら完了です。"; ObjectID = "RAT-4L-uTR"; */
+"RAT-4L-uTR.text" = "Make sure the same passcode appears.\nPress ✓ to complete the pairing process and\nthe [!Bluetooth!] logo will stop blinking.";
 
-/* Class = "UILabel"; text = "アプリからのペアリングを開始して\nターミナルを選択してください"; ObjectID = "fi1-O1-RvP"; */
+/* Class = "UILabel"; text = "ペアリングを開始して\nターミナルを選択してください"; ObjectID = "fi1-O1-RvP"; */
 "fi1-O1-RvP.text" = "Exchange Passcodes and\nPair with Your Terminal";
 
 /* Class = "UILabel"; text = "ペアリングが\n完了しました"; ObjectID = "lHP-Rv-nKE"; */
 "lHP-Rv-nKE.text" = "Pairing Complete";
 
-/* Class = "UILabel"; text = "カードリーダー上部にある電源ボタンを押し\nランプが点灯していたら次に進みます"; ObjectID = "s4j-3Y-02R"; */
+/* Class = "UILabel"; text = "ターミナル上部にある電源ボタンを押し\nランプが点灯していたら次に進みます。"; ObjectID = "s4j-3Y-02R"; */
 "s4j-3Y-02R.text" = "Press the power button.\nOnce the power light turns on, press [Next].";

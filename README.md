@@ -42,6 +42,27 @@ Go to your target's General settings, and add `CoineyKit.framework`, as well as 
 
 Now you're almost ready to make use of CoineyKit, you just need to update your build settings to use CoineyKit.xcconfig, as shown in the above screenshot.
 
+#### NSAppTransportSecurity
+
+As a final step, add the following to your project's `Info.plist` file.
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+  <key>NSExceptionDomains</key>
+  <dict>
+    <key>coiney.com</key>
+    <dict>
+      <key>NSExceptionAllowsInsecureHTTPLoads</key>
+      <true/>
+      <key>NSIncludesSubdomains</key>
+      <true/>
+    </dict>
+  </dict>
+</dict>
+```
+
+We will be moving to https in the future, so this will eventually become unnecessary.  Note that we only use http for static pages like the user agreement, and transaction-related traffic is always encrypted.
 
 ## Making our first payment
 
@@ -172,21 +193,22 @@ You can use a transaction ID to bring up its detail view.  The view can contain 
     {
         NSLog(@"Completed transaction: %@", aTransaction);
         
-        [aController dismissViewControllerAnimated:YES completion:nil];
-        
-        CYTransactionViewController *transactionViewController =
-        [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
-                                                               allowRefunding:YES]; // Pass NO to hide the refund button
-        transactionViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                                                    initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                       target:self
-                                                                       action:@selector(done:)];
-        UINavigationController *navigationController = [[UINavigationController alloc]
-                                                           initWithRootViewController:transactionViewController];
-        [navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
-        [self presentViewController:navigationController
-                           animated:YES
-                         completion:nil];
+        [aController dismissViewControllerAnimated:YES completion:^{
+            CYTransactionViewController *transactionViewController =
+                [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
+                                                                       allowRefunding:YES];
+                                                              // Pass NO to hide the refund button
+            transactionViewController.navigationItem.rightBarButtonItem =
+	        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                              target:self
+                                                              action:@selector(done:)];
+            UINavigationController *navigationController =
+                [[UINavigationController alloc] initWithRootViewController:transactionViewController];
+            [navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
+            [self presentViewController:navigationController
+                               animated:YES
+                             completion:nil];
+	}];
     }
     
     - (void)done:(id)aSender

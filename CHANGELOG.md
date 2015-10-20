@@ -1,3 +1,13 @@
+## 4.1.1 (2015-10-20)
+
+#### 変更点
+
+* ZipArchive を使用しているアプリで、CoineyKit の ZipArchive とシンボル衝突が発生する問題を修正 (#34)
+* CYTransactionViewController の「返金済み」の行が表示されない問題を修正 (#35)
+* Example アプリ + iOS 7 で、決済完了後に取引詳細画面が表示されない問題を修正
+
+For internal use: Krona@f0ba548
+
 ## 4.1.0 (2015-10-02)
 
 #### 新機能

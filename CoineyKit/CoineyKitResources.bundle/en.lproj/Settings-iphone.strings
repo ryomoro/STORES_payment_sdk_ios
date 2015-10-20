@@ -1,0 +1,159 @@
+
+/* Class = "UILabel"; text = "スタッフの登録がありません。"; ObjectID = "AcF-44-9Go"; */
+"1hf-ea-tUB.text" = "No staff to display";
+
+/* Class = "UINavigationItem"; title = "レシート"; ObjectID = "2um-jQ-SAr"; */
+"2um-jQ-SAr.title" = "Receipt Settings";
+
+/* Class = "UIBarButtonItem"; title = "送信"; ObjectID = "4H4-4J-grH"; */
+"4H4-4J-grH.title" = "Send";
+
+/* Class = "UILabel"; text = "プリンター"; ObjectID = "AE9-oa-TJm"; */
+"AE9-oa-TJm.text" = "Printer";
+
+/* Class = "UINavigationItem"; title = "加盟店情報"; ObjectID = "BiV-q8-qxL"; */
+"BiV-q8-qxL.title" = "Merchant Information";
+
+/* Class = "UILabel"; text = "レシートコメント"; ObjectID = "CCg-HS-pxu"; */
+"CCg-HS-pxu.text" = "Comment";
+
+/* Class = "UIButton"; normalTitle = "スタッフ"; ObjectID = "CN4-NF-yOI"; */
+"CN4-NF-yOI.normalTitle" = "Staff";
+
+/* Class = "UIButton"; normalTitle = "URL"; ObjectID = "D7D-mj-Nza"; */
+"D7D-mj-Nza.normalTitle" = "URL";
+
+/* Class = "UIButton"; normalTitle = "レシート"; ObjectID = "Ee3-M9-69W"; */
+"Ee3-M9-69W.normalTitle" = "Receipt Settings";
+
+/* Class = "UITextField"; placeholder = "メッセージ (オプション）"; ObjectID = "F3S-8v-Std"; */
+"F3S-8v-Std.placeholder" = "Invitation Message (Optional）";
+
+/* Class = "UINavigationItem"; title = "スタッフ情報"; ObjectID = "HbZ-FX-3qJ"; */
+"HbZ-FX-3qJ.title" = "Staff Details";
+
+/* Class = "UIButton"; normalTitle = "名前"; ObjectID = "JLM-Z6-IYk"; */
+"JLM-Z6-IYk.normalTitle" = "Name";
+
+/* Class = "UILabel"; text = "プリンターとの接続は\nホーム画面→設定→Bluetoothから行います。"; ObjectID = "KDW-xb-Csg"; */
+"KDW-xb-Csg.text" = "To connect a Bluetooth printer, open:\nHome→Settings→Bluetooth";
+
+/* Class = "UIButton"; normalTitle = "ログアウト"; ObjectID = "N6o-hQ-qeg"; */
+"N6o-hQ-qeg.normalTitle" = "Log Out";
+
+/* Class = "UIButton"; normalTitle = "マネージャー "; ObjectID = "PJ0-05-E71"; */
+"PJ0-05-E71.normalTitle" = "Manager";
+
+/* Class = "UILabel"; text = "オンにすると当月末までの売上が\n翌月20日に自動的に入金されます。"; ObjectID = "QZ2-L0-qDc"; */
+"QZ2-L0-qDc.text" = "If enabled, monthly sales will be automatically\ndeposited on the 20th of the following month.";
+
+/* Class = "UILabel"; text = "スタッフを追加するには\n右上の \"+\" をタップしてください。"; ObjectID = "cIg-eS-F6g"; */
+"Tj4-s1-Dx8.text" = "Tap the \"+\" button to\ninvite a staff member.";
+
+/* Class = "UILabel"; text = "コメントを入力するとレシートに\nメッセージを表示できます。"; ObjectID = "V1c-uA-acv"; */
+"V1c-uA-acv.text" = "Comment entered here will appear in\nthe receipt.";
+
+/* Class = "UILabel"; text = "オンにすると決済金額が%@以下\nの場合にサインがスキップされます。"; ObjectID = "V7h-65-TWc"; */
+"V7h-65-TWc.text" = "If enabled, signing will not be required for transactions under %@.";
+
+/* Class = "UIButton"; normalTitle = "テスト印刷"; ObjectID = "WQi-rU-R7s"; */
+"WQi-rU-R7s.normalTitle" = "Print Test Receipt";
+
+/* Class = "UILabel"; text = "ユーザーの追加、他ユーザーの取引閲覧、\n売上取消・返品をおこなうことができます。"; ObjectID = "WcL-fQ-Ums"; */
+"WcL-fQ-Ums.text" = "Managers can add users, see other users'\ntransactions, and make refunds.";
+
+/* Class = "UIButton"; normalTitle = "加盟店情報"; ObjectID = "X2b-24-zgz"; */
+"X2b-24-zgz.normalTitle" = "Merchant Information";
+
+/* Class = "UIButton"; normalTitle = "電話番号"; ObjectID = "YW7-dN-OA9"; */
+"YW7-dN-OA9.normalTitle" = "Phone";
+
+/* Class = "UIButton"; normalTitle = "メール"; ObjectID = "Ytq-ZZ-XzY"; */
+"Ytq-ZZ-XzY.normalTitle" = "E-mail";
+
+/* Class = "UILabel"; text = "アカウント"; ObjectID = "YyC-xv-8Im"; */
+"YyC-xv-8Im.text" = "Account";
+
+/* Class = "UIButton"; normalTitle = "マネージャー"; ObjectID = "ZDP-hK-Wdd"; */
+"ZDP-hK-Wdd.normalTitle" = "Manager";
+
+/* Class = "UIButton"; normalTitle = "住所"; ObjectID = "bve-GZ-oXf"; */
+"bve-GZ-oXf.normalTitle" = "Address";
+
+/* Class = "UINavigationItem"; title = "スタッフ"; ObjectID = "7sY-xM-Psb"; */
+"dAz-RI-I9c.title" = "Staff";
+
+/* Class = "UIButton"; normalTitle = "サインレス"; ObjectID = "dsN-jv-DxF"; */
+"dsN-jv-DxF.normalTitle" = "Signless Transactions";
+
+/* Class = "UINavigationItem"; title = "設定"; ObjectID = "ejC-WH-q2S"; */
+"ejC-WH-q2S.title" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "メール"; ObjectID = "ek0-E6-atp"; */
+"ek0-E6-atp.normalTitle" = "E-mail";
+
+/* Class = "UIButton"; normalTitle = "レシート自動印刷"; ObjectID = "k3Q-Ms-84w"; */
+"k3Q-Ms-84w.normalTitle" = "Print Receipts Automatically";
+
+/* Class = "UIButton"; normalTitle = "自動引き出し"; ObjectID = "kRH-XA-2ik"; */
+"kRH-XA-2ik.normalTitle" = "Automatic Withdrawals";
+
+/* Class = "UINavigationItem"; title = "スタッフ追加"; ObjectID = "lQy-AM-uBb"; */
+"lQy-AM-uBb.title" = "Add Staff";
+
+/* Class = "UILabel"; text = "支払い"; ObjectID = "mwm-Lm-d81"; */
+"mwm-Lm-d81.text" = "Payment";
+
+/* Class = "UIButton"; normalTitle = "このユーザーを削除"; ObjectID = "no5-9r-aLH"; */
+"no5-9r-aLH.normalTitle" = "Delete User";
+
+/* Class = "UITextField"; placeholder = "メールアドレス"; ObjectID = "qEh-Wf-Liu"; */
+"qEh-Wf-Liu.placeholder" = "E-mail";
+
+/* Class = "UIButton"; normalTitle = "アカウント"; ObjectID = "tUn-Ix-zek"; */
+"tUn-Ix-zek.normalTitle" = "Active";
+
+/* Class = "UILabel"; text = "権限設定"; ObjectID = "yPd-J4-g8a"; */
+"yPd-J4-g8a.text" = "Permissions";
+
+/* Class = "UILabel"; text = "基本情報"; ObjectID = "yTn-dX-5aw"; */
+"yTn-dX-5aw.text" = "Shop Information";
+
+/* Class = "UILabel"; text = "ユーザーの追加、他ユーザーの取引閲覧、\n売上取消・返品をおこなうことができます。"; ObjectID = "zUw-YQ-zZE"; */
+"zUw-YQ-zZE.text" = "Managers can add users, see other users'\ntransactions and make refunds.";
+
+/* Class = "UILabel"; text = "カードリーダー"; ObjectID = "LSa-SL-N5L"; */
+"LSa-SL-N5L.text" = "Card Reader";
+
+/* Class = "UIButton"; normalTitle = "接続確認・読み取りテスト"; ObjectID = "wAa-Eg-6cg"; */
+"wAa-Eg-6cg.normalTitle" = "Setup";
+
+/* Class = "UINavigationItem"; title = "接続確認・読み取りテスト"; ObjectID = "VPY-y5-srD"; */
+"VPY-y5-srD.title" = "Setup";
+
+/* Class = "UINavigationItem"; title = "読み取り練習"; ObjectID = "lPy-H4-wuv"; */
+"lPy-H4-wuv.title" = "Setup";
+
+/* Class = "UINavigationItem"; title = "ヒント"; ObjectID = "mns-z8-dUu"; */
+"mns-z8-dUu.title" = "Tips";
+
+/* Class = "UINavigationItem"; title = "接続確認・読み取りテスト"; ObjectID = "3U2-eZ-uGp"; */
+"3U2-eZ-uGp.title" = "Setup";
+
+/* Class = "UINavigationItem"; title = "接続確認・読み取りテスト"; ObjectID = "F9q-xm-R85"; */
+"F9q-xm-R85.title" = "Setup";
+
+/* Class = "UILabel"; text = "Coineyリーダー"; ObjectID = "q5m-9S-LHV"; */
+"q5m-9S-LHV.text" = "Coiney Reader";
+
+/* Class = "UILabel"; text = "磁気・IC対応"; ObjectID = "QCK-dC-FMh"; */
+"QCK-dC-FMh.text" = "IC and magnetic stripe";
+
+/* Class = "UILabel"; text = "使用するカードリーダーを\n選択してください"; ObjectID = "fvt-Tm-88b"; */
+"fvt-Tm-88b.text" = "Choose your card reader.";
+
+/* Class = "UILabel"; text = "Coineyターミナル"; ObjectID = "Q5S-3w-1E8"; */
+"Q5S-3w-1E8.text" = "Coiney Terminal";
+
+/* Class = "UILabel"; text = "磁気専用"; ObjectID = "KxE-JO-O3y"; */
+"KxE-JO-O3y.text" = "Magnetic stripe only";

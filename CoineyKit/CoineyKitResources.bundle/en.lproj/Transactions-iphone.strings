@@ -1,0 +1,63 @@
+
+/* Class = "UINavigationItem"; title = "売上"; ObjectID = "Kne-dk-FSq"; */
+"Kne-dk-FSq.title" = "Transactions";
+
+/* Class = "UIButton"; normalTitle = "プリンターに送信"; ObjectID = "8W8-Gq-QEo"; */
+"8W8-Gq-QEo.normalTitle" = "Print Receipt";
+
+/* Class = "UIButton"; normalTitle = "取引区分"; ObjectID = "PNQ-Id-ljb"; */
+"PNQ-Id-ljb.normalTitle" = "Payment Method";
+
+/* Class = "UIButton"; normalTitle = "取引番号"; ObjectID = "or0-qF-7wO"; */
+"or0-qF-7wO.normalTitle" = "Transaction ID";
+
+/* Class = "UIButton"; normalTitle = "返品済み"; ObjectID = "kCL-4c-Rqo"; */
+"kCL-4c-Rqo.normalTitle" = "Refunded";
+
+/* Class = "UIButton"; normalTitle = "承認番号"; ObjectID = "rir-ua-azE"; */
+"rir-ua-azE.normalTitle" = "Approval Code";
+
+/* Class = "UIButton"; normalTitle = "売上取消・返品"; ObjectID = "Qct-L7-Y5o"; */
+"Qct-L7-Y5o.normalTitle" = "Refund";
+
+/* Class = "UIButton"; normalTitle = "スタッフ"; ObjectID = "SjN-Ea-LIg"; */
+"SjN-Ea-LIg.normalTitle" = "Staff";
+
+/* Class = "UILabel"; text = "取引情報"; ObjectID = "2Zp-ck-wOG"; */
+"2Zp-ck-wOG.text" = "Details";
+
+/* Class = "UITextField"; placeholder = "メールで送信"; ObjectID = "bwB-rm-iDM"; */
+"bwB-rm-iDM.placeholder" = "Send e-mail";
+
+/* Class = "UIButton"; normalTitle = "取引日時"; ObjectID = "HPY-UL-9xc"; */
+"HPY-UL-9xc.normalTitle" = "Date";
+
+/* Class = "UILabel"; text = "商品"; ObjectID = "KZg-CM-dUL"; */
+"KZg-CM-dUL.text" = "Products";
+
+/* Class = "UISearchBar"; placeholder = "商品、金額、下４桁"; ObjectID = "4aL-e7-eOI"; */
+"4aL-e7-eOI.placeholder" = "Product, Price, or Last 4 Digits";
+
+/* Class = "UINavigationItem"; title = "取引情報"; ObjectID = "nte-gS-dq1"; */
+"nte-gS-dq1.title" = "Transaction Details";
+
+/* Class = "UILabel"; text = "まだ取引がありません"; ObjectID = "PGN-P0-x1Z"; */
+"PGN-P0-x1Z.text" = "No transactions to display";
+
+/* Class = "UINavigationItem"; title = "売上取消・返品のご確認"; ObjectID = "g7O-sE-uZA"; */
+"g7O-sE-uZA.title" = "Refund Confirmation";
+
+/* Class = "UILabel"; text = "売上取消・返品額"; ObjectID = "3gl-km-MYM"; */
+"3gl-km-MYM.text" = "Amount";
+
+/* Class = "UILabel"; text = "ご注意ください"; ObjectID = "ykY-Pa-xJ3"; */
+"ykY-Pa-xJ3.text" = "Warning";
+
+/* Class = "UILabel"; text = "「売上取消・返品」をしたお取引は売上から削除され、再計上できません。"; ObjectID = "bYe-df-Ks6"; */
+"bYe-df-Ks6.text" = "Once a transaction has been refunded, it cannot be restored.";
+
+/* Class = "UIButton"; normalTitle = "売上取消・返品を実行"; ObjectID = "ihy-Ij-2GV"; */
+"ihy-Ij-2GV.normalTitle" = "Refund";
+
+/* Class = "UIButton"; normalTitle = "キャンセル"; ObjectID = "yLu-zw-Kyw"; */
+"yLu-zw-Kyw.normalTitle" = "Cancel";
