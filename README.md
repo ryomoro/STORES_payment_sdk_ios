@@ -13,7 +13,7 @@ If you follow along this tutorial, you will learn how to create a basic applicat
 ## What you need
 
  * CoineyKit
- * Xcode 6 or above (Installed in `/Applications`)
+ * Xcode 7 or above (Installed in `/Applications`)
  
 
 ## Setting up your project
