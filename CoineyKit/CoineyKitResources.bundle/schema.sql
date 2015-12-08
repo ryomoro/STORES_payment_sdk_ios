@@ -282,6 +282,7 @@ CREATE TABLE "transactions" (
     "identifier" text NOT NULL,
     "cardBrandName" text,
     "approvalCode" text,
+    "applicationIdentifier" text,
     "cardSuffix" text,
     "latitude" real,
     "longitude" real,

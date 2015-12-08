@@ -1,3 +1,32 @@
+## 4.2.0 (2015-12-08)
+
+#### 変更点
+
+* CoineyターミナルでのIC・磁気カード決済に対応しました。
+
+#### 注意点
+
+##### External Accessory Protocol の追加
+
+ターミナルとのBluetooth接続のため、アプリの Info.plist に、下記の記述を追加してください。
+
+```
+<key>UISupportedExternalAccessoryProtocols</key>
+<array>
+  <string>com.coiney.Coiney</string>
+</array>
+```
+
+また、iTunes Connect で App Store へレビュー申請する際、MFi PPID が必要になります。
+
+詳しくは Apple MFi プログラムのドキュメントをご参照ください。
+
+##### 支払いキャンセル時のメッセージについて
+
+PIN入力画面で、[支払いキャンセル] を押すと、利用可能なカードの場合でも、「このカードはお使いいただけません」と表示されます。メッセージの内容に誤りがありますが、支払いのキャンセルは問題なく行われております。
+
+For internal use: Krona@4c21b63
+
 ## 4.1.1 (2015-10-20)
 
 #### 変更点

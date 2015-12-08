@@ -107,8 +107,8 @@
 /* Class = "UILabel"; text = "住所"; ObjectID = "lN4-pb-vkN"; */
 "lN4-pb-vkN.text" = "Address";
 
-/* Class = "UILabel"; text = "オンにすると決済金額が%@以下の場合にサインがスキップされます。"; ObjectID = "mJS-G8-EFl"; */
-"mJS-G8-EFl.text" = "If enabled, signing will not be required for transactions under %@.";
+/* Class = "UILabel"; text = "オンにすると決済金額が%@以下の場合にサインがスキップされます。\nCoineyターミナルをご利用の場合はご利用いただけません。"; ObjectID = "mJS-G8-EFl"; */
+"mJS-G8-EFl.text" = "If enabled, signing will not be required for transactions under %@.\nThis feature is not available for use with the Coiney Terminal.";
 
 /* Class = "UIBarButtonItem"; title = "送信"; ObjectID = "mKo-Zm-QGA"; */
 "mKo-Zm-QGA.title" = "Send";

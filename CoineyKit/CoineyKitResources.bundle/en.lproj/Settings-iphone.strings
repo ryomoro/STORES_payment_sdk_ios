@@ -53,8 +53,8 @@
 /* Class = "UILabel"; text = "コメントを入力するとレシートに\nメッセージを表示できます。"; ObjectID = "V1c-uA-acv"; */
 "V1c-uA-acv.text" = "Comment entered here will appear in\nthe receipt.";
 
-/* Class = "UILabel"; text = "オンにすると決済金額が%@以下\nの場合にサインがスキップされます。"; ObjectID = "V7h-65-TWc"; */
-"V7h-65-TWc.text" = "If enabled, signing will not be required for transactions under %@.";
+/* Class = "UILabel"; text = "オンにすると決済金額が%@以下\nの場合にサインがスキップされます。\nCoineyターミナルをご利用の場合は\nご利用いただけません。"; ObjectID = "V7h-65-TWc"; */
+"V7h-65-TWc.text" = "If enabled, signing will not be required for\ntransactions under %@.\nThis feature is not available for use with the\nCoiney Terminal.";
 
 /* Class = "UIButton"; normalTitle = "テスト印刷"; ObjectID = "WQi-rU-R7s"; */
 "WQi-rU-R7s.normalTitle" = "Print Test Receipt";
@@ -80,7 +80,7 @@
 /* Class = "UIButton"; normalTitle = "住所"; ObjectID = "bve-GZ-oXf"; */
 "bve-GZ-oXf.normalTitle" = "Address";
 
-/* Class = "UINavigationItem"; title = "スタッフ"; ObjectID = "7sY-xM-Psb"; */
+/* Class = "UINavigationItem"; title = "スタッフ"; ObjectID = "dAz-RI-I9c"; */
 "dAz-RI-I9c.title" = "Staff";
 
 /* Class = "UIButton"; normalTitle = "サインレス"; ObjectID = "dsN-jv-DxF"; */

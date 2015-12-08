@@ -42,6 +42,17 @@ Go to your target's General settings, and add `CoineyKit.framework`, as well as 
 
 Now you're almost ready to make use of CoineyKit, you just need to update your build settings to use CoineyKit.xcconfig, as shown in the above screenshot.
 
+#### External Accessory Protocol for Coiney Terminal
+
+For your app to connect to a Coiney Terminal for IC and magstripe transactions, we need to add `com.coiney.Coiney` to the list of supported accessory protocols.  Add the following to your `Info.plist` file:
+
+```
+<key>UISupportedExternalAccessoryProtocols</key>
+<array>
+  <string>com.coiney.Coiney</string>
+</array>
+```
+
 #### NSAppTransportSecurity
 
 As a final step, add the following to your project's `Info.plist` file.
@@ -62,7 +73,7 @@ As a final step, add the following to your project's `Info.plist` file.
 </dict>
 ```
 
-We will be moving to https in the future, so this will eventually become unnecessary.  Note that we only use http for static pages like the user agreement, and transaction-related traffic is always encrypted.
+We will be moving to https in the future, so this will eventually become unnecessary.  Note that we only use http for static pages like the user agreement.  Transaction-related traffic is always encrypted.
 
 ## Making our first payment
 
@@ -111,7 +122,7 @@ If we run the application it should appear like below:
 
 ![App screenshot](.readme_images/simshot1.png)
 
-Swipe your card to make a transaction. That's all that's required for the basic use case.
+Connect a terminal or magstripe reader to make a transaction. Tap [Connect to Terminal] for instructions on connecting to a Coiney Terminal via Bluetooth.
 
 ## Get notified of the transaction status
 

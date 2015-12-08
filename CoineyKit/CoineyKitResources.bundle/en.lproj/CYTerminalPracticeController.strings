@@ -13,3 +13,6 @@
 
 /* Class = "UILabel"; text = "ICカード、磁気ストライプ、\nそれぞれの形式のカードを読み取りましょう"; ObjectID = "nXU-LX-Qp0"; */
 "nXU-LX-Qp0.text" = "Read the chip on an IC-enabled card and\nswipe using the magnetic stripe reader.";
+
+/* Class = "UINavigationItem"; title = "読み取りテスト"; ObjectID = "szf-Ug-j7K"; */
+"szf-Ug-j7K.title" = "Setup";

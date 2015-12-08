@@ -22,3 +22,6 @@
 
 /* Class = "UILabel"; text = "ターミナル上部にある電源ボタンを押し\nランプが点灯していたら次に進みます。"; ObjectID = "s4j-3Y-02R"; */
 "s4j-3Y-02R.text" = "Press the power button.\nOnce the power light turns on, press [Next].";
+
+/* Class = "UINavigationItem"; title = "接続確認"; ObjectID = "YWU-gT-CQP"; */
+"YWU-gT-CQP.title" = "Setup";

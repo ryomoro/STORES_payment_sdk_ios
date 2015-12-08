@@ -72,6 +72,11 @@
 /// \~japanese
 /// アクワイアラが発行する承認コード
 @property(nonatomic, strong) NSString *approvalCode;
+/// \~english
+/// Returns the AID for an IC card transaction
+/// \~japanese
+/// IC カード決済の AID
+@property(nonatomic, strong) NSString *applicationIdentifier;
 
 /// \~english
 /// Generates a bitmap for the transaction's receipt.

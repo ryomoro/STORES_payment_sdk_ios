@@ -1,0 +1,15 @@
+
+/* Class = "IBUILabel"; text = "お支払い方法"; ObjectID = "WdR-Jg-JXh"; */
+"WdR-Jg-JXh.text" = "Payment:";
+
+/* Class = "IBUILabel"; text = "1回払い"; ObjectID = "yj7-nE-XUW"; */
+"yj7-nE-XUW.text" = "Single";
+
+/* Class = "IBUILabel"; text = "上記以外のカードもご利用いただけます。\n契約内容をご確認ください。"; ObjectID = "COp-Ao-Mv9"; */
+"COp-Ao-Mv9.text" = "Additional card brands may be accepted\ndepending on your contract.";
+
+/* Class = "UIButton"; normalTitle = "ターミナルに接続する "; ObjectID = "GMh-pM-g4I"; */
+"GMh-pM-g4I.normalTitle" = "Connect to Terminal ";
+
+/* Class = "UILabel"; text = "テストアカウント (決済はおこなわれません)"; ObjectID = "WZ0-WL-JKn"; */
+"WZ0-WL-JKn.text" = "Test Account (Card Will Not Be Charged)";
