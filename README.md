@@ -354,6 +354,12 @@ If you plan to do any printing that _doesn't_ use CYPrinter, i.e. if you plan to
 
 To print a receipt for a Coiney transaction, obtain the transaction information from the relevant `CYTransaction` object, and print using your printing implementation.
 
+## Submitting Your App for Review
+
+When submitting your build to App Review through iTunes Connect, you will need to indicate the following MFi PPID in your build's Review Notes:
+
+`126754-0016`
+
 ## And that's it!
 
 If you have any further questions feel free to email <devsupport@coiney.com>.
