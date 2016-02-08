@@ -356,7 +356,7 @@ To print a receipt for a Coiney transaction, obtain the transaction information 
 
 ## Submitting Your App for Review
 
-When submitting your app for review through iTunes Connect, you will need an MFi PPID (Made for iPhone Product Plan ID) for interoperation with the Miura M010.  Please contact us for your PPID.
+When submitting your app for review through iTunes Connect, you will need an MFi PPID (Made for iPhone Product Plan ID) for interoperation with the Miura M010.  Please use the form [here](../../wiki/PPID-の申請) to request your PPID.
 
 ## And that's it!
 
