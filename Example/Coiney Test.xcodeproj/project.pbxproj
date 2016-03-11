@@ -10,7 +10,6 @@
 		C77B835A189A1BC700902B8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B8359189A1BC700902B8C /* Foundation.framework */; };
 		C77B835C189A1BC700902B8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B835B189A1BC700902B8C /* CoreGraphics.framework */; };
 		C77B835E189A1BC700902B8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77B835D189A1BC700902B8C /* UIKit.framework */; };
-		C77B8364189A1BC700902B8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C77B8362189A1BC700902B8C /* InfoPlist.strings */; };
 		C77B8366189A1BC700902B8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C77B8365189A1BC700902B8C /* main.m */; };
 		C77B836A189A1BC700902B8C /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C77B8369189A1BC700902B8C /* CTAppDelegate.m */; };
 		C77B836D189A1BC700902B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77B836B189A1BC700902B8C /* Main.storyboard */; };
@@ -27,7 +26,6 @@
 		C77B835B189A1BC700902B8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C77B835D189A1BC700902B8C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C77B8361189A1BC700902B8C /* Coiney Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coiney Test-Info.plist"; sourceTree = "<group>"; };
-		C77B8363189A1BC700902B8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C77B8365189A1BC700902B8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C77B8367189A1BC700902B8C /* Coiney Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coiney Test-Prefix.pch"; sourceTree = "<group>"; };
 		C77B8368189A1BC700902B8C /* CTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAppDelegate.h; sourceTree = "<group>"; };
@@ -38,13 +36,11 @@
 		C77B8371189A1BC700902B8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C77B8378189A1BC700902B8C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C77B8380189A1BC700902B8C /* Coiney TestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coiney TestTests-Info.plist"; sourceTree = "<group>"; };
-		C77B8382189A1BC700902B8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C77B8384189A1BC700902B8C /* Coiney_TestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coiney_TestTests.m; sourceTree = "<group>"; };
 		C77B838F189A1BD800902B8C /* CoineyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoineyKit.framework; sourceTree = "<group>"; };
 		C77B8390189A1BD800902B8C /* CoineyKit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CoineyKit.xcconfig; sourceTree = "<group>"; };
 		C77B8391189A1BD800902B8C /* CoineyKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CoineyKitResources.bundle; sourceTree = "<group>"; };
 		DC617F1A1AF2419A00D22FA1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		DC617F291AF2618100D22FA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				C77B8361189A1BC700902B8C /* Coiney Test-Info.plist */,
-				C77B8362189A1BC700902B8C /* InfoPlist.strings */,
 				C77B8365189A1BC700902B8C /* main.m */,
 				C77B8367189A1BC700902B8C /* Coiney Test-Prefix.pch */,
 			);
@@ -133,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				C77B8380189A1BC700902B8C /* Coiney TestTests-Info.plist */,
-				C77B8381189A1BC700902B8C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -191,7 +185,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = C77B834D189A1BC700902B8C;
@@ -210,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C77B8372189A1BC700902B8C /* Images.xcassets in Resources */,
-				C77B8364189A1BC700902B8C /* InfoPlist.strings in Resources */,
 				C77B836D189A1BC700902B8C /* Main.storyboard in Resources */,
 				C77B8394189A1BD800902B8C /* CoineyKitResources.bundle in Resources */,
 			);
@@ -232,29 +224,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C77B8362189A1BC700902B8C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C77B8363189A1BC700902B8C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		C77B836B189A1BC700902B8C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C77B836C189A1BC700902B8C /* Base */,
-				DC617F291AF2618100D22FA1 /* en */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C77B8381189A1BC700902B8C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C77B8382189A1BC700902B8C /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -294,7 +269,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -327,7 +302,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

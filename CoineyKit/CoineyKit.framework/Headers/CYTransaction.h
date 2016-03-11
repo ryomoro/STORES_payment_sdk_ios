@@ -77,6 +77,11 @@
 /// \~japanese
 /// IC カード決済の AID
 @property(nonatomic, strong) NSString *applicationIdentifier;
+/// \~english
+/// Returns the application label for an IC card transaction
+/// \~japanese
+/// IC カード決済のアプリケーションラベル
+@property(nonatomic, strong) NSString *applicationLabel;
 
 /// \~english
 /// Generates a bitmap for the transaction's receipt.

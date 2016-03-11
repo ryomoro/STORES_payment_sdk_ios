@@ -1,5 +1,0 @@
-/* Class = "UILabel"; text = "ICカードの暗証番号入力してください"; ObjectID = "JLx-Nf-HLX"; */
-"JLx-Nf-HLX.text" = "Please enter the PIN of your IC card.";
-
-/* Class = "UILabel"; text = "暗証番号をお忘れの場合はそのまま\"✓\"ボタンを押してください"; ObjectID = "bkW-rO-zqr"; */
-"bkW-rO-zqr.text" = "If you have forgotten the PIN please press \"✓\" without entering anything.";
