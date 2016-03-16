@@ -1,55 +1,50 @@
 # CoineyKit
 
-CoineyKit をご利用いただき、ありがとうございます。ご要望やバグ報告の際は、お手数ですが [GitHub issue](https://github.com/Coiney/CoineyKit-iOS/issues) を作成いただきますようお願い致します。
+Thanks for showing interest in CoineyKit. We work hard to make it as easy to integrate as possible, but if you have any issues at all, please create a ticket using our [Issue Tracker](https://github.com/Coiney/CoineyKit-iOS/issues).
 
 -------
 
-# サンプルアプリ
+# Example Application
 
-## 目的
+## What we are going to create
 
-このチュートリアルでは、CoineyKitを使って、カード決済ができるサンプルアプリを作成します。
+If you follow along this tutorial, you will learn how to create a basic application, that allows the user to accept Credit Card payments using the Coiney Credit Card Reader.
 
-## 必要なもの
+## What you need
 
- * CoineyKit (このレポジトリを `git clone`、または .zip 形式でダウンロードしてください)
- * Xcode 7 以上
+ * CoineyKit
+ * Xcode 7 or above (Installed in `/Applications`)
  
 
-## プロジェクトのセットアップ
+## Setting up your project
 
-Xcode を起動し、`File → New → Project` から、`Single View Application` を選択します。
+Begin by launching Xcode and creating a new project: `File → New → Project`. In the dialog that appears, Choose the `Single View Application` template. And enter project options as per the screenshot below.
 
 ![Template selection](.readme_images/template-selection.png)
-
-下記のように設定します。
-
 ![Template options](.readme_images/template-options.png)
 
-本レポジトリを `git clone` またはダウンロードし、`CoineyKit` フォルダを、`«プロジェクトフォルダ»/CoineyKit` となるように、プロジェクトフォルダの中へコピーします。
+Now that your project is created, copy the folder `CoineyKit` to your project folder, resulting in path of `<Your project folder>/CoineyKit` .
 
 ![Folder hierarchy](.readme_images/folder-hierarchy.png)
 
-Git をお使いでしたら、更新しやすいように、submodule として追加することをお勧めします。
+The next step is to add `CoineyKitResources.bundle`, `CoineyKit.xcconfig` & `CoineyKit.framework` to your project. (If you use git it's a good idea to add CoineyKit as a submodule, that way you'll always know if it is up to date or not)
 
-`CoineyKit.xcconfig` と `CoineyKitResources.bundle` を、Xcode のプロジェクトナビゲーターにドラッグ＆ドロップします。
-
-次に、Debug・Release 両方の configuration に "CoineyKit" を指定してください。
+Drag and drop `CoineyKit.xcconfig` and `CoineyKitResources.bundle` into the project navigator in Xcode.  Select "CoineyKit" as your Debug and Release configuration files.
 
 ![Configurations](.readme_images/configuration.png)
 
-ターゲットの General 設定を開き、`CoineyKit.framework` および下記ライブラリをリンクするようにします。
+Go to your target's General settings, and add `CoineyKit.framework`, as well as the following:
 
- * libxml2.dylib
- * libsqlite3.dylib
+ * libxml2.tbd
+ * libsqlite3.tbd
 
 ![Libraries and Frameworks](.readme_images/frameworks-libs.png)
 
-もう少しでセットアップは完了です。
+Now you're almost ready to make use of CoineyKit, you just need to update your build settings to use CoineyKit.xcconfig, as shown in the above screenshot.
 
-#### Info.plist への追加
+#### External Accessory Protocol for Coiney Terminal
 
-Bluetooth で Coiney ターミナルに接続し、IC や磁気カード決済をするために、`UISupportedExternalAccessoryProtocols` をに追加する必要があります。
+For your app to connect to a Coiney Terminal for IC and magstripe transactions, we need to add `com.coiney.Coiney` to the list of supported accessory protocols.  Add the following to your `Info.plist` file:
 
 ```
 <key>UISupportedExternalAccessoryProtocols</key>
@@ -58,7 +53,9 @@ Bluetooth で Coiney ターミナルに接続し、IC や磁気カード決済�
 </array>
 ```
 
-iOS 9 の App Transport Security 対応するために、`NSAppTransportSecurity` を追加してください。
+#### NSAppTransportSecurity
+
+As a final step, add the following to your project's `Info.plist` file.
 
 ```
 <key>NSAppTransportSecurity</key>
@@ -76,13 +73,13 @@ iOS 9 の App Transport Security 対応するために、`NSAppTransportSecurity
 </dict>
 ```
 
-今後すべてのリンクを https にしていくため、将来的に不要になる予定です。http で取得しているのは、利用規約などの静的ページのみです。決済に携わる通信には https を使っておりますので、安心してご利用いただけます。
+We will be moving to https in the future, so this will eventually become unnecessary.  Note that we only use http for static pages like the user agreement.  Transaction-related traffic is always encrypted.
 
-## 決済をする
+## Making our first payment
+
+Open up `ViewController.h` and make it look like:
 
 ### Objective-C
-
-`ViewController.h` と `ViewController.m` を開き、下記のコードを貼り付けてください。
 
 #### ViewController.h
 
@@ -103,7 +100,7 @@ iOS 9 の App Transport Security 対応するために、`NSAppTransportSecurity
 
     - (IBAction)makePayment:(id)aSender
     {
-        // CYCoineyController に渡す CYItem を作成
+        // Create a line item to pre-populate the Coiney controller with.
         NSString *memo = _productMemoField.text;
         int price = [_productPriceField.text intValue];
     
@@ -111,14 +108,14 @@ iOS 9 の App Transport Security 対応するために、`NSAppTransportSecurity
                                     currency:CYCurrencyJPY
                                         memo:memo];
     
-        // CYCoineyViewController のインスタンスを作成
+        // Create an instance of the Coiney payment controller.
         CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
     
-        // ViewController の上に表示
+        // Present it on top of the current controller.
         [self presentViewController:coineyController animated:YES completion:nil];
     }
     @end
-    
+
 ### Swift
 
 #### ViewController.swift
@@ -140,21 +137,21 @@ iOS 9 の App Transport Security 対応するために、`NSAppTransportSecurity
         }
     }
     
-`Main.storyboard` でボタンを作り、押されたら `makePayment:` が呼び出されるようにしてください。`productNameField` と `productPriceField` はそれぞれ `IBOutlet` をフィールドにつなげてください。
+Now hook up a button to your `makePayment:` method, and text fields to `productNameField` & `productPriceField`.
 
 ![Action connection](.readme_images/action-connection.png)
 
-iPhone で実行すると、下記のようになります。
+If we run the application it should appear like below:
 
 ![App screenshot](.readme_images/simshot1.png)
 
-あとはターミナルかリーダーを繋げば決済できます。ターミナルへ接続するには、「ターミナルに接続する」をタップし、説明に従ってください。
+Connect a terminal or magstripe reader to make a transaction. Tap [Connect to Terminal] for instructions on connecting to a Coiney Terminal via Bluetooth.
 
-## 結果の通知を受け取る
+## Get notified of the transaction status
+
+To know the status of the transaction you simply make yourself the delegate of your Coiney controller, and it will notify you when a transaction is completed or canceled.
 
 ### Objective-C
-
-デリゲートメソッドを使って、決済完了時とキャンセル時に通知を受け取ることができます。下記のように、`ViewController.m` に `CYCoineyViewControllerDelegate` プロトコルを実装させ、`coineyViewController:didCompleteTransaction:` および `coineyViewControllerDidCancel:` を実装してください。
 
 #### ViewController.m
 
@@ -186,16 +183,16 @@ iPhone で実行すると、下記のようになります。
     - (void)coineyViewController:(CYCoineyViewController *)aController
           didCompleteTransaction:(id<CYTransaction>)aTransaction
     {
-        NSLog(@"Completed transaction: %@", aTransaction);
+        NSLog(@"Completed transaction!: %@", aTransaction);
     }
     
     - (void)coineyViewControllerDidCancel:(CYCoineyViewController *)aController
     {
         [aController dismissViewControllerAnimated:YES completion:nil];
-        NSLog(@"Cancelled");
+        NSLog(@"Cancelled payment.");
     }
     @end
-    
+
 ### Swift
 
 #### ViewController.swift
@@ -228,9 +225,9 @@ iPhone で実行すると、下記のようになります。
         }
     }
     
-## 取引詳細を表示する
+## Show the details of a transaction
 
-取引 ID をもとに、取引の詳細画面を表示できます。詳細画面上の売上取消・返品ボタンより、売上取消・返品をおこなえます。売上取消・返品ボタンは、パラメータにより、非表示にすることもできます。
+You can use a transaction ID to bring up its detail view.  The view can contain a refund button if refunding should be allowed.
 
 ### Objective-C
 
@@ -246,14 +243,18 @@ iPhone で実行すると、下記のようになります。
     
     - (IBAction)makePayment:(id)aSender
     {
+        // Create a line item to pre-populate the Coiney controller with.
         NSString *memo = _productMemoField.text;
         int price = [_productPriceField.text intValue];
         
         CYItem *item = [CYItem itemWithTotal:price
                                         currency:CYCurrencyJPY
                                             memo:memo];
+        
+        // Create an instance of the Coiney payment controller.
         CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
         coineyController.delegate = self;
+        // Present it on top of the current controller.
         [self presentViewController:coineyController animated:YES completion:nil];
     }
     
@@ -266,7 +267,7 @@ iPhone で実行すると、下記のようになります。
             CYTransactionViewController *transactionViewController =
                 [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
                                                                        allowRefunding:YES];
-                                                              // 売上取消・返品ボタンを非表示にするには、NO を渡してください
+                                                              // Pass NO to hide the refund button
             transactionViewController.navigationItem.rightBarButtonItem =
 	        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                               target:self
@@ -277,7 +278,7 @@ iPhone で実行すると、下記のようになります。
             [self presentViewController:navigationController
                                animated:YES
                              completion:nil];
-	    }];
+	}];
     }
     
     - (void)done:(id)aSender
@@ -285,7 +286,7 @@ iPhone で実行すると、下記のようになります。
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     @end
-    
+
 ### Swift
 
 #### ViewController.swift
@@ -325,13 +326,13 @@ iPhone で実行すると、下記のようになります。
         }
     }
 
-上記コードを実行すると、決済完了後、取引詳細が表示されます。
+After making a payment and tapping Done, you will see a `CYTransactionViewController` showing the details of the transaction.
 
 ![App screenshot](.readme_images/simshot3.png)
 
-## 取引履歴の参照
+## Looking up a transaction
 
-取引履歴から `CYTransaction` オブジェクトを取得するには、`CYLookUpTransaction()` を使います。
+You can use a transaction's unique identifier to query the corresponding CYTransaction object, and show it in a view controller.
 
 ### Objective-C
 
@@ -340,7 +341,7 @@ iPhone で実行すると、下記のようになります。
             NSLog(@"Transaction found: %@", transaction);
             CYTransactionViewController *transactionViewController =
                 [CYTransactionViewController transactionViewControllerWithTransaction:transaction
-                                                                       allowRefunding:YES];
+                                                                       allowRefunding:YES]; // Pass NO to hide the refund button
                                                                           
             transactionViewController.navigationItem.rightBarButtonItem =
                 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone   
@@ -361,7 +362,7 @@ iPhone で実行すると、下記のようになります。
     {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
+
 ### Swift
 
     CYLookUpTransaction(transactionIdentifier, { (transaction, error) -> Void in
@@ -383,13 +384,13 @@ iPhone で実行すると、下記のようになります。
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
-## レシート印刷
+## Printing
 
-_注: 当機能は提供終了予定のため、使用を推奨しておりません。レシート印刷は POS アプリ側で実装いただきますようお願い致します。_
+_Note: printing is deprecated and will be removed from CoineyKit in the future. Each embedding application should implement its own receipt printing functionality as necessary._
 
-レシートを印刷するには、決済完了画面・取引詳細画面のプリントボタンを押すか、CoineyKit のプリント API を使用します。
+Receipts can be printed either by pressing the Print button in the Transaction Complete view, or by calling CoineyKit's printer API.
 
-CoineyKit でレシート印刷を可能にするには、最初に `+[CYPrinter setPrintingEnabled:YES]` を呼んでください。
+Printing is turned off by default.  Enable it by calling `+[CYPrinter setPrintingEnabled:]`:
 
 #### AppDelegate.m
 
@@ -398,9 +399,9 @@ CoineyKit でレシート印刷を可能にするには、最初に `+[CYPrinter
         [CYPrinter setPrintingEnabled:YES];
     }
 
-印字内容は [ReceiptML](/Documentation/ReceiptML) というフォーマットで記述します。
+The receipt's contents and format are specified using ReceiptML, whose specification can be found [here](/Documentation/ReceiptML).
 
-下記のサンプルコードでは、決済完了後にレシートを印刷します。
+The following sample code prints a receipt automatically whenever a transaction finishes.
 
 #### ViewController.m
     
@@ -452,20 +453,20 @@ CoineyKit でレシート印刷を可能にするには、最初に `+[CYPrinter
         }
     }
 
-対応プリンタ:
+Supported printer models are:
 
-スター精密
+Star Micronics
 
 * SM-S210i
 * TSP650II
 
-エプソン
+Epson
 
 * TM-P60II
 * TM-T20II
-* TM−m10
+* TM-m10
 
-App Review へ申請する際は、下記キーを Info.plist に追加し、プリンターメーカーに MFi 認証してもらう必要があります。詳しくは [MFi Program](https://developer.apple.com/programs/mfi/) をご覧ください。
+If you plan to include printer support, you must add the following entry to your Info.plist file, and obtain MFi certification from the printer manufacturer(s).  See the [MFi Program website](https://developer.apple.com/programs/mfi/) for further information.
 
 	<key>UISupportedExternalAccessoryProtocols</key>
 	<array>
@@ -473,12 +474,14 @@ App Review へ申請する際は、下記キーを Info.plist に追加し、プ
 		<string>com.epson.escpos</string>
 	</array>
 
-独自実装でレシート印刷する場合には、必ず `[CYPrinter setPrintingEnabled:NO]` としてください。
+If you plan to do any printing that _doesn't_ use CYPrinter, i.e. if you plan to implement printing in your own app, be sure to set `[CYPrinter setPrintingEnabled:NO]`.  This is because Bluetooth accessories cannot be shared between CoineyKit and your app.  
 
-## App Review への申請
+To print a receipt for a Coiney transaction, obtain the transaction information from the relevant `CYTransaction` object, and print using your printing implementation.
 
-Apple のアプリ審査を受けるにあたり、Coiney ターミナルの MFi 認証が必要になります。[こちら](../../wiki/PPID-の申請) のページをご覧ください。
+## Submitting Your App for Review
 
-## お問い合わせ
+When submitting your app for review through iTunes Connect, you will need an MFi PPID (Made for iPhone Product Plan ID) for interoperation with the Miura M010.  Please use the form [here](../../wiki/PPID-の申請) to request your PPID.
 
-ご質問・ご要望等は、<coineykit-support@coiney.com> までお問い合わせください。
+## And that's it!
+
+If you have any further questions feel free to email <coineykit-support@coiney.com>.
