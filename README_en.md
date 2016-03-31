@@ -10,6 +10,8 @@ Thanks for showing interest in CoineyKit. We work hard to make it as easy to int
 
 If you follow along this tutorial, you will learn how to create a basic application, that allows the user to accept Credit Card payments using the Coiney Credit Card Reader.
 
+You can find a complete sample app at `Example/Coiney Test.xcodeproj`.
+
 ## What you need
 
  * CoineyKit
@@ -228,6 +230,13 @@ To know the status of the transaction you simply make yourself the delegate of y
 ## Show the details of a transaction
 
 You can use a transaction ID to bring up its detail view.  The view can contain a refund button if refunding should be allowed.
+
+The refund button will be hidden in the following cases:
+
+* `allowRefunding:NO` was passed
+* You are logged in with a staff account (only owners and managers can refund)
+* The transaction is more than 60 days old
+* The transaction is already refunded
 
 ### Objective-C
 

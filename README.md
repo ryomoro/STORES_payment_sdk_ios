@@ -10,6 +10,8 @@ CoineyKit をご利用いただき、ありがとうございます。ご要望�
 
 このチュートリアルでは、CoineyKitを使って、カード決済ができるサンプルアプリを作成します。
 
+(完成したものが、`Example/Coiney Test.xcodeproj` にあります)
+
 ## 必要なもの
 
  * CoineyKit (このレポジトリを `git clone`、または .zip 形式でダウンロードしてください)
@@ -40,8 +42,8 @@ Git をお使いでしたら、更新しやすいように、submodule として
 
 ターゲットの General 設定を開き、`CoineyKit.framework` および下記ライブラリをリンクするようにします。
 
- * libxml2.dylib
- * libsqlite3.dylib
+ * libxml2.tbd
+ * libsqlite3.tbd
 
 ![Libraries and Frameworks](.readme_images/frameworks-libs.png)
 
@@ -49,7 +51,7 @@ Git をお使いでしたら、更新しやすいように、submodule として
 
 #### Info.plist への追加
 
-Bluetooth で Coiney ターミナルに接続し、IC や磁気カード決済をするために、`UISupportedExternalAccessoryProtocols` をに追加する必要があります。
+Bluetooth で Coiney ターミナルに接続し、IC や磁気カード決済をするために、`UISupportedExternalAccessoryProtocols` を追加する必要があります。
 
 ```
 <key>UISupportedExternalAccessoryProtocols</key>
@@ -58,7 +60,7 @@ Bluetooth で Coiney ターミナルに接続し、IC や磁気カード決済�
 </array>
 ```
 
-iOS 9 の App Transport Security 対応するために、`NSAppTransportSecurity` を追加してください。
+iOS 9 の App Transport Security に対応するために、`NSAppTransportSecurity` を追加してください。
 
 ```
 <key>NSAppTransportSecurity</key>
@@ -228,9 +230,16 @@ iPhone で実行すると、下記のようになります。
         }
     }
     
-## 取引詳細を表示する
+## 取引詳細の表示・売上取消
 
 取引 ID をもとに、取引の詳細画面を表示できます。詳細画面上の売上取消・返品ボタンより、売上取消・返品をおこなえます。売上取消・返品ボタンは、パラメータにより、非表示にすることもできます。
+
+下記の場合は売上取消・返品ボタンが表示されませんので、ご注意ください。
+
+* `allowRefunding:NO` を渡した
+* スタッフアカウントでログインしている（オーナー、マネージャーのみ売上取消できます）
+* 取引日から61日以上経過している
+* 既に売上取消済み
 
 ### Objective-C
 
