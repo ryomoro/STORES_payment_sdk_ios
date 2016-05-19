@@ -24,7 +24,7 @@
 /// A representation of the identifier for displaying to users.
 /// (Not guaranteed to be unique)
 /// \~japanese
-/// ユーザーに表示するためにフォーマットされた決済ID
+/// `identifier` をユーザーに表示するためにフォーマットした値
 /// (一意であるとは限りません)
 @property(nonatomic, readonly) NSString *humanReadableIdentifier;
 /// \~english
