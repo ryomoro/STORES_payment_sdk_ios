@@ -8,16 +8,11 @@
 
 - (IBAction)makePayment:(id)aSender
 {
-    // Create a line item to pre-populate the Coiney controller with.
-    NSString *name = _productNameField.text;
-    NSInteger price = [_productPriceField.text integerValue];
-
-    CYItem *lineItem = [CYItem itemWithTotal:price
-                                    currency:CYCurrencyJPY
-                                        memo:name];
+    NSString *memo = _productNameField.text;
+    NSInteger amount = [_productPriceField.text integerValue];
 
     // Create an instance of the Coiney payment controller.
-    CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[lineItem]];
+    CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithAmount:amount memo:memo];
     coineyController.delegate = self;
     
     // Present it on top of the current controller.

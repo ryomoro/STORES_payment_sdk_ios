@@ -8,7 +8,7 @@ Thanks for showing interest in CoineyKit. We work hard to make it as easy to int
 
 ## What we are going to create
 
-If you follow along this tutorial, you will learn how to create a basic application, that allows the user to accept Credit Card payments using the Coiney Credit Card Reader.
+If you follow along this tutorial, you will learn how to create a basic application, that allows the user to accept Credit Card payments using the Coiney Terminal.
 
 You can find a complete sample app at `Example/Coiney Test.xcodeproj`.
 
@@ -16,7 +16,7 @@ You can find a complete sample app at `Example/Coiney Test.xcodeproj`.
 
  * CoineyKit
  * Xcode 7 or above (Installed in `/Applications`)
- 
+ * Coiney Terminal; to purchase one, please contact us at <coineykit-support@coiney.com>.
 
 ## Setting up your project
 
@@ -102,16 +102,11 @@ Open up `ViewController.h` and make it look like:
 
     - (IBAction)makePayment:(id)aSender
     {
-        // Create a line item to pre-populate the Coiney controller with.
         NSString *memo = _productMemoField.text;
         int price = [_productPriceField.text intValue];
     
-        CYItem *item = [CYItem itemWithTotal:price
-                                    currency:CYCurrencyJPY
-                                        memo:memo];
-    
         // Create an instance of the Coiney payment controller.
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
+        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithAmount:price memo:memo];
     
         // Present it on top of the current controller.
         [self presentViewController:coineyController animated:YES completion:nil];
@@ -132,8 +127,7 @@ Open up `ViewController.h` and make it look like:
         @IBAction func makePayment(sender: AnyObject) {
             let amount: UInt? = amountField == nil ? nil : UInt(amountField!.text!)
             if (amount != nil) {
-                let item: CYItem = CYItem(total: amount!, currency: .JPY, memo: memoField?.text)
-                let coineyController: CYCoineyViewController = CYCoineyViewController(lineItems: [item])
+                let coineyController: CYCoineyViewController = CYCoineyViewController(amount, memo: memo)
                 self.presentViewController(coineyController, animated: true, completion: nil)
             }
         }
@@ -147,7 +141,7 @@ If we run the application it should appear like below:
 
 ![App screenshot](.readme_images/simshot1.png)
 
-Connect a terminal or magstripe reader to make a transaction. Tap [Connect to Terminal] for instructions on connecting to a Coiney Terminal via Bluetooth.
+Connect a terminal to make a transaction. Click the terminal information button on the right side of the navigation bar, and tap the  [Connect to Terminal] button.
 
 ## Get notified of the transaction status
 
@@ -235,7 +229,6 @@ The refund button will be hidden in the following cases:
 
 * `allowRefunding:NO` was passed
 * You are logged in with a staff account (only owners and managers can refund)
-* The transaction is more than 60 days old
 * The transaction is already refunded
 
 ### Objective-C
@@ -393,99 +386,17 @@ You can use a transaction's unique identifier to query the corresponding CYTrans
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
-## Printing
+## Receipt Printing
 
-_Note: printing is deprecated and will be removed from CoineyKit in the future. Each embedding application should implement its own receipt printing functionality as necessary._
+By enabling printing in CoineyKit, paper receipts can be printed at the receipt and transaction detail views.  Printing is disabled by default.  Follow these steps to use CoineyKit's receipt printing feature:
 
-Receipts can be printed either by pressing the Print button in the Transaction Complete view, or by calling CoineyKit's printer API.
+1. Call `CYEnablePrinting(YES)`, typically at app launch, in `-[UIApplicationDelegate application:didFinishLaunchingWithOptions:]`.
+2. Pair your iPhone or iPad with a supported printer through the Bluetooth system settings.  See coiney.com for a list of supported printers.
+3. Make a transaction to get to the receipt view.  You will see a [Print Receipt] button.
 
-Printing is turned off by default.  Enable it by calling `+[CYPrinter setPrintingEnabled:]`:
+Note: CoineyKit does not currently support the Star Micronics SM-L200.
 
-#### AppDelegate.m
-
-    - (void)applicationDidFinishLaunching:(UIApplication *)aApplication
-    {
-        [CYPrinter setPrintingEnabled:YES];
-    }
-
-The receipt's contents and format are specified using ReceiptML, whose specification can be found [here](/Documentation/ReceiptML).
-
-The following sample code prints a receipt automatically whenever a transaction finishes.
-
-#### ViewController.m
-    
-    #import "ViewController.h"
-    @import CoineyKit;
-    
-    @implementation ViewController
-    
-    - (IBAction)makePayment:(id)aSender
-    {
-        CYCoineyViewController * const coineyController = [CYCoineyViewController new];
-        [self presentViewController:coineyController animated:YES completion:nil];
-    }
-    
-    - (void)coineyViewController:(CYCoineyViewController *)aController
-          didCompleteTransaction:(id<CYTransaction>)aTransaction
-    {
-        NSLog(@"Completed transaction: %@", aTransaction);
-    
-        NSMutableString * const ml = [NSMutableString stringWithString:
-                                      @"<receipt>\n"
-                                      @"<title font-name=\"HiraKakuProN-W6\">Coiney Store</title>\n"
-                                      @"<subtitle>123-456-7890</subtitle>\n"];
-        [ml appendString:[NSString stringWithFormat:
-                         @"<subtitle>%@</subtitle>\n", [NSDate date]]];
-        [ml appendString:@"<ruler/>\n"
-                         @"<line-item>\n"
-                         @"\t<name>Item A</name>\n"];
-        [ml appendString:[NSString stringWithFormat:
-                         @"\t<price>%d</price>\n", [aTransaction.amount intValue]]];
-        [ml appendString:@"</line-item>\n"
-                         @"<total/>\n"
-                         @"<ruler/>\n"];
-        [ml appendString:[NSString stringWithFormat:
-                         @"<subtitle font-size=\"17\">%@ %@</subtitle>\n",
-                         NSStringFromCYCardbrand(aTransaction.cardBrand),
-                         aTransaction.cardSuffix]];
-        [ml appendString:@"</receipt>\n"];
-    
-        if([[CYPrinter connectedPrinters] count] == 0)
-            NSLog(@"No connected printers");
-        else {
-            // Print
-            for (CYPrinter * printer in [CYPrinter connectedPrinters]) {
-                [printer batchPrint:^{
-                    [printer printReceiptML:ml];
-                } cutWhenDone:YES];
-            }
-        }
-    }
-
-Supported printer models are:
-
-Star Micronics
-
-* SM-S210i
-* TSP650II
-
-Epson
-
-* TM-P60II
-* TM-T20II
-* TM-m10
-
-If you plan to include printer support, you must add the following entry to your Info.plist file, and obtain MFi certification from the printer manufacturer(s).  See the [MFi Program website](https://developer.apple.com/programs/mfi/) for further information.
-
-	<key>UISupportedExternalAccessoryProtocols</key>
-	<array>
-		<string>jp.star-m.starpro</string>
-		<string>com.epson.escpos</string>
-	</array>
-
-If you plan to do any printing that _doesn't_ use CYPrinter, i.e. if you plan to implement printing in your own app, be sure to set `[CYPrinter setPrintingEnabled:NO]`.  This is because Bluetooth accessories cannot be shared between CoineyKit and your app.  
-
-To print a receipt for a Coiney transaction, obtain the transaction information from the relevant `CYTransaction` object, and print using your printing implementation.
+Note: If you plan to implement receipt printing in your own app, do not call `CYEnablePrinting(YES)`, since the printer's `EASession` cannot be shared.
 
 ## Submitting Your App for Review
 

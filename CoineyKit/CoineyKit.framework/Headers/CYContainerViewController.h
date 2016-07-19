@@ -14,6 +14,3 @@
 
 @interface CYContainmentSegue : UIStoryboardSegue
 @end
-
-@interface CYCachedContainmentSegue : CYContainmentSegue
-@end

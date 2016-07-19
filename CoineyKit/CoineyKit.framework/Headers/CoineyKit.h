@@ -25,9 +25,7 @@
 #import <CoineyKit/CYCoineyViewController.h>
 #import <CoineyKit/CYContainerViewController.h>
 #import <CoineyKit/CYAuthenticationViewController.h>
+#import <CoineyKit/CYPrinting.h>
 #import <CoineyKit/CYTransactionViewController.h>
 #import <CoineyKit/CYTransaction.h>
 #import <CoineyKit/CYAPIError.h>
-#import <CoineyKit/CYItem.h>
-#import <CoineyKit/CYPrinter.h>
-#import <CoineyKit/CYPrinter+CYReceiptPrinting.h>

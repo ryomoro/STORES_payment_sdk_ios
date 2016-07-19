@@ -16,6 +16,7 @@ CoineyKit をご利用いただき、ありがとうございます。ご要望�
 
  * CoineyKit (このレポジトリを `git clone`、または .zip 形式でダウンロードしてください)
  * Xcode 7 以上
+ * Coineyターミナル (購入については、 <coineykit-support@coiney.com> までお問い合わせください)
  
 
 ## プロジェクトのセットアップ
@@ -51,7 +52,7 @@ Git をお使いでしたら、更新しやすいように、submodule として
 
 #### Info.plist への追加
 
-Bluetooth で Coiney ターミナルに接続し、IC や磁気カード決済をするために、`UISupportedExternalAccessoryProtocols` を追加する必要があります。
+BluetoothでCoineyターミナルに接続し、ICや磁気カード決済をするために、`UISupportedExternalAccessoryProtocols` をInfo.plistへ追加する必要があります。
 
 ```
 <key>UISupportedExternalAccessoryProtocols</key>
@@ -135,8 +136,7 @@ iOS 9 の App Transport Security に対応するために、`NSAppTransportSecur
         @IBAction func makePayment(sender: AnyObject) {
             let amount: UInt? = amountField == nil ? nil : UInt(amountField!.text!)
             if (amount != nil) {
-                let item: CYItem = CYItem(total: amount!, currency: .JPY, memo: memoField?.text)
-                let coineyController: CYCoineyViewController = CYCoineyViewController(lineItems: [item])
+                let coineyController: CYCoineyViewController = CYCoineyViewController(amount, memo: memo)
                 self.presentViewController(coineyController, animated: true, completion: nil)
             }
         }
@@ -150,7 +150,7 @@ iPhone で実行すると、下記のようになります。
 
 ![App screenshot](.readme_images/simshot1.png)
 
-あとはターミナルかリーダーを繋げば決済できます。ターミナルへ接続するには、「ターミナルに接続する」をタップし、説明に従ってください。
+あとはターミナルを繋げば決済できます。ターミナルへ接続するには、ナビゲーションバー右側のターミナル情報ボタンをタップし、[ターミナルに接続する] をタップしてください。
 
 ## 結果の通知を受け取る
 
@@ -170,16 +170,11 @@ iPhone で実行すると、下記のようになります。
     
     - (IBAction)makePayment:(id)aSender
     {
-        // Create a line item to pre-populate the Coiney controller with.
         NSString *memo = _productMemoField.text;
         NSInteger price = [_productPriceField.text integerValue];
         
-        CYItem *item = [CYItem itemWithTotal:price
-                                    currency:CYCurrencyJPY
-                                        memo:memo];
-        
         // Create an instance of the Coiney payment controller.
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
+        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithAmount:price memo:memo];
         coineyController.delegate = self;
         // Present it on top of the current controller.
         [self presentViewController:coineyController animated:YES completion:nil];
@@ -232,14 +227,12 @@ iPhone で実行すると、下記のようになります。
     
 ## 取引詳細の表示・売上取消
 
-取引 ID をもとに、取引の詳細画面を表示できます。詳細画面上の売上取消・返品ボタンより、売上取消・返品をおこなえます。売上取消・返品ボタンは、パラメータにより、非表示にすることもできます。
+取引 ID をもとに、取引の詳細画面を表示できます。画面上のボタンで、売上取消・返品処理をおこなえます。ボタンは、パラメーターで非表示にすることもできます。
 
-下記の場合は売上取消・返品ボタンが表示されませんので、ご注意ください。
+下記の場合は、パラメーターにかかわらず、売上取消・返品ボタンが表示されません。ご注意ください。
 
-* `allowRefunding:NO` を渡した
-* スタッフアカウントでログインしている（オーナー、マネージャーのみ売上取消できます）
-* 取引日から61日以上経過している
-* 既に売上取消済み
+* スタッフアカウントでログインしている（オーナー、マネージャーのみ取消できます）
+* 既に売上取消・返品済み
 
 ### Objective-C
 
@@ -394,95 +387,16 @@ iPhone で実行すると、下記のようになります。
 
 ## レシート印刷
 
-_注: 当機能は提供終了予定のため、使用を推奨しておりません。レシート印刷は POS アプリ側で実装いただきますようお願い致します。_
+印刷機能をオンにすると、決済完了画面および取引詳細画面に [レシートを印刷] ボタンが表示され、レシートを印刷できます。デフォルトはオフです。
 
-レシートを印刷するには、決済完了画面・取引詳細画面のプリントボタンを押すか、CoineyKit のプリント API を使用します。
+レシートを印刷するには:
 
-CoineyKit でレシート印刷を可能にするには、最初に `+[CYPrinter setPrintingEnabled:YES]` を呼んでください。
+1. アプリ起動時に `CYEnablePrinting(YES)` を呼びます。
+2. iPadまたはiPhoneのBluetooth設定から、対応プリンターとペアリングします。対応機種はcoiney.comをご参照ください。
 
-#### AppDelegate.m
+注1: BLE接続のスター精密SM-L200につきましては、現在CoineyKitでは非対応です。
 
-    - (void)applicationDidFinishLaunching:(UIApplication *)aApplication
-    {
-        [CYPrinter setPrintingEnabled:YES];
-    }
-
-印字内容は [ReceiptML](/Documentation/ReceiptML) というフォーマットで記述します。
-
-下記のサンプルコードでは、決済完了後にレシートを印刷します。
-
-#### ViewController.m
-    
-    #import "ViewController.h"
-    @import CoineyKit;
-    
-    @implementation ViewController
-    
-    - (IBAction)makePayment:(id)aSender
-    {
-        CYCoineyViewController * const coineyController = [CYCoineyViewController new];
-        [self presentViewController:coineyController animated:YES completion:nil];
-    }
-    
-    - (void)coineyViewController:(CYCoineyViewController *)aController
-          didCompleteTransaction:(id<CYTransaction>)aTransaction
-    {
-        NSLog(@"Completed transaction: %@", aTransaction);
-    
-        NSMutableString * const ml = [NSMutableString stringWithString:
-                                      @"<receipt>\n"
-                                      @"<title font-name=\"HiraKakuProN-W6\">Coiney Store</title>\n"
-                                      @"<subtitle>123-456-7890</subtitle>\n"];
-        [ml appendString:[NSString stringWithFormat:
-                         @"<subtitle>%@</subtitle>\n", [NSDate date]]];
-        [ml appendString:@"<ruler/>\n"
-                         @"<line-item>\n"
-                         @"\t<name>Item A</name>\n"];
-        [ml appendString:[NSString stringWithFormat:
-                         @"\t<price>%d</price>\n", [aTransaction.amount intValue]]];
-        [ml appendString:@"</line-item>\n"
-                         @"<total/>\n"
-                         @"<ruler/>\n"];
-        [ml appendString:[NSString stringWithFormat:
-                         @"<subtitle font-size=\"17\">%@ %@</subtitle>\n",
-                         NSStringFromCYCardbrand(aTransaction.cardBrand),
-                         aTransaction.cardSuffix]];
-        [ml appendString:@"</receipt>\n"];
-    
-        if([[CYPrinter connectedPrinters] count] == 0)
-            NSLog(@"No connected printers");
-        else {
-            // Print
-            for (CYPrinter * printer in [CYPrinter connectedPrinters]) {
-                [printer batchPrint:^{
-                    [printer printReceiptML:ml];
-                } cutWhenDone:YES];
-            }
-        }
-    }
-
-対応プリンタ:
-
-スター精密
-
-* SM-S210i
-* TSP650II
-
-エプソン
-
-* TM-P60II
-* TM-T20II
-* TM−m10
-
-App Review へ申請する際は、下記キーを Info.plist に追加し、プリンターメーカーに MFi 認証してもらう必要があります。詳しくは [MFi Program](https://developer.apple.com/programs/mfi/) をご覧ください。
-
-	<key>UISupportedExternalAccessoryProtocols</key>
-	<array>
-		<string>jp.star-m.starpro</string>
-		<string>com.epson.escpos</string>
-	</array>
-
-独自実装でレシート印刷する場合には、必ず `[CYPrinter setPrintingEnabled:NO]` としてください。
+注2: 自社アプリでレシート印刷を実装する場合は、 `CYEnablePrinting(YES)` を呼ばないでください。 `EASession` をCoineyKitと共有できないためです。
 
 ## App Review への申請
 

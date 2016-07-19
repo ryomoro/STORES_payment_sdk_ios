@@ -2,9 +2,10 @@
 @import CoineyKit;
 
 @implementation CTAppDelegate
-
-- (void)applicationDidFinishLaunching:(UIApplication *)aApplication
+- (BOOL)          application:(UIApplication *)aApplication
+didFinishLaunchingWithOptions:(NSDictionary *)aOptions
 {
-    [CYPrinter setPrintingEnabled:YES];
+
+    return YES;
 }
 @end

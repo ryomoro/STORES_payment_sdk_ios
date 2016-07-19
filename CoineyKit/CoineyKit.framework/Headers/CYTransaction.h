@@ -38,14 +38,9 @@
 /// 返品の日時（未返品であればnil）
 @property(nonatomic, readonly) NSDate *refundDate;
 /// \~english
-/// The currency of the transaction amount
+/// The amount of the transaction in Japanese Yen
 /// \~japanese
-/// 決済の通貨
-@property(nonatomic, readonly) CYCurrency currency;
-/// \~english
-/// The amount of the transaction in its currency
-/// \~japanese
-/// 決済額
+/// 決済額 (日本円)
 @property(nonatomic, nonatomic, readonly) int64_t amount;
 /// \~english
 /// The brand of credit card used to make the transaction

@@ -77,7 +77,6 @@ CREATE TABLE "_shops_old_20141014" (
     "currentBalance" integer,
     "sandboxed" boolean,
     "manualCreditCardInputAllowed" boolean,
-    "signlessTransactionsEnabled" boolean,
     "autoDepositEnabled" boolean,
     "locationRequired" boolean,
     "receiptAddress" text,
@@ -85,56 +84,6 @@ CREATE TABLE "_shops_old_20141014" (
     "receiptEmail" text,
     "receiptURL" text,
     "receiptComment" text,
-    PRIMARY KEY("identifier")
-);
-
--- ----------------------------
---  Table structure for _transactions_old_20141008
--- ----------------------------
-DROP TABLE IF EXISTS "_transactions_old_20141008";
-CREATE TABLE "_transactions_old_20141008" (
-    "identifier" text NOT NULL,
-    "cardBrandName" text,
-    "approvalCode" text,
-    "cardSuffix" text,
-    "latitude" real,
-    "longitude" real,
-    "amount" integer DEFAULT 0,
-    "hasLocalChanges" boolean,
-    "refunded" boolean,
-    "chargeDate" date,
-    "refundDate" date,
-    "lastModificationDate" date,
-    "createdOnThisDevice" boolean DEFAULT 0,
-    "userFullName" text,
-    "userEmail" text,
-    "userIdentifier" text,
-    "existsOnRemote" boolean,
-    PRIMARY KEY("identifier")
-);
-
--- ----------------------------
---  Table structure for _transactions_old_20141008_1
--- ----------------------------
-DROP TABLE IF EXISTS "_transactions_old_20141008_1";
-CREATE TABLE "_transactions_old_20141008_1" (
-    "identifier" TEXT NOT NULL,
-    "cardBrandName" text,
-    "approvalCode" text,
-    "cardSuffix" text,
-    "latitude" real,
-    "longitude" real,
-    "amount" integer DEFAULT 0,
-    "hasLocalChanges" boolean,
-    "refunded" boolean,
-    "chargeDate" date,
-    "refundDate" date,
-    "lastModificationDate" date,
-    "createdOnThisDevice" boolean DEFAULT 0,
-    "userFullName" text,
-    "userEmail" text,
-    "userIdentifier" text,
-    "existsOnRemote" boolean,
     PRIMARY KEY("identifier")
 );
 
@@ -240,9 +189,11 @@ CREATE TABLE "shops" (
     "hasIndirectJCBContract" boolean,
     "paymentByInstallmentsAllowed" boolean,
     "manualCreditCardInputAllowed" boolean,
-    "signlessTransactionsAllowed" boolean,
-    "signlessTransactionsEnabled" boolean,
+    "staffManagementAllowed" boolean,
+    "autoDepositAllowed" boolean,
     "autoDepositEnabled" boolean,
+    "magstripeFallbackAllowed" boolean,
+    "balanceManagedByThirdParty" boolean,
     "minimumDepositAmount" integer,
     "locationRequired" boolean,
     "acceptedCardBrands" integer,
@@ -252,7 +203,6 @@ CREATE TABLE "shops" (
     "receiptEmail" text,
     "receiptURL" text,
     "receiptComment" text,
-    "signlessTransactionCeiling" integer,
     "companyName" text,
     "companyZipCode" text,
     "companyCity" text,
@@ -271,6 +221,14 @@ CREATE TABLE "shops" (
     "bankAccountType" text,
     "bankAccountNumber" text,
     "nameOnBankAccount" text,
+    "supportEmail" text,
+    "supportPhoneNumber" text,
+    "supportPhonesOpenAt" text,
+    "supportPhonesCloseAt" text,
+    "helpCenterURL" text,
+    "termsOfUseURL" text,
+    "prohibitedMerchandiseURL" text,
+    "privacyPolicyURL" text,
     PRIMARY KEY("identifier")
 );
 
@@ -294,7 +252,7 @@ CREATE TABLE "transactions" (
     "chargeDate" date,
     "refundDate" date,
     "updatedAt" date,
-    "createdOnThisDevice" boolean DEFAULT 0,
+    "contiguous" boolean DEFAULT 0,
     "userFullName" text,
     "userEmail" text,
     "userIdentifier" text,
@@ -314,17 +272,6 @@ CREATE TABLE "users" (
     "roleString" text,
     "suspended" boolean,
     "hasLocalChanges" boolean,
-    PRIMARY KEY("identifier")
-);
-
--- ----------------------------
---  Table structure for contracts
--- ----------------------------
-DROP TABLE IF EXISTS "contracts";
-CREATE TABLE "contracts" (
-    "identifier" text NOT NULL,
-    "authority" integer,
-    "establishedBy" text,
     PRIMARY KEY("identifier")
 );
 
