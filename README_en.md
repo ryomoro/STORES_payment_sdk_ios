@@ -125,9 +125,9 @@ Open up `ViewController.h` and make it look like:
         @IBOutlet var amountField: UITextField?
         
         @IBAction func makePayment(sender: AnyObject) {
-            let amount: UInt? = amountField == nil ? nil : UInt(amountField!.text!)
+            let amount: Int64? = amountField == nil ? nil : Int64(amountField!.text!)
             if (amount != nil) {
-                let coineyController: CYCoineyViewController = CYCoineyViewController(amount, memo: memo)
+                let coineyController: CYCoineyViewController = CYCoineyViewController(amount: amount, memo: memo)
                 self.presentViewController(coineyController, animated: true, completion: nil)
             }
         }
