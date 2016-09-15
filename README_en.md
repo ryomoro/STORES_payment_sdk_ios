@@ -18,6 +18,8 @@ You can find a complete sample app at `Example/Coiney Test.xcodeproj`.
  * Xcode 7 or above (Installed in `/Applications`)
  * Coiney Terminal; to purchase one, please contact us at <coineykit-support@coiney.com>.
 
+ This repository uses git-lfs. Please install it using homebrew or download it from here: https://git-lfs.github.com.
+
 ## Setting up your project
 
 Begin by launching Xcode and creating a new project: `File → New → Project`. In the dialog that appears, Choose the `Single View Application` template. And enter project options as per the screenshot below.
@@ -54,28 +56,6 @@ For your app to connect to a Coiney Terminal for IC and magstripe transactions, 
   <string>com.coiney.Coiney</string>
 </array>
 ```
-
-#### NSAppTransportSecurity
-
-As a final step, add the following to your project's `Info.plist` file.
-
-```
-<key>NSAppTransportSecurity</key>
-<dict>
-  <key>NSExceptionDomains</key>
-  <dict>
-    <key>coiney.com</key>
-    <dict>
-      <key>NSExceptionAllowsInsecureHTTPLoads</key>
-      <true/>
-      <key>NSIncludesSubdomains</key>
-      <true/>
-    </dict>
-  </dict>
-</dict>
-```
-
-We will be moving to https in the future, so this will eventually become unnecessary.  Note that we only use http for static pages like the user agreement.  Transaction-related traffic is always encrypted.
 
 ## Making our first payment
 

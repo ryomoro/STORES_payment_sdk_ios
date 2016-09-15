@@ -18,6 +18,7 @@ CoineyKit をご利用いただき、ありがとうございます。ご要望�
  * Xcode 7 以上
  * Coineyターミナル (購入については、 <coineykit-support@coiney.com> までお問い合わせください)
  
+ このレポジトリでは `git-lfs` を使用するため、`clone` する際にはあらかじめインストールしてください。homebrew、または [こちら](https://git-lfs.github.com) からインストールできます。
 
 ## プロジェクトのセットアップ
 
@@ -60,26 +61,6 @@ BluetoothでCoineyターミナルに接続し、ICや磁気カード決済をす
   <string>com.coiney.Coiney</string>
 </array>
 ```
-
-iOS 9 の App Transport Security に対応するために、`NSAppTransportSecurity` を追加してください。
-
-```
-<key>NSAppTransportSecurity</key>
-<dict>
-  <key>NSExceptionDomains</key>
-  <dict>
-    <key>coiney.com</key>
-    <dict>
-      <key>NSExceptionAllowsInsecureHTTPLoads</key>
-      <true/>
-      <key>NSIncludesSubdomains</key>
-      <true/>
-    </dict>
-  </dict>
-</dict>
-```
-
-今後すべてのリンクを https にしていくため、将来的に不要になる予定です。http で取得しているのは、利用規約などの静的ページのみです。決済に携わる通信には https を使っておりますので、安心してご利用いただけます。
 
 ## 決済をする
 
