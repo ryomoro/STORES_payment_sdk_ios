@@ -14,7 +14,7 @@ CoineyKit をご利用いただき、ありがとうございます。ご要望�
 
 ## 必要なもの
 
- * CoineyKit (このレポジトリを `git clone`、または .zip 形式でダウンロードしてください)
+ * CoineyKit (このレポジトリを `git clone` してください)
  * Xcode 7 以上
  * Coineyターミナル (購入については、 <coineykit-support@coiney.com> までお問い合わせください)
  
