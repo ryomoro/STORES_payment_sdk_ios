@@ -184,6 +184,8 @@ CREATE TABLE "shops" (
     "industry" text,
     "placeOfUse" text,
     "url" text,
+    "minimumTransactionAmount" integer,
+    "maximumTransactionAmount" integer,
     "corporate" boolean,
     "sandboxed" boolean,
     "hasIndirectJCBContract" boolean,
@@ -196,6 +198,7 @@ CREATE TABLE "shops" (
     "balanceManagedByThirdParty" boolean,
     "minimumDepositAmount" integer,
     "locationRequired" boolean,
+    "acceptedPaymentMethods" integer,
     "acceptedCardBrands" integer,
     "receiptShopName" text,
     "receiptAddress" text,
@@ -225,10 +228,13 @@ CREATE TABLE "shops" (
     "supportPhoneNumber" text,
     "supportPhonesOpenAt" text,
     "supportPhonesCloseAt" text,
+    "homePageURL" text,
+    "accountManagementURL" text,
     "helpCenterURL" text,
     "termsOfUseURL" text,
     "prohibitedMerchandiseURL" text,
     "privacyPolicyURL" text,
+    "recurringPaymentsAllowed" boolean,
     PRIMARY KEY("identifier")
 );
 
@@ -238,6 +244,7 @@ CREATE TABLE "shops" (
 DROP TABLE IF EXISTS "transactions";
 CREATE TABLE "transactions" (
     "identifier" text NOT NULL,
+    "paymentMethodName" text,
     "cardBrandName" text,
     "approvalCode" text,
     "applicationIdentifier" text,
@@ -253,9 +260,12 @@ CREATE TABLE "transactions" (
     "refundDate" date,
     "updatedAt" date,
     "contiguous" boolean DEFAULT 0,
-    "userFullName" text,
-    "userEmail" text,
-    "userIdentifier" text,
+    "chargeUserFullName" text,
+    "chargeUserEmail" text,
+    "chargeUserIdentifier" text,
+    "refundUserFullName" text,
+    "refundUserEmail" text,
+    "refundUserIdentifier" text,
     "existsOnRemote" boolean,
     PRIMARY KEY("identifier")
 );

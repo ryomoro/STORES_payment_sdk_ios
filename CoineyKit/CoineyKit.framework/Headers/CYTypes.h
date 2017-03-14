@@ -5,6 +5,25 @@
 #import <Foundation/Foundation.h>
 
 /// \~english
+/// Represents a payment method.
+/// \~japanese
+/// 支払い方法を表します。
+typedef NS_ENUM(NSInteger, CYPaymentMethod) {
+    CYPaymentMethodUnknown,
+    CYPaymentMethodCreditCard,
+    CYPaymentMethodWechatPay
+};
+
+/// \~english
+/// Represents a set of payment methods.
+/// \~japanese
+/// 支払い方法の集合を表します。
+typedef NS_OPTIONS(NSInteger, CYPaymentMethodMask) {
+    CYPaymentMethodMaskCreditCard = 1 << CYPaymentMethodCreditCard,
+    CYPaymentMethodMaskWechatPay  = 1 << CYPaymentMethodWechatPay
+};
+
+/// \~english
 /// Represents a currency.
 /// (Currently only Japanese Yen are supported)
 /// \~japanese

@@ -43,10 +43,10 @@ typedef void (^CYAuthenticationStatusBlock)(BOOL aIsAuthenticated);
 /// Text for pre-populating the username field.
 /// \~japanese
 /// `CYAuthenticationViewController` 表示時に、メールアドレス欄に予め記入する文字列
-NSString *CYAuthenticationControllerDefaultEmail;
+extern NSString *CYAuthenticationControllerDefaultEmail;
 
 /// \~english
 /// Text for pre-populating the password field.
 /// \~japanese
 /// `CYAuthenticationViewController` 表示時に、パスワード欄に予め記入する文字列
-NSString *CYAuthenticationControllerDefaultPassword;
+extern NSString *CYAuthenticationControllerDefaultPassword;

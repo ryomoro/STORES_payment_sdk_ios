@@ -14,11 +14,11 @@ CoineyKit をご利用いただき、ありがとうございます。ご要望�
 
 ## 必要なもの
 
- * CoineyKit (このレポジトリを `git clone` してください)
- * Xcode 7 以上
+あらかじめ [git-lfs](https://git-lfs.github.com) をインストールし、 `git lfs install` を実行してください。git-lfs がないと、リポジトリを正しくクローンできません。
+
+ * CoineyKit (このリポジトリを `git clone` してください)
+ * Xcode 8 以上
  * Coineyターミナル (購入については、 <coineykit-support@coiney.com> までお問い合わせください)
- 
- このレポジトリでは `git-lfs` を使用するため、`clone` する際にはあらかじめインストールしてください。homebrew、または [こちら](https://git-lfs.github.com) からインストールできます。
 
 ## プロジェクトのセットアップ
 
@@ -44,7 +44,7 @@ Git をお使いでしたら、更新しやすいように、submodule として
 
 ターゲットの General 設定を開き、`CoineyKit.framework` および下記ライブラリをリンクするようにします。
 
- * libxml2.tbd
+ * libstdc++.tbd
  * libsqlite3.tbd
 
 ![Libraries and Frameworks](.readme_images/frameworks-libs.png)

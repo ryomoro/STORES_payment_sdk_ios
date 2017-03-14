@@ -14,11 +14,11 @@ You can find a complete sample app at `Example/Coiney Test.xcodeproj`.
 
 ## What you need
 
+ This repository uses git-lfs. Please install it using homebrew or download it from here: https://git-lfs.github.com.
+
  * CoineyKit
  * Xcode 7 or above (Installed in `/Applications`)
  * Coiney Terminal; to purchase one, please contact us at <coineykit-support@coiney.com>.
-
- This repository uses git-lfs. Please install it using homebrew or download it from here: https://git-lfs.github.com.
 
 ## Setting up your project
 
@@ -39,7 +39,7 @@ Drag and drop `CoineyKit.xcconfig` and `CoineyKitResources.bundle` into the proj
 
 Go to your target's General settings, and add `CoineyKit.framework`, as well as the following:
 
- * libxml2.tbd
+ * libstdc++.tbd
  * libsqlite3.tbd
 
 ![Libraries and Frameworks](.readme_images/frameworks-libs.png)
