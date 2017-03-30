@@ -1,6 +1,6 @@
 # CoineyKit
 
-CoineyKit をご利用いただき、ありがとうございます。ご要望やバグ報告の際は、お手数ですが [GitHub issue](https://github.com/Coiney/CoineyKit-iOS/issues) を作成いただきますようお願い致します。
+CoineyKit をご利用いただき、ありがとうございます。ご要望やバグ報告の際は、お手数ですが [GitHub issue](https://github.com/Coiney-SDK/CoineyKit-iOS/issues) を作成いただきますようお願い致します。
 
 -------
 
@@ -30,7 +30,7 @@ Xcode を起動し、`File → New → Project` から、`Single View Applicatio
 
 ![Template options](.readme_images/template-options.png)
 
-本レポジトリを `git clone` またはダウンロードし、`CoineyKit` フォルダを、`«プロジェクトフォルダ»/CoineyKit` となるように、プロジェクトフォルダの中へコピーします。
+本リポジトリを `git clone` またはダウンロードし、`CoineyKit` フォルダを、`«プロジェクトフォルダ»/CoineyKit` となるように、プロジェクトフォルダの中へコピーします。
 
 ![Folder hierarchy](.readme_images/folder-hierarchy.png)
 
