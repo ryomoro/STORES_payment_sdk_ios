@@ -18,7 +18,7 @@ You can find a complete sample app at `Example/Coiney Test.xcodeproj`.
 
  * CoineyKit
  * Xcode 7 or above (Installed in `/Applications`)
- * Coiney Terminal; to purchase one, please contact us at <coineykit-support@coiney.com>.
+ * Coiney Terminal; to purchase one, please contact us at <coineykitsupport@coiney.com>.
 
 ## Setting up your project
 

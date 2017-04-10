@@ -18,7 +18,7 @@ CoineyKit をご利用いただき、ありがとうございます。ご要望�
 
  * CoineyKit (このリポジトリを `git clone` してください)
  * Xcode 8 以上
- * Coineyターミナル (購入については、 <coineykit-support@coiney.com> までお問い合わせください)
+ * Coineyターミナル (購入については、 <coineykitsupport@coiney.com> までお問い合わせください)
 
 ## プロジェクトのセットアップ
 
