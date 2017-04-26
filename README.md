@@ -87,21 +87,17 @@ BluetoothでCoineyターミナルに接続し、ICや磁気カード決済をす
 
     - (IBAction)makePayment:(id)aSender
     {
-        // CYCoineyController に渡す CYItem を作成
         NSString *memo = _productMemoField.text;
         int price = [_productPriceField.text intValue];
     
-        CYItem *item = [CYItem itemWithTotal:price
-                                    currency:CYCurrencyJPY
-                                        memo:memo];
-    
         // CYCoineyViewController のインスタンスを作成
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
+        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithAmount:price memo:memo];
     
         // ViewController の上に表示
         [self presentViewController:coineyController animated:YES completion:nil];
     }
     @end
+
     
 ### Swift
 
@@ -111,15 +107,22 @@ BluetoothでCoineyターミナルに接続し、ICや磁気カード決済をす
     import CoineyKit
     
     class ViewController: UIViewController {
-        @IBOutlet var memoField: UITextField?
-        @IBOutlet var amountField: UITextField?
+    
+        @IBOutlet weak var memoField: UITextField!
+        @IBOutlet weak var amountField: UITextField!
         
-        @IBAction func makePayment(sender: AnyObject) {
-            let amount: Int64? = amountField == nil ? nil : Int64(amountField!.text!)
-            if (amount != nil) {
-                let coineyController: CYCoineyViewController = CYCoineyViewController(amount: amount, memo: memo)
-                self.presentViewController(coineyController, animated: true, completion: nil)
+        @IBAction func makePayment(sender: AnyObject) 
+        {
+            let memo = productNameField.text ?? ""
+            let amount = Int64(productPriceField.text!) ?? 0
+            
+            // CYCoineyViewController のインスタンスを作成
+            guard let coineyController = CYCoineyViewController.init(amount: amount, memo: memo) else {
+                fatalError("Failed to initialize CYCoineyViewController.")
             }
+            
+            // ViewController の上に表示
+            self.present(coineyController, animated: true, completion: nil)
         }
     }
     
@@ -151,14 +154,15 @@ iPhone で実行すると、下記のようになります。
     
     - (IBAction)makePayment:(id)aSender
     {
-        NSString *memo = _productMemoField.text;
-        NSInteger price = [_productPriceField.text integerValue];
-        
-        // Create an instance of the Coiney payment controller.
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithAmount:price memo:memo];
-        coineyController.delegate = self;
-        // Present it on top of the current controller.
-        [self presentViewController:coineyController animated:YES completion:nil];
+	    NSString *memo = _productNameField.text;
+	    NSInteger amount = [_productPriceField.text integerValue];
+	
+	    // CYCoineyViewController のインスタンスを作成
+	    CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithAmount:amount memo:memo];
+	    coineyController.delegate = self;
+	    
+	    // ViewController の上に表示
+	    [self presentViewController:coineyController animated:YES completion:nil];
     }
     
     - (void)coineyViewController:(CYCoineyViewController *)aController
@@ -170,10 +174,10 @@ iPhone で実行すると、下記のようになります。
     - (void)coineyViewControllerDidCancel:(CYCoineyViewController *)aController
     {
         [aController dismissViewControllerAnimated:YES completion:nil];
-        NSLog(@"Cancelled");
+        NSLog(@"Cancelled payment.");
     }
     @end
-    
+
 ### Swift
 
 #### ViewController.swift
@@ -181,28 +185,36 @@ iPhone で実行すると、下記のようになります。
     import UIKit
     import CoineyKit
 
-    class ViewController: UIViewController, CYCoineyViewControllerDelegate {
-        @IBOutlet var memoField: UITextField?
-        @IBOutlet var amountField: UITextField?
+    class ViewController: UIViewController {
+    
+        @IBOutlet weak var memoField: UITextField!
+        @IBOutlet weak var amountField: UITextField!
     
         @IBAction func makePayment(sender: AnyObject) {
-            let amount: UInt? = amountField == nil ? nil : UInt(amountField!.text!)
-            if (amount != nil) {
-                let item: CYItem = CYItem(total: amount!, currency: .JPY, memo: memoField?.text)
-                let coineyController: CYCoineyViewController = CYCoineyViewController(lineItems: [item])
-                coineyController.delegate = self
-                self.presentViewController(coineyController, animated: true, completion: nil)
-            }
+	        let memo = productNameField.text ?? ""
+	        let amount = Int64(productPriceField.text!) ?? 0
+	        
+	        // CYCoineyViewController のインスタンスを作成
+	        guard let coineyController = CYCoineyViewController.init(amount: amount, memo: memo) else {
+	            fatalError("Failed to initialize CYCoineyViewController.")
+	        }
+	        coineyController.delegate = self
+	        
+	        // ViewController の上に表示
+	        self.present(coineyController, animated: true, completion: nil)
         }
+    }
     
-        func coineyViewController(aController: CYCoineyViewController!,
-             didCompleteTransaction aTransaction: CYTransaction!) {
+    extension ViewController : CYCoineyViewControllerDelegate {
+    
+        func coineyViewController(_ aController: CYCoineyViewController!,
+                                  didComplete aTransaction: CYTransaction!) {
             print("Completed transaction: \(aTransaction)")
         }
     
-        func coineyViewControllerDidCancel(aController: CYCoineyViewController!) {
-            self.dismissViewControllerAnimated(true, completion: nil)
-            print("Cancelled")
+        func coineyViewControllerDidCancel(_ aController: CYCoineyViewController!) {
+            self.dismiss(animated: true, completion: nil)
+            print("Cancelled payment.")
         }
     }
     
@@ -229,15 +241,15 @@ iPhone で実行すると、下記のようになります。
     
     - (IBAction)makePayment:(id)aSender
     {
-        NSString *memo = _productMemoField.text;
-        int price = [_productPriceField.text intValue];
-        
-        CYItem *item = [CYItem itemWithTotal:price
-                                        currency:CYCurrencyJPY
-                                            memo:memo];
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
-        coineyController.delegate = self;
-        [self presentViewController:coineyController animated:YES completion:nil];
+	    NSString *memo = _productNameField.text;
+	    NSInteger amount = [_productPriceField.text integerValue];
+	
+	    // CYCoineyViewController のインスタンスを作成
+	    CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithAmount:amount memo:memo];
+	    coineyController.delegate = self;
+	    
+	    // ViewController の上に表示
+	    [self presentViewController:coineyController animated:YES completion:nil];
     }
     
     - (void)coineyViewController:(CYCoineyViewController *)aController
@@ -249,9 +261,8 @@ iPhone で実行すると、下記のようになります。
             CYTransactionViewController *transactionViewController =
                 [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
                                                                        allowRefunding:YES];
-                                                              // 売上取消・返品ボタンを非表示にするには、NO を渡してください
             transactionViewController.navigationItem.rightBarButtonItem =
-	        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                               target:self
                                                               action:@selector(done:)];
             UINavigationController *navigationController =
@@ -260,15 +271,15 @@ iPhone で実行すると、下記のようになります。
             [self presentViewController:navigationController
                                animated:YES
                              completion:nil];
-	    }];
+	     }];
     }
     
     - (void)done:(id)aSender
     {
-        [self dismissViewControllerAnimated:YES completion:nil];
+    	[self dismissViewControllerAnimated:YES completion:nil];
     }
     @end
-    
+
 ### Swift
 
 #### ViewController.swift
@@ -276,35 +287,51 @@ iPhone で実行すると、下記のようになります。
     import UIKit
     import CoineyKit
 
-    class ViewController: UIViewController, CYCoineyViewControllerDelegate {
-        @IBOutlet var memoField: UITextField?
-        @IBOutlet var amountField: UITextField?
+    class ViewController: UIViewController {
+        
+        @IBOutlet weak var memoField: UITextField!
+        @IBOutlet weak var amountField: UITextField!
     
         @IBAction func makePayment(sender: AnyObject) {
-            let amount: UInt? = amountField == nil ? nil : UInt(amountField!.text!)
-            if (amount != nil) {
-                let item: CYItem = CYItem(total: amount!, currency: .JPY, memo: memoField?.text)
-                let coineyController: CYCoineyViewController = CYCoineyViewController(lineItems: [item])
-                coineyController.delegate = self
-                self.presentViewController(coineyController, animated: true, completion: nil)
-            }
+	        let memo = productNameField.text ?? ""
+	        let amount = Int64(productPriceField.text!) ?? 0
+	        
+	       // CYCoineyViewController のインスタンスを作成
+	        guard let coineyController = CYCoineyViewController.init(amount: amount, memo: memo) else {
+	            fatalError("Failed to initialize CYCoineyViewController.")
+	        }
+	        coineyController.delegate = self
+	        
+	        // ViewController の上に表示
+	        self.present(coineyController, animated: true, completion: nil)
         }
-    
-        func coineyViewController(aController: CYCoineyViewController!,
-            didCompleteTransaction aTransaction: CYTransaction!) {                                
-            self.dismissViewControllerAnimated(true) { () -> Void in
-                let transactionController = CYTransactionViewController(transaction: aTransaction,
-                    allowRefunding: true)
-                transactionController.navigationItem.rightBarButtonItem =
-                    UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "done")
-                let navigationController = UINavigationController(rootViewController: transactionController)
-                navigationController.modalPresentationStyle = .FormSheet
-                self.presentViewController(navigationController, animated: true, completion: nil)
-            }
-        }
-    
+        
         func done() {
-            self.dismissViewControllerAnimated(true, completion: nil)
+        	self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    extension ViewController : CYCoineyViewControllerDelegate {
+    
+        func coineyViewController(_ aController: CYCoineyViewController!,
+                                  didComplete aTransaction: CYTransaction!) {
+            print("Completed transaction: \(aTransaction)")
+            
+            self.dismiss(animated: true, completion: {
+	            guard let transactionViewController =
+	                CYTransactionViewController.init(transaction: aTransaction, allowRefunding: true) else {
+	                    fatalError("Failed to initialize CYTransactionViewController.")
+	            }
+	            
+	            transactionViewController.navigationItem.rightBarButtonItem =
+	                UIBarButtonItem.init(barButtonSystemItem: .done,
+	                                     target: self,
+	                                     action: #selector(self.done))
+	            
+	            let navigationController = UINavigationController.init(rootViewController: transactionViewController)
+	            navigationController.modalPresentationStyle = .formSheet
+	            self.present(navigationController, animated: true, completion: nil)
+	        })
         }
     }
 
@@ -334,8 +361,8 @@ iPhone で実行すると、下記のようになります。
             [navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
             [self presentViewController:navigationController animated:YES completion:nil];
         }
-    	else
-    		NSLog(@"Transaction not found: %@", err);
+        else
+            NSLog(@"Transaction not found: %@", err);
     });
     
     ...
@@ -344,26 +371,33 @@ iPhone で実行すると、下記のようになります。
     {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
+
 ### Swift
 
-    CYLookUpTransaction(transactionIdentifier, { (transaction, error) -> Void in
-        if error != nil {
+    CYLookUpTransaction(transactionIdentifier, { aTransaction, aError in
+        if let transaction = aTransaction {
+            guard let transactionViewController =
+                CYTransactionViewController.init(transaction: transaction, allowRefunding: true) else {
+                    fatalError("Failed to initialize CYTransactionViewController.")
+            }
+            
+            transactionViewController.navigationItem.rightBarButtonItem =
+                UIBarButtonItem.init(barButtonSystemItem: .done,
+                                     target: self,
+                                     action: #selector(self.done))
+            
+            let navigationController = UINavigationController.init(rootViewController: transactionViewController)
+            navigationController.modalPresentationStyle = .formSheet
+            self.present(navigationController, animated: true, completion: nil)
+        } else if let error = aError {
             print("Transaction not found: \(error)")
-        } else {
-            let transactionController = CYTransactionViewController(transaction: transaction, allowRefunding: true)
-            transactionController.navigationItem.rightBarButtonItem =
-                UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "done")
-            let navigationController = UINavigationController(rootViewController: transactionController)
-            navigationController.modalPresentationStyle = .FormSheet
-            self.presentViewController(navigationController, animated: true, completion: nil)
         }
     })
     
     ...
     
     func done() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
 ## レシート印刷
