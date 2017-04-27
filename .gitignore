@@ -1,3 +1,4 @@
-Example/Coiney Test.xcodeproj/xcuserdata
-Example/Coiney Test.xcodeproj/project.xcworkspace/xcuserdata
+*.xcworkspace
+*.xcuserdata
+xcuserdata
 .DS_Store

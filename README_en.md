@@ -8,13 +8,13 @@ Thanks for showing interest in CoineyKit. We work hard to make it as easy to int
 
 ## What we are going to create
 
-If you follow along this tutorial, you will learn how to create a basic application, that allows the user to accept Credit Card payments using the Coiney Terminal.
+If you follow along this tutorial you will learn how to create a basic application that allows the user to accept Credit Card payments using the Coiney Terminal.
 
 You can find a complete sample app at `Example/Coiney Test.xcodeproj`.
 
 ## What you need
 
- This repository uses git-lfs. Please install it using homebrew or download it from here: https://git-lfs.github.com.
+ This repository uses git-lfs. Please install it using homebrew or download it from here: <https://git-lfs.github.com>.
 
  * CoineyKit
  * Xcode 7 or above (Installed in `/Applications`)
@@ -43,8 +43,6 @@ Go to your target's General settings, and add `CoineyKit.framework`, as well as 
  * libsqlite3.tbd
 
 ![Libraries and Frameworks](.readme_images/frameworks-libs.png)
-
-Now you're almost ready to make use of CoineyKit, you just need to update your build settings to use CoineyKit.xcconfig, as shown in the above screenshot.
 
 #### External Accessory Protocol for Coiney Terminal
 
@@ -101,15 +99,22 @@ Open up `ViewController.h` and make it look like:
     import CoineyKit
     
     class ViewController: UIViewController {
-        @IBOutlet var memoField: UITextField?
-        @IBOutlet var amountField: UITextField?
+    
+        @IBOutlet weak var memoField: UITextField!
+        @IBOutlet weak var amountField: UITextField!
         
-        @IBAction func makePayment(sender: AnyObject) {
-            let amount: Int64? = amountField == nil ? nil : Int64(amountField!.text!)
-            if (amount != nil) {
-                let coineyController: CYCoineyViewController = CYCoineyViewController(amount: amount, memo: memo)
-                self.presentViewController(coineyController, animated: true, completion: nil)
+        @IBAction func makePayment(sender: AnyObject) 
+        {
+            let memo = productNameField.text ?? ""
+            let amount = Int64(productPriceField.text!) ?? 0
+            
+            // Create an instance of the Coiney payment controller. 
+            guard let coineyController = CYCoineyViewController.init(amount: amount, memo: memo) else {
+                fatalError("Failed to initialize CYCoineyViewController.")
             }
+            
+            // Present it on top of the current controller.
+            self.present(coineyController, animated: true, completion: nil)
         }
     }
     
@@ -141,25 +146,21 @@ To know the status of the transaction you simply make yourself the delegate of y
     
     - (IBAction)makePayment:(id)aSender
     {
-        // Create a line item to pre-populate the Coiney controller with.
-        NSString *memo = _productMemoField.text;
-        NSInteger price = [_productPriceField.text integerValue];
-        
-        CYItem *item = [CYItem itemWithTotal:price
-                                    currency:CYCurrencyJPY
-                                        memo:memo];
-        
-        // Create an instance of the Coiney payment controller.
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
-        coineyController.delegate = self;
-        // Present it on top of the current controller.
-        [self presentViewController:coineyController animated:YES completion:nil];
+	    NSString *memo = _productNameField.text;
+	    NSInteger amount = [_productPriceField.text integerValue];
+	
+	    // Create an instance of the Coiney payment controller.
+	    CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithAmount:amount memo:memo];
+	    coineyController.delegate = self;
+	    
+	    // Present it on top of the current controller.
+	    [self presentViewController:coineyController animated:YES completion:nil];
     }
     
     - (void)coineyViewController:(CYCoineyViewController *)aController
           didCompleteTransaction:(id<CYTransaction>)aTransaction
     {
-        NSLog(@"Completed transaction!: %@", aTransaction);
+        NSLog(@"Completed transaction: %@", aTransaction);
     }
     
     - (void)coineyViewControllerDidCancel:(CYCoineyViewController *)aController
@@ -176,28 +177,36 @@ To know the status of the transaction you simply make yourself the delegate of y
     import UIKit
     import CoineyKit
 
-    class ViewController: UIViewController, CYCoineyViewControllerDelegate {
-        @IBOutlet var memoField: UITextField?
-        @IBOutlet var amountField: UITextField?
+    class ViewController: UIViewController {
+    
+        @IBOutlet weak var memoField: UITextField!
+        @IBOutlet weak var amountField: UITextField!
     
         @IBAction func makePayment(sender: AnyObject) {
-            let amount: UInt? = amountField == nil ? nil : UInt(amountField!.text!)
-            if (amount != nil) {
-                let item: CYItem = CYItem(total: amount!, currency: .JPY, memo: memoField?.text)
-                let coineyController: CYCoineyViewController = CYCoineyViewController(lineItems: [item])
-                coineyController.delegate = self
-                self.presentViewController(coineyController, animated: true, completion: nil)
-            }
+	        let memo = productNameField.text ?? ""
+	        let amount = Int64(productPriceField.text!) ?? 0
+	        
+	        // Create an instance of the Coiney payment controller.
+	        guard let coineyController = CYCoineyViewController.init(amount: amount, memo: memo) else {
+	            fatalError("Failed to initialize CYCoineyViewController.")
+	        }
+	        coineyController.delegate = self
+	        
+	        // Present it on top of the current controller.
+	        self.present(coineyController, animated: true, completion: nil)
         }
+    }
     
-        func coineyViewController(aController: CYCoineyViewController!,
-             didCompleteTransaction aTransaction: CYTransaction!) {
+    extension ViewController : CYCoineyViewControllerDelegate {
+    
+        func coineyViewController(_ aController: CYCoineyViewController!,
+                                  didComplete aTransaction: CYTransaction!) {
             print("Completed transaction: \(aTransaction)")
         }
     
-        func coineyViewControllerDidCancel(aController: CYCoineyViewController!) {
-            self.dismissViewControllerAnimated(true, completion: nil)
-            print("Cancelled")
+        func coineyViewControllerDidCancel(_ aController: CYCoineyViewController!) {
+            self.dismiss(animated: true, completion: nil)
+            print("Cancelled payment.")
         }
     }
     
@@ -225,19 +234,15 @@ The refund button will be hidden in the following cases:
     
     - (IBAction)makePayment:(id)aSender
     {
-        // Create a line item to pre-populate the Coiney controller with.
-        NSString *memo = _productMemoField.text;
-        int price = [_productPriceField.text intValue];
-        
-        CYItem *item = [CYItem itemWithTotal:price
-                                        currency:CYCurrencyJPY
-                                            memo:memo];
-        
-        // Create an instance of the Coiney payment controller.
-        CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithLineItems:@[item]];
-        coineyController.delegate = self;
-        // Present it on top of the current controller.
-        [self presentViewController:coineyController animated:YES completion:nil];
+	    NSString *memo = _productNameField.text;
+	    NSInteger amount = [_productPriceField.text integerValue];
+	
+	    // Create an instance of the Coiney payment controller.
+	    CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithAmount:amount memo:memo];
+	    coineyController.delegate = self;
+	    
+	    // Present it on top of the current controller.
+	    [self presentViewController:coineyController animated:YES completion:nil];
     }
     
     - (void)coineyViewController:(CYCoineyViewController *)aController
@@ -260,12 +265,12 @@ The refund button will be hidden in the following cases:
             [self presentViewController:navigationController
                                animated:YES
                              completion:nil];
-	}];
+	     }];
     }
     
     - (void)done:(id)aSender
     {
-        [self dismissViewControllerAnimated:YES completion:nil];
+    	[self dismissViewControllerAnimated:YES completion:nil];
     }
     @end
 
@@ -276,35 +281,51 @@ The refund button will be hidden in the following cases:
     import UIKit
     import CoineyKit
 
-    class ViewController: UIViewController, CYCoineyViewControllerDelegate {
-        @IBOutlet var memoField: UITextField?
-        @IBOutlet var amountField: UITextField?
+    class ViewController: UIViewController {
+        
+        @IBOutlet weak var memoField: UITextField!
+        @IBOutlet weak var amountField: UITextField!
     
         @IBAction func makePayment(sender: AnyObject) {
-            let amount: UInt? = amountField == nil ? nil : UInt(amountField!.text!)
-            if (amount != nil) {
-                let item: CYItem = CYItem(total: amount!, currency: .JPY, memo: memoField?.text)
-                let coineyController: CYCoineyViewController = CYCoineyViewController(lineItems: [item])
-                coineyController.delegate = self
-                self.presentViewController(coineyController, animated: true, completion: nil)
-            }
+	        let memo = productNameField.text ?? ""
+	        let amount = Int64(productPriceField.text!) ?? 0
+	        
+	        // Create an instance of the Coiney payment controller.
+	        guard let coineyController = CYCoineyViewController.init(amount: amount, memo: memo) else {
+	            fatalError("Failed to initialize CYCoineyViewController.")
+	        }
+	        coineyController.delegate = self
+	        
+	        // Present it on top of the current controller.
+	        self.present(coineyController, animated: true, completion: nil)
         }
-    
-        func coineyViewController(aController: CYCoineyViewController!,
-            didCompleteTransaction aTransaction: CYTransaction!) {                                
-            self.dismissViewControllerAnimated(true) { () -> Void in
-                let transactionController = CYTransactionViewController(transaction: aTransaction,
-                    allowRefunding: true)
-                transactionController.navigationItem.rightBarButtonItem =
-                    UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "done")
-                let navigationController = UINavigationController(rootViewController: transactionController)
-                navigationController.modalPresentationStyle = .FormSheet
-                self.presentViewController(navigationController, animated: true, completion: nil)
-            }
-        }
-    
+        
         func done() {
-            self.dismissViewControllerAnimated(true, completion: nil)
+        	self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    extension ViewController : CYCoineyViewControllerDelegate {
+    
+        func coineyViewController(_ aController: CYCoineyViewController!,
+                                  didComplete aTransaction: CYTransaction!) {
+            print("Completed transaction: \(aTransaction)")
+            
+            self.dismiss(animated: true, completion: {
+	            guard let transactionViewController =
+	                CYTransactionViewController.init(transaction: aTransaction, allowRefunding: true) else {
+	                    fatalError("Failed to initialize CYTransactionViewController.")
+	            }
+	            
+	            transactionViewController.navigationItem.rightBarButtonItem =
+	                UIBarButtonItem.init(barButtonSystemItem: .done,
+	                                     target: self,
+	                                     action: #selector(self.done))
+	            
+	            let navigationController = UINavigationController.init(rootViewController: transactionViewController)
+	            navigationController.modalPresentationStyle = .formSheet
+	            self.present(navigationController, animated: true, completion: nil)
+	        })
         }
     }
 
@@ -334,8 +355,8 @@ You can use a transaction's unique identifier to query the corresponding CYTrans
             [navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
             [self presentViewController:navigationController animated:YES completion:nil];
         }
-    	else
-    		NSLog(@"Transaction not found: %@", err);
+        else
+            NSLog(@"Transaction not found: %@", err);
     });
     
     ...
@@ -347,23 +368,30 @@ You can use a transaction's unique identifier to query the corresponding CYTrans
 
 ### Swift
 
-    CYLookUpTransaction(transactionIdentifier, { (transaction, error) -> Void in
-        if error != nil {
+    CYLookUpTransaction(transactionIdentifier, { aTransaction, aError in
+        if let transaction = aTransaction {
+            guard let transactionViewController =
+                CYTransactionViewController.init(transaction: transaction, allowRefunding: true) else {
+                    fatalError("Failed to initialize CYTransactionViewController.")
+            }
+            
+            transactionViewController.navigationItem.rightBarButtonItem =
+                UIBarButtonItem.init(barButtonSystemItem: .done,
+                                     target: self,
+                                     action: #selector(self.done))
+            
+            let navigationController = UINavigationController.init(rootViewController: transactionViewController)
+            navigationController.modalPresentationStyle = .formSheet
+            self.present(navigationController, animated: true, completion: nil)
+        } else if let error = aError {
             print("Transaction not found: \(error)")
-        } else {
-            let transactionController = CYTransactionViewController(transaction: transaction, allowRefunding: true)
-            transactionController.navigationItem.rightBarButtonItem =
-                UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "done")
-            let navigationController = UINavigationController(rootViewController: transactionController)
-            navigationController.modalPresentationStyle = .FormSheet
-            self.presentViewController(navigationController, animated: true, completion: nil)
         }
     })
     
     ...
     
     func done() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
 ## Receipt Printing

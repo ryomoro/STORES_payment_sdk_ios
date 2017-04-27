@@ -5,7 +5,7 @@
 - (BOOL)          application:(UIApplication *)aApplication
 didFinishLaunchingWithOptions:(NSDictionary *)aOptions
 {
-
+    CYEnablePrinting(YES);
     return YES;
 }
 @end
