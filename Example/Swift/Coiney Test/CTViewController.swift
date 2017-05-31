@@ -16,9 +16,7 @@ class CTViewController: UIViewController {
         let amount = Int64(productPriceField.text!) ?? 0
         
         // Create an instance of the Coiney payment controller.
-        guard let coineyController = CYCoineyViewController.init(amount: amount, memo: memo) else {
-            fatalError("Failed to initialize CYCoineyViewController.")
-        }
+        let coineyController = CYCoineyViewController.init(amount: amount, memo: memo)
         coineyController.delegate = self
         
         // Present it on top of the current controller.
@@ -33,16 +31,14 @@ class CTViewController: UIViewController {
 
 extension CTViewController : CYCoineyViewControllerDelegate {
     
-    func coineyViewController(_ aController: CYCoineyViewController!,
-                              didComplete aTransaction: CYTransaction!)
+    func coineyViewController(_ aController: CYCoineyViewController,
+                              didComplete aTransaction: CYTransaction)
     {
         print("Completed transaction: \(aTransaction)")
         
         self.dismiss(animated: true, completion: {
-            guard let transactionViewController =
-                CYTransactionViewController.init(transaction: aTransaction, allowRefunding: true) else {
-                    fatalError("Failed to initialize CYTransactionViewController.")
-            }
+            let transactionViewController = CYTransactionViewController.init(transaction: aTransaction,
+                                                                             allowRefunding: true)
             
             transactionViewController.navigationItem.rightBarButtonItem =
                 UIBarButtonItem.init(barButtonSystemItem: .done,
@@ -55,7 +51,7 @@ extension CTViewController : CYCoineyViewControllerDelegate {
         })
     }
     
-    func coineyViewControllerDidCancel(_ aController: CYCoineyViewController!)
+    func coineyViewControllerDidCancel(_ aController: CYCoineyViewController)
     {
         self.dismiss(animated: true, completion: nil)
     }

@@ -5,6 +5,6 @@
 #import <Foundation/Foundation.h>
 
 @interface CYAPIError : NSError
-@property(nonatomic, readonly) NSString *cy_localizedDescription;
-@property(nonatomic, readonly) NSString *cy_localizedTitle;
+@property(nonatomic, readonly, nullable) NSString *cy_localizedDescription;
+@property(nonatomic, readonly, nullable) NSString *cy_localizedTitle;
 @end

@@ -19,43 +19,46 @@
 /// A unique transaction identifier
 /// \~japanese
 /// 決済の一意なID
-@property(nonatomic, readonly) NSString *identifier;
+@property(nonatomic, readonly, nonnull) NSString *identifier;
 /// \~english
 /// A representation of the identifier for displaying to users.
 /// (Not guaranteed to be unique)
 /// \~japanese
 /// `identifier` をユーザーに表示するためにフォーマットした値
 /// (一意であるとは限りません)
-@property(nonatomic, readonly) NSString *humanReadableIdentifier;
+@property(nonatomic, readonly, nonnull) NSString *humanReadableIdentifier;
 /// \~english
 /// Returns the date/time of the transaction
 /// \~japanese
 /// 決済の日時
-@property(nonatomic, readonly) NSDate *chargeDate;
+@property(nonatomic, readonly, nonnull) NSDate *chargeDate;
 /// \~english
 /// Returns the date/time of the refund, or nil if not refunded.
 /// \~japanese
 /// 返品の日時（未返品であればnil）
-@property(nonatomic, readonly) NSDate *refundDate;
+@property(nonatomic, readonly, nullable) NSDate *refundDate;
 /// \~english
 /// The amount of the transaction in Japanese Yen
 /// \~japanese
 /// 決済額 (日本円)
-@property(nonatomic, nonatomic, readonly) int64_t amount;
+@property(nonatomic, readonly) int64_t amount;
 /// \~english
-/// The brand of credit card used to make the transaction
+/// The brand of credit card used to make the transaction. \ref CYUnknownCardBrand for WeChat Pay
+/// transactions.
 /// \~japanese
-/// 決済に使われたカードブランド
+/// 決済に使われたカードブランド。WeChat Pay決済では \ref CYUnknownCardBrand
 @property(nonatomic, readonly) CYCardBrand cardBrand;
 /// \~english
-/// Returns a string containing the last 4 digits of the credit card's number
+/// Returns a string containing the last 4 digits of the credit card's number. `nil` for WeChat Pay
+/// transactions.
 /// \~japanese
-/// カード番号の下4桁
-@property(nonatomic, readonly) NSString *cardSuffix;
+/// カード番号の下4桁。WeChat Pay決済では `nil`
+@property(nonatomic, readonly, nullable) NSString *cardSuffix;
 /// \~english
-/// Method of credit card financing (installments, revolving, etc.)
+/// Method of credit card financing (installments, revolving, etc.) \ref CYFinancingNone for WeChat
+/// Pay transactions.
 /// \~japanese
-/// 支払区分
+/// 支払区分。WeChat Pay決済では \ref CYFinancingNone
 @property(nonatomic, readonly) CYFinancingType financing;
 /// \~english
 /// Returns whether or not the transaction has been refunded
@@ -66,17 +69,19 @@
 /// Returns the approval code from the acquirer
 /// \~japanese
 /// アクワイアラが発行する承認コード
-@property(nonatomic, strong) NSString *approvalCode;
+@property(nonatomic, strong, nullable) NSString *approvalCode;
 /// \~english
-/// Returns the AID for an IC card transaction
+/// Returns the AID for an IC card transaction. `nil` for magstripe credit card and WeChat Pay
+/// transactions.
 /// \~japanese
-/// IC カード決済の AID
-@property(nonatomic, strong) NSString *applicationIdentifier;
+/// ICカード決済のAID。磁気カード決済およびWeChat Pay決済では `nil`
+@property(nonatomic, strong, nullable) NSString *applicationIdentifier;
 /// \~english
-/// Returns the application label for an IC card transaction
+/// Returns the application label for an IC card transaction. `nil` for magstripe credit card and
+/// WeChat Pay transactions.
 /// \~japanese
-/// IC カード決済のアプリケーションラベル
-@property(nonatomic, strong) NSString *applicationLabel;
+/// ICカード決済のアプリケーションラベル。磁気カード決済およびWeChat Pay決済では `nil`
+@property(nonatomic, strong, nullable) NSString *applicationLabel;
 
 /// \~english
 /// Generates a bitmap for the transaction's receipt.
@@ -86,7 +91,7 @@
 /// 決済のレシートをビットマップとして描画します。
 /// \param aWidth 生成する `UIImage` の幅
 /// \return 描画した `UIImage`
-- (UIImage *)receiptImageWithWidth:(float const)aWidth;
+- (UIImage * _Nonnull)receiptImageWithWidth:(float const)aWidth;
 
 /// \~english
 /// Generates a ReceiptML string with the transaction data.
@@ -94,7 +99,7 @@
 /// \~japanese
 /// 決済データを ReceiptML 形式で返します。
 /// \return ReceiptML 形式の決済データ
-- (NSString *)receipt;
+- (NSString * _Nonnull)receipt;
 @end
 
 /// \~english
@@ -103,7 +108,8 @@
 /// \~japanese
 /// `CYLookUpTransaction()` で参照した決済に対して、処理を行うためのブロック型です。
 /// パラメータには、該当する決済オブジェクトか、参照に失敗した場合はエラーが渡されます。
-typedef void (^CYTransactionLookupBlock)(id<CYTransaction> aTransaction, NSError *aError);
+typedef void (^CYTransactionLookupBlock)(id<CYTransaction> _Nullable aTransaction,
+                                         NSError * _Nullable aError);
 
 /// \~english
 /// Queries Coiney for a given transaction identifier and if found, passes it to the completion block.
@@ -115,7 +121,8 @@ typedef void (^CYTransactionLookupBlock)(id<CYTransaction> aTransaction, NSError
 /// 一致するものあれば `CYTransaction` オブジェクトを、なければ `nil` をブロックに渡します。
 /// \param aIdentifier 参照する決済ID
 /// \param aCompletionBlock 参照後に実行するブロック
-void CYLookUpTransaction(NSString *aIdentifier, CYTransactionLookupBlock aCompletionBlock);
+void CYLookUpTransaction(NSString * _Nonnull aIdentifier,
+                         CYTransactionLookupBlock _Nonnull aCompletionBlock);
 
 /// \~english
 /// Minimum and maximum transaction amounts.

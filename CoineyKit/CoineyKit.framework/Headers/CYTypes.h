@@ -7,7 +7,7 @@
 /// \~english
 /// Represents a payment method.
 /// \~japanese
-/// 支払い方法を表します。
+/// 決済方法を表します。
 typedef NS_ENUM(NSInteger, CYPaymentMethod) {
     CYPaymentMethodUnknown,
     CYPaymentMethodCreditCard,
@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, CYPaymentMethod) {
 /// \~english
 /// Represents a set of payment methods.
 /// \~japanese
-/// 支払い方法の集合を表します。
+/// 決済方法の集合を表します。
 typedef NS_OPTIONS(NSInteger, CYPaymentMethodMask) {
     CYPaymentMethodMaskCreditCard = 1 << CYPaymentMethodCreditCard,
     CYPaymentMethodMaskWechatPay  = 1 << CYPaymentMethodWechatPay
@@ -98,14 +98,39 @@ typedef NS_OPTIONS(NSInteger, CYCardBrandMask) {
 typedef NS_ENUM(NSInteger, CYFinancingType) {
     CYFinancingNone,
     CYFinancingRevolving,
-    CYFinancing2Installments
+    CYFinancing2Installments,
+    CYFinancingBonus,
+    CYFinancing3Installments,
+    CYFinancing5Installments,
+    CYFinancing6Installments,
+    CYFinancing10Installments,
+    CYFinancing12Installments,
+    CYFinancing15Installments,
+    CYFinancing18Installments,
+    CYFinancing20Installments,
+    CYFinancing24Installments
+};
+
+typedef NS_OPTIONS(NSInteger, CYFinancingMask) {
+    CYFinancingMaskRevolving      = 1 << CYFinancingRevolving,
+    CYFinancingMask2Installments  = 1 << CYFinancing2Installments,
+    CYFinancingMaskBonus          = 1 << CYFinancingBonus,
+    CYFinancingMask3Installments  = 1 << CYFinancing3Installments,
+    CYFinancingMask5Installments  = 1 << CYFinancing5Installments,
+    CYFinancingMask6Installments  = 1 << CYFinancing6Installments,
+    CYFinancingMask10Installments = 1 << CYFinancing10Installments,
+    CYFinancingMask12Installments = 1 << CYFinancing12Installments,
+    CYFinancingMask15Installments = 1 << CYFinancing15Installments,
+    CYFinancingMask18Installments = 1 << CYFinancing18Installments,
+    CYFinancingMask20Installments = 1 << CYFinancing20Installments,
+    CYFinancingMask24Installments = 1 << CYFinancing24Installments
 };
 
 /// \~english
 /// Converts a CYCurrency to its corresponding ISO currency code
 /// \~japanese
 /// `CYCurrency` に該当する ISO 通貨コードを返します。
-static inline NSString *NSStringFromCYCurrency(CYCurrency const aCurrency)
+static inline NSString * _Nullable NSStringFromCYCurrency(CYCurrency const aCurrency)
 {
     switch(aCurrency) {
         case CYCurrencyJPY: return @"JPY";
@@ -117,7 +142,7 @@ static inline NSString *NSStringFromCYCurrency(CYCurrency const aCurrency)
 /// Converts an ISO currency code to a CYCurrency
 /// \~japanese
 /// ISO 通貨コードに該当する `CYCurrency` を返します。
-static inline CYCurrency CYCurrencyFromString(NSString * const aCurrencyCode)
+static inline CYCurrency CYCurrencyFromString(NSString * const _Nullable aCurrencyCode)
 {
     NSString * const code = [aCurrencyCode lowercaseString];
     if([code isEqualToString:@"jpy"])
@@ -130,7 +155,7 @@ static inline CYCurrency CYCurrencyFromString(NSString * const aCurrencyCode)
 /// Converts a CYCardBrand to a string for display
 /// \~japanese
 /// 表示のため `CYCardBrand` を文字列に変換します。
-static inline NSString *NSStringFromCYCardbrand(CYCardBrand const aCardBrand)
+static inline NSString * _Nonnull NSStringFromCYCardbrand(CYCardBrand const aCardBrand)
 {
     switch(aCardBrand) {
         case CYVisa:       return @"VISA";

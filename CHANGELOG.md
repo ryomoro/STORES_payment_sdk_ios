@@ -1,3 +1,29 @@
+## 5.1.0 (2017-05-31)
+
+### WeChat Pay対応
+
+WeChat Pay受付開始に向け、QR読取りによるWeChat Payの決済機能を追加しました。※受付開始時期については、別途アナウンスいたします。
+
+WeChat Pay対応店舗では、CoineyKit起動時に「決済方法選択」画面が表示され、クレジットカード・WeChat Payから選択できます。WeChat Pay非対応店舗では、カード決済画面が開きますので、従来の動きと変わりません。
+
+決済方法選択画面をスキップする方法も用意しています。詳しくは `CYCoineyViewController` のドキュメントをご参照ください。
+
+動作確認用にテストアカウントを発行しますので、ご希望の方は coineykitsupport@coiney.com までお問い合わせください。
+
+##### 注意事項
+
+`CYTransaction` で `paymentMethod` プロパティが `CYPaymentMethodWechatPay` の場合、 `cardSuffix`、`approvalCode` の各プロパティが `nil` となります。 `nil` チェックなど、適宜対応いただきますようお願いします。WeChat Pay受付開始に伴い、旧CoineyKitバージョンでも上記プロパティに `nil` が返ります。
+
+### プリンター設定
+
+* CoineyKitのレシート印刷機能を使用する場合 (`CYEnablePrinting(YES)` を呼ぶ場合)、CoineyKit上からプリンターに接続したり、設定を確認できるようになりました。カード決済画面およびWeChat Pay QR読取り画面の右上部のボタンを押すと開きます。
+* `CYEnablePrinting(YES)` を呼ばない場合は、プリンター設定は非表示となります。
+* Bluetooth LE接続の、スター精密 SM-L200 に対応しました。※SM-L200は接続方法が異なるため、プリンター設定からの接続のみ対応しており、iOSのBluetooth設定からは接続できません。
+
+### バグ修正
+
+* スタッフアカウントでログインすると、取消していないにも関わらず `CYTransactionViewController` の売上取消ボタンに「売上取消・返品済み」と表示される問題を修正しました。
+
 ## 5.0.2 (2017-03-14)
 
 ### 変更点

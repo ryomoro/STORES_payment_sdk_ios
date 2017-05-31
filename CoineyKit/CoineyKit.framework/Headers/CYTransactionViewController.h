@@ -23,13 +23,13 @@ typedef void (^CYTransactionViewControllerRefundBlock)(BOOL aSuccess);
 /// The transaction object of the controller
 /// \~japanese
 /// コントローラの決済オブジェクト
-@property(nonatomic, readonly, nonatomic) id<CYTransaction> transaction;
+@property(nonatomic, readonly, nonnull) id<CYTransaction> transaction;
 
 /// \~english
 /// Whether refunding is allowed
 /// \~japanese
 /// 返品可能かどうか
-@property(nonatomic, readonly, nonatomic, getter=allowsRefunding) BOOL allowRefunding;
+@property(nonatomic, getter=allowsRefunding) BOOL allowRefunding;
 
 /// \~english
 /// Returns a controller populated with the information from `aTransaction`
@@ -39,8 +39,8 @@ typedef void (^CYTransactionViewControllerRefundBlock)(BOOL aSuccess);
 /// 特定の決済の詳細画面を返します。
 /// \param aTransaction コントローラに設定する `CYTransaction` オブジェクト
 /// \param aAllowRefunds 返品可能にするかどうか
-+ (instancetype)transactionViewControllerWithTransaction:(id<CYTransaction>)aTransaction
-                                          allowRefunding:(BOOL)aAllowRefunds;
++ (instancetype _Nonnull)transactionViewControllerWithTransaction:(id<CYTransaction> _Nonnull)aTransaction
+                                                   allowRefunding:(BOOL)aAllowRefunds;
 
 /// \~english
 /// Shows the refund confirmation view on top of a `CYTransactionViewController`
@@ -48,5 +48,5 @@ typedef void (^CYTransactionViewControllerRefundBlock)(BOOL aSuccess);
 /// \~japanese
 /// 売上取消・返品確認ビューを表示します。
 /// \param aCompletion 売上取消・返品が成功、キャンセル、エラーのいずれかで終了した際に呼ばれるコールバック
-- (void)confirmRefundWithCompletion:(CYTransactionViewControllerRefundBlock)aCompletion;
+- (void)confirmRefundWithCompletion:(CYTransactionViewControllerRefundBlock _Nullable)aCompletion;
 @end

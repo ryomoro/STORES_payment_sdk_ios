@@ -27,8 +27,8 @@ typedef void (^CYAuthenticationStatusBlock)(BOOL aIsAuthenticated);
 /// `aParentViewController` が `nil` でなく、且つ未ログインなら、ログイン画面を表示します。
 /// \param aCompletionBlock 終了時に実行するブロック
 /// \param aParentViewController 未ログイン状態なら、この上にログイン画面を表示
-+ (void)checkAuthenticationStatus:(CYAuthenticationStatusBlock)aCompletionBlock
-                 inViewController:(UIViewController *)aParentViewController;
++ (void)checkAuthenticationStatus:(CYAuthenticationStatusBlock _Nullable)aCompletionBlock
+                 inViewController:(UIViewController * _Nullable)aParentViewController;
 
 /// \~english
 /// Deletes any stored credentials, so the user is required to log in the next time a
@@ -43,10 +43,10 @@ typedef void (^CYAuthenticationStatusBlock)(BOOL aIsAuthenticated);
 /// Text for pre-populating the username field.
 /// \~japanese
 /// `CYAuthenticationViewController` 表示時に、メールアドレス欄に予め記入する文字列
-extern NSString *CYAuthenticationControllerDefaultEmail;
+extern NSString * _Nullable CYAuthenticationControllerDefaultEmail;
 
 /// \~english
 /// Text for pre-populating the password field.
 /// \~japanese
 /// `CYAuthenticationViewController` 表示時に、パスワード欄に予め記入する文字列
-extern NSString *CYAuthenticationControllerDefaultPassword;
+extern NSString * _Nullable CYAuthenticationControllerDefaultPassword;
