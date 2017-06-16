@@ -419,4 +419,4 @@ Apple のアプリ審査を受けるにあたり、Coiney ターミナルの MFi
 
 ## お問い合わせ
 
-ご質問・ご要望等は、<coineykit-support@coiney.com> までお問い合わせください。
+ご質問・ご要望等は、<coineykitsupport@coiney.com> までお問い合わせください。

@@ -412,4 +412,4 @@ When submitting your app for review through iTunes Connect, you will need an MFi
 
 ## And that's it!
 
-If you have any further questions feel free to email <coineykit-support@coiney.com>.
+If you have any further questions feel free to email <coineykitsupport@coiney.com>.
