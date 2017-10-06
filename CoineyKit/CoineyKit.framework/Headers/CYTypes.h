@@ -8,7 +8,7 @@
 /// Represents a payment method.
 /// \~japanese
 /// 決済方法を表します。
-typedef NS_ENUM(NSInteger, CYPaymentMethod) {
+typedef NS_ENUM(int64_t, CYPaymentMethod) {
     CYPaymentMethodUnknown,
     CYPaymentMethodCreditCard,
     CYPaymentMethodWechatPay
@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, CYPaymentMethod) {
 /// Represents a set of payment methods.
 /// \~japanese
 /// 決済方法の集合を表します。
-typedef NS_OPTIONS(NSInteger, CYPaymentMethodMask) {
+typedef NS_OPTIONS(int64_t, CYPaymentMethodMask) {
     CYPaymentMethodMaskCreditCard = 1 << CYPaymentMethodCreditCard,
     CYPaymentMethodMaskWechatPay  = 1 << CYPaymentMethodWechatPay
 };
@@ -29,7 +29,7 @@ typedef NS_OPTIONS(NSInteger, CYPaymentMethodMask) {
 /// \~japanese
 /// 通貨を表します。
 /// (現在日本円のみ対応)
-typedef NS_ENUM(NSInteger, CYCurrency) {
+typedef NS_ENUM(int64_t, CYCurrency) {
     /// \~english
     /// Invalid currency code
     /// \~japanese
@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, CYCurrency) {
 /// Represents a brand of credit card.
 /// \~japanese
 /// クレジットカードブランドを表します。
-typedef NS_ENUM(NSInteger, CYCardBrand) {
+typedef NS_ENUM(int64_t, CYCardBrand) {
     /// \~english
     /// Unknown
     /// \~japanese
@@ -85,7 +85,7 @@ typedef NS_ENUM(NSInteger, CYCardBrand) {
     CYSaison
 };
 
-typedef NS_OPTIONS(NSInteger, CYCardBrandMask) {
+typedef NS_OPTIONS(int64_t, CYCardBrandMask) {
     CYCardBrandMaskMasterCard = 1 << CYMasterCard,
     CYCardBrandMaskVisa       = 1 << CYVisa,
     CYCardBrandMaskAMEX       = 1 << CYAMEX,
@@ -95,7 +95,7 @@ typedef NS_OPTIONS(NSInteger, CYCardBrandMask) {
     CYCardBrandMaskSaison     = 1 << CYSaison
 };
 
-typedef NS_ENUM(NSInteger, CYFinancingType) {
+typedef NS_ENUM(int64_t, CYFinancingType) {
     CYFinancingNone,
     CYFinancingRevolving,
     CYFinancing2Installments,
@@ -111,7 +111,7 @@ typedef NS_ENUM(NSInteger, CYFinancingType) {
     CYFinancing24Installments
 };
 
-typedef NS_OPTIONS(NSInteger, CYFinancingMask) {
+typedef NS_OPTIONS(int64_t, CYFinancingMask) {
     CYFinancingMaskRevolving      = 1 << CYFinancingRevolving,
     CYFinancingMask2Installments  = 1 << CYFinancing2Installments,
     CYFinancingMaskBonus          = 1 << CYFinancingBonus,

@@ -68,7 +68,7 @@
 /// \~english
 /// Returns the approval code from the acquirer
 /// \~japanese
-/// アクワイアラが発行する承認コード
+/// アクワイアラが発行する承認コード。WeChat Pay決済では `nil`
 @property(nonatomic, strong, nullable) NSString *approvalCode;
 /// \~english
 /// Returns the AID for an IC card transaction. `nil` for magstripe credit card and WeChat Pay
@@ -82,6 +82,11 @@
 /// \~japanese
 /// ICカード決済のアプリケーションラベル。磁気カード決済およびWeChat Pay決済では `nil`
 @property(nonatomic, strong, nullable) NSString *applicationLabel;
+/// \~english
+/// Returns the card network device identifier.
+/// \~japanese
+/// 端末識別番号
+@property(nonatomic, strong, nullable) NSString *cardNetworkDeviceIdentifier;
 
 /// \~english
 /// Generates a bitmap for the transaction's receipt.

@@ -81,4 +81,4 @@
 /// Returns a bitmask representing the merchant's accepted payment methods, or 0 if unauthenticated.
 /// \~japanese
 /// ログイン中の加盟店で利用可能な決済方法を返します。未ログインの場合は0を返します。
-CYPaymentMethodMask CYAcceptedPaymentMethods();
+CYPaymentMethodMask CYAcceptedPaymentMethods(void);
