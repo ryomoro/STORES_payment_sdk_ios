@@ -214,11 +214,13 @@ To know the status of the transaction you simply make yourself the delegate of y
 
 You can use a transaction ID to bring up its detail view.  The view can contain a refund button if refunding should be allowed.
 
-The refund button will be hidden in the following cases:
+The refund button will be disabled in the following cases:
 
 * `allowRefunding:NO` was passed
 * You are logged in with a staff account (only owners and managers can refund)
 * The transaction is already refunded
+
+Refunding is not allowed for transactions 60 days and older.  Attemping to refund such a transaction results in an error alert being shown.
 
 ### Objective-C
 
@@ -254,7 +256,7 @@ The refund button will be hidden in the following cases:
             CYTransactionViewController *transactionViewController =
                 [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
                                                                        allowRefunding:YES];
-                                                              // Pass NO to hide the refund button
+                                                              // Pass NO to disable the refund button
             transactionViewController.navigationItem.rightBarButtonItem =
 	        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                               target:self
@@ -314,6 +316,7 @@ The refund button will be hidden in the following cases:
             self.dismiss(animated: true, completion: {
 	            guard let transactionViewController =
 	                CYTransactionViewController.init(transaction: aTransaction, allowRefunding: true) else {
+	                    // Pass "allowRefunding: false" to disable refunding
 	                    fatalError("Failed to initialize CYTransactionViewController.")
 	            }
 	            

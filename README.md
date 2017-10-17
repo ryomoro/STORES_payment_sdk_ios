@@ -220,12 +220,14 @@ iPhone で実行すると、下記のようになります。
     
 ## 取引詳細の表示・売上取消
 
-取引 ID をもとに、取引の詳細画面を表示できます。画面上のボタンで、売上取消・返品処理をおこなえます。ボタンは、パラメーターで非表示にすることもできます。
+取引 ID をもとに、取引の詳細画面を表示できます。画面上のボタンで、売上取消・返品処理をおこなえます。ボタンは、`allowRefunding` パラメーターにNOを渡すことで、押せなくすることもできます。
 
-下記の場合は、パラメーターにかかわらず、売上取消・返品ボタンが表示されません。ご注意ください。
+下記の場合は、パラメーターにかかわらず、売上取消・返品ボタンが無効となります。ご注意ください。
 
 * スタッフアカウントでログインしている（オーナー、マネージャーのみ取消できます）
 * 既に売上取消・返品済み
+
+また、60日以上経過している取引は、ボタンを押すとエラーとなり、取消できません。
 
 ### Objective-C
 
@@ -261,6 +263,7 @@ iPhone で実行すると、下記のようになります。
             CYTransactionViewController *transactionViewController =
                 [CYTransactionViewController transactionViewControllerWithTransaction:aTransaction
                                                                        allowRefunding:YES];
+                                                                       // 売上取消・返品不可にするには、NOを渡す
             transactionViewController.navigationItem.rightBarButtonItem =
                 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                               target:self
@@ -320,6 +323,7 @@ iPhone で実行すると、下記のようになります。
             self.dismiss(animated: true, completion: {
 	            guard let transactionViewController =
 	                CYTransactionViewController.init(transaction: aTransaction, allowRefunding: true) else {
+	                    // 売上取消・返品不可にするには、allowRefunding: falseを渡す
 	                    fatalError("Failed to initialize CYTransactionViewController.")
 	            }
 	            
