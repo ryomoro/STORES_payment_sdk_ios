@@ -17,7 +17,7 @@ CoineyKit をご利用いただき、ありがとうございます。ご要望�
 あらかじめ [git-lfs](https://git-lfs.github.com) をインストールし、 `git lfs install` を実行してください。git-lfs がないと、リポジトリを正しくクローンできません。
 
  * CoineyKit (このリポジトリを `git clone` してください)
- * Xcode 8 以上
+ * Xcode 9
  * Coineyターミナル (購入については、 <coineykitsupport@coiney.com> までお問い合わせください)
 
 ## プロジェクトのセットアップ

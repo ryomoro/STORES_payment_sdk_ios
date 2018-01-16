@@ -17,7 +17,7 @@ You can find a complete sample app at `Example/Coiney Test.xcodeproj`.
  This repository uses git-lfs. Please install it using homebrew or download it from here: <https://git-lfs.github.com>.
 
  * CoineyKit
- * Xcode 7 or above (Installed in `/Applications`)
+ * Xcode 9
  * Coiney Terminal; to purchase one, please contact us at <coineykitsupport@coiney.com>.
 
 ## Setting up your project
