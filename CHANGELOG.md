@@ -1,3 +1,15 @@
+## 5.2.1 (2018-05-15)
+
+### iOS 11.2.6以降でCoineyターミナルとBluetooth接続できない問題を修正
+
+* iOS 11.2.6以降+CoineyKit 5.2.0以前でCoineyターミナルとBluetooth接続できない問題に対応しました。
+* CoineyKitをアップデートしても接続できない場合は、 [こちらのページ](https://support.coiney.com/hc/ja/articles/360001901231--iOS-v11-2-6以降のOS端末をご利用中の方へ) の「2. アプリを最新にしてもペアリングができない」の手順に従い、端末のリセットをお願い致します。
+
+### メモリ逼迫時のクラッシュを修正
+
+* `UIApplicationDidReceiveMemoryWarningNotification` が発生した際にクラッシュする問題を修正しました。
+* 次の例外への対応になります: `+[CYAPI didReceiveMemoryWarning]: unrecognized selector sent to instance...`
+
 ## 5.2.0 (2017-10-06)
 
 ### American ExpressおよびDinersカードのIC決済に対応
