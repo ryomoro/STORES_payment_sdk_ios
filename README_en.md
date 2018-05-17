@@ -16,7 +16,7 @@ You can find a complete sample app at `Example/Coiney Test.xcodeproj`.
 
  This repository uses git-lfs. Please install it using homebrew or download it from here: <https://git-lfs.github.com>.
 
- * CoineyKit
+ * CoineyKit (Clone this repo after installing git-lfs.)
  * Xcode 9
  * Coiney Terminal; to purchase one, please contact us at <coineykitsupport@coiney.com>.
 
@@ -31,7 +31,7 @@ Now that your project is created, copy the folder `CoineyKit` to your project fo
 
 ![Folder hierarchy](.readme_images/folder-hierarchy.png)
 
-The next step is to add `CoineyKitResources.bundle`, `CoineyKit.xcconfig` & `CoineyKit.framework` to your project. (If you use git it's a good idea to add CoineyKit as a submodule, that way you'll always know if it is up to date or not)
+The next step is to add `CoineyKitResources.bundle`, `CoineyKit.xcconfig` & `CoineyKit.framework` to your project. (If you use git it's a good idea to add CoineyKit as a submodule, to make updating easier.)
 
 Drag and drop `CoineyKit.xcconfig` and `CoineyKitResources.bundle` into the project navigator in Xcode.  Select "CoineyKit" as your Debug and Release configuration files.
 
@@ -39,6 +39,7 @@ Drag and drop `CoineyKit.xcconfig` and `CoineyKitResources.bundle` into the proj
 
 Go to your target's General settings, and add `CoineyKit.framework`, as well as the following:
 
+ * libxml2.tbd
  * libstdc++.tbd
  * libsqlite3.tbd
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC44047220ABD6E900BDF4D6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44047120ABD6E900BDF4D6 /* File.swift */; };
+		DC44047420ABD6FF00BDF4D6 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44047320ABD6FF00BDF4D6 /* libxml2.tbd */; };
 		FA52A3281EADEBC800BFB90A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A3271EADEBC800BFB90A /* main.m */; };
 		FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A32A1EADEBC800BFB90A /* CTAppDelegate.m */; };
 		FA52A3311EADEBC800BFB90A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA52A32F1EADEBC800BFB90A /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC44047120ABD6E900BDF4D6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		DC44047320ABD6FF00BDF4D6 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		FA52A3231EADEBC800BFB90A /* Coiney Test (Objective-C).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coiney Test (Objective-C).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA52A3271EADEBC800BFB90A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA52A3291EADEBC800BFB90A /* CTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC44047420ABD6FF00BDF4D6 /* libxml2.tbd in Frameworks */,
 				FA52A3441EADF0DB00BFB90A /* libsqlite3.tbd in Frameworks */,
 				FA52A3421EADF0CB00BFB90A /* libstdc++.tbd in Frameworks */,
 				FAC5587D1EAF17B40045C109 /* CoineyKit.framework in Frameworks */,
@@ -78,6 +83,7 @@
 				FA52A3321EADEBC800BFB90A /* Assets.xcassets */,
 				FAC5587E1EAF17BB0045C109 /* CoineyKitResources.bundle */,
 				FA52A3261EADEBC800BFB90A /* Supporting Files */,
+				DC44047120ABD6E900BDF4D6 /* File.swift */,
 			);
 			path = "Coiney Test (Objective-C)";
 			sourceTree = "<group>";
@@ -97,6 +103,7 @@
 		FA52A3401EADF0CB00BFB90A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC44047320ABD6FF00BDF4D6 /* libxml2.tbd */,
 				FAC5587C1EAF17B40045C109 /* CoineyKit.framework */,
 				FA52A3431EADF0DB00BFB90A /* libsqlite3.tbd */,
 				FA52A3411EADF0CB00BFB90A /* libstdc++.tbd */,
@@ -130,11 +137,12 @@
 		FA52A31B1EADEBC800BFB90A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Coiney;
 				TargetAttributes = {
 					FA52A3221EADEBC800BFB90A = {
 						CreatedOnToolsVersion = 8.3.1;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -177,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */,
+				DC44047220ABD6E900BDF4D6 /* File.swift in Sources */,
 				FA52A3281EADEBC800BFB90A /* main.m in Sources */,
 				FA52A33F1EADED0E00BFB90A /* CTViewController.m in Sources */,
 			);
@@ -219,12 +228,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -251,7 +262,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -274,12 +285,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -300,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,6 +335,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Coiney.Coiney-Test--Objective-C-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -339,6 +354,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Coiney.Coiney-Test--Objective-C-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

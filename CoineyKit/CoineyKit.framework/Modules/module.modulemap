@@ -1,0 +1,11 @@
+framework module CoineyKit {
+  umbrella header "CoineyKit.h"
+
+  export *
+  module * { export * }
+}
+
+module CoineyKit.Swift {
+    header "CoineyKit-Swift.h"
+    requires objc
+}

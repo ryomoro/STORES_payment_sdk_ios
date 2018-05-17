@@ -29,3 +29,6 @@
 #import <CoineyKit/CYTransactionViewController.h>
 #import <CoineyKit/CYTransaction.h>
 #import <CoineyKit/CYAPIError.h>
+
+FOUNDATION_EXPORT double CoineyKitVersionNumber;
+FOUNDATION_EXPORT const unsigned char CoineyKitVersionString[];

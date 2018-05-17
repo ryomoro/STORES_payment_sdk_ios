@@ -30,7 +30,7 @@ Xcode を起動し、`File → New → Project` から、`Single View Applicatio
 
 ![Template options](.readme_images/template-options.png)
 
-本リポジトリを `git clone` またはダウンロードし、`CoineyKit` フォルダを、`«プロジェクトフォルダ»/CoineyKit` となるように、プロジェクトフォルダの中へコピーします。
+本リポジトリを `git clone` し、`CoineyKit` フォルダを、`«プロジェクトフォルダ»/CoineyKit` となるように、プロジェクトフォルダの中へコピーします。
 
 ![Folder hierarchy](.readme_images/folder-hierarchy.png)
 
@@ -44,6 +44,7 @@ Git をお使いでしたら、更新しやすいように、submodule として
 
 ターゲットの General 設定を開き、`CoineyKit.framework` および下記ライブラリをリンクするようにします。
 
+ * libxml2.tbd
  * libstdc++.tbd
  * libsqlite3.tbd
 
