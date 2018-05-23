@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Coiney-SDK/CoineyKit-iOS.svg?token=q1fWSqJB3688yqHv3sZs&branch=master)](https://travis-ci.com/Coiney-SDK/CoineyKit-iOS)
+
 # CoineyKit
 
 Thanks for showing interest in CoineyKit. We work hard to make it as easy to integrate as possible, but if you have any issues at all, please create a ticket using our [Issue Tracker](https://github.com/Coiney-SDK/CoineyKit-iOS/issues).

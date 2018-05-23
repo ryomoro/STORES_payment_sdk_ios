@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC44047220ABD6E900BDF4D6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44047120ABD6E900BDF4D6 /* File.swift */; };
 		DC44047420ABD6FF00BDF4D6 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44047320ABD6FF00BDF4D6 /* libxml2.tbd */; };
 		FA52A3281EADEBC800BFB90A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A3271EADEBC800BFB90A /* main.m */; };
 		FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A32A1EADEBC800BFB90A /* CTAppDelegate.m */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DC44047120ABD6E900BDF4D6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		DC44047320ABD6FF00BDF4D6 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		FA52A3231EADEBC800BFB90A /* Coiney Test (Objective-C).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coiney Test (Objective-C).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA52A3271EADEBC800BFB90A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 				FA52A3321EADEBC800BFB90A /* Assets.xcassets */,
 				FAC5587E1EAF17BB0045C109 /* CoineyKitResources.bundle */,
 				FA52A3261EADEBC800BFB90A /* Supporting Files */,
-				DC44047120ABD6E900BDF4D6 /* File.swift */,
 			);
 			path = "Coiney Test (Objective-C)";
 			sourceTree = "<group>";
@@ -185,7 +182,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */,
-				DC44047220ABD6E900BDF4D6 /* File.swift in Sources */,
 				FA52A3281EADEBC800BFB90A /* main.m in Sources */,
 				FA52A33F1EADED0E00BFB90A /* CTViewController.m in Sources */,
 			);

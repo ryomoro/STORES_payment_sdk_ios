@@ -1,0 +1,16 @@
+language: objective-c
+os: osx
+osx_image: xcode9.3
+
+before_install:
+    - brew install git-lfs
+
+before_script:
+    - git lfs install
+    - git lfs pull
+
+script:
+    - xcodebuild -project "Example/Swift/Coiney Test.xcodeproj" -scheme "Coiney Test" -sdk iphoneos CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO archive
+    - xcodebuild -project "Example/Swift/Coiney Test.xcodeproj" -scheme "Coiney Test" -sdk iphonesimulator build
+    - xcodebuild -project "Example/Objective-C/Coiney Test (Objective-C).xcodeproj" -scheme "Coiney Test (Objective-C)" -sdk iphoneos CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO archive
+    - xcodebuild -project "Example/Objective-C/Coiney Test (Objective-C).xcodeproj" -scheme "Coiney Test (Objective-C)" -sdk iphonesimulator build
