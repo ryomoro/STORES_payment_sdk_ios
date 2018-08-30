@@ -42,8 +42,6 @@ Drag and drop `CoineyKit.xcconfig` and `CoineyKitResources.bundle` into the proj
 Go to your target's General settings, and add `CoineyKit.framework`, as well as the following:
 
  * libxml2.tbd
- * libstdc++.tbd
- * libsqlite3.tbd
 
 ![Libraries and Frameworks](.readme_images/frameworks-libs.png)
 

@@ -12,8 +12,6 @@
 		FAA76C6F1EADF5DD00ACD5A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA76C6D1EADF5DD00ACD5A1 /* Main.storyboard */; };
 		FAA76C711EADF5DD00ACD5A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA76C701EADF5DD00ACD5A1 /* Assets.xcassets */; };
 		FAA76C741EADF5DD00ACD5A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA76C721EADF5DD00ACD5A1 /* LaunchScreen.storyboard */; };
-		FAA76C7F1EADF62100ACD5A1 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA76C7E1EADF62100ACD5A1 /* libstdc++.tbd */; };
-		FAA76C811EADF62A00ACD5A1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA76C801EADF62A00ACD5A1 /* libsqlite3.tbd */; };
 		FAA76C851EADF65B00ACD5A1 /* CTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA76C841EADF65B00ACD5A1 /* CTViewController.swift */; };
 		FAC558791EAF16AA0045C109 /* CoineyKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FAC558781EAF16AA0045C109 /* CoineyKitResources.bundle */; };
 		FAC5587B1EAF16B50045C109 /* CoineyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5587A1EAF16B50045C109 /* CoineyKit.framework */; };
@@ -27,8 +25,6 @@
 		FAA76C701EADF5DD00ACD5A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAA76C731EADF5DD00ACD5A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAA76C751EADF5DD00ACD5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAA76C7E1EADF62100ACD5A1 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		FAA76C801EADF62A00ACD5A1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FAA76C841EADF65B00ACD5A1 /* CTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTViewController.swift; sourceTree = "<group>"; };
 		FAC558781EAF16AA0045C109 /* CoineyKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CoineyKitResources.bundle; path = ../../../CoineyKit/CoineyKitResources.bundle; sourceTree = "<group>"; };
 		FAC5587A1EAF16B50045C109 /* CoineyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoineyKit.framework; path = ../../CoineyKit/CoineyKit.framework; sourceTree = "<group>"; };
@@ -41,8 +37,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC44047020ABD38B00BDF4D6 /* libxml2.tbd in Frameworks */,
-				FAA76C811EADF62A00ACD5A1 /* libsqlite3.tbd in Frameworks */,
-				FAA76C7F1EADF62100ACD5A1 /* libstdc++.tbd in Frameworks */,
 				FAC5587B1EAF16B50045C109 /* CoineyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,8 +78,6 @@
 			children = (
 				DC44046F20ABD38B00BDF4D6 /* libxml2.tbd */,
 				FAC5587A1EAF16B50045C109 /* CoineyKit.framework */,
-				FAA76C801EADF62A00ACD5A1 /* libsqlite3.tbd */,
-				FAA76C7E1EADF62100ACD5A1 /* libstdc++.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

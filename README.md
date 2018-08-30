@@ -47,8 +47,6 @@ Git をお使いでしたら、更新しやすいように、submodule として
 ターゲットの General 設定を開き、`CoineyKit.framework` および下記ライブラリをリンクするようにします。
 
  * libxml2.tbd
- * libstdc++.tbd
- * libsqlite3.tbd
 
 ![Libraries and Frameworks](.readme_images/frameworks-libs.png)
 
