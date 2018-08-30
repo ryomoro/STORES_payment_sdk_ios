@@ -37,6 +37,7 @@
 		<string>jp.star-m.starpro</string>
 		<string>com.epson.escpos</string>
 		<string>com.coiney.Coiney</string>
+		<string>com.sii-ps.siieap</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

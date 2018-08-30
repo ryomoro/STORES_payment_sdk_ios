@@ -12,7 +12,7 @@ Thanks for showing interest in CoineyKit. We work hard to make it as easy to int
 
 If you follow along this tutorial you will learn how to create a basic application that allows the user to accept Credit Card payments using the Coiney Terminal.
 
-You can find a complete sample app at `Example/Coiney Test.xcodeproj`.
+You can find complete sample apps, written in Swift and Objective-C, in the `Example` folder.
 
 ## What you need
 
@@ -405,8 +405,20 @@ You can use a transaction's unique identifier to query the corresponding CYTrans
 By enabling printing in CoineyKit, paper receipts can be printed at the receipt and transaction detail views.  Printing is disabled by default.  Follow these steps to use CoineyKit's receipt printing feature:
 
 1. Call `CYEnablePrinting(YES)`, typically at app launch, in `-[UIApplicationDelegate application:didFinishLaunchingWithOptions:]`.
-2. Pair your iPhone or iPad with a supported printer through the Bluetooth system settings.  See coiney.com for a list of supported printers.
-3. Make a transaction to get to the receipt view.  You will see a [Print Receipt] button.
+2. Add the following External Accessory protocols to your Info.plist.
+
+```
+<key>UISupportedExternalAccessoryProtocols</key>
+<array>
+  <string>com.coiney.Coiney</string><!--M010 Card Reader-->
+  <string>com.sii-ps.siieap</string>
+  <string>com.epson.escpos</string>
+  <string>jp.star-m.starpro</string>
+</array>
+```
+
+3. Pair your iPhone or iPad with a supported printer through the Bluetooth system settings.  See coiney.com for a list of supported printers.
+4. Make a transaction to get to the receipt view.  You will see a [Print Receipt] button.
 
 Note: CoineyKit does not currently support the Star Micronics SM-L200.
 

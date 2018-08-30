@@ -12,7 +12,7 @@ CoineyKit をご利用いただき、ありがとうございます。ご要望�
 
 このチュートリアルでは、CoineyKitを使って、カード決済ができるサンプルアプリを作成します。
 
-(完成したものが、`Example/Coiney Test.xcodeproj` にあります)
+(完成したものが `Example/` 配下にあります)
 
 ## 必要なもの
 
@@ -414,7 +414,19 @@ iPhone で実行すると、下記のようになります。
 レシートを印刷するには:
 
 1. アプリ起動時に `CYEnablePrinting(YES)` を呼びます。
-2. iPadまたはiPhoneのBluetooth設定から、対応プリンターとペアリングします。対応機種はcoiney.comをご参照ください。
+2. アプにのInfo.plistに、以下のExternal Accessory Protocolsを追加します。
+
+```
+<key>UISupportedExternalAccessoryProtocols</key>
+<array>
+  <string>com.coiney.Coiney</string><!--コイニーターミナル-->
+  <string>com.sii-ps.siieap</string>
+  <string>com.epson.escpos</string>
+  <string>jp.star-m.starpro</string>
+</array>
+```
+
+3. iPadまたはiPhoneのBluetooth設定から、対応プリンターとペアリングします。対応機種はcoiney.comをご参照ください。
 
 注1: BLE接続のスター精密SM-L200につきましては、現在CoineyKitでは非対応です。
 
