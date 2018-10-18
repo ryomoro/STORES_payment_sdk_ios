@@ -1,6 +1,13 @@
+## 5.3.4 (2018-10-18)
+
+* `CYEnablePrinting(NO)` で `EASession` を閉じるようにしました。これにより、POSとCoineyKitでプリンターを共有できるようになりました。プリンターを共有する場合、 CoineyKitでの決済前後に都度 `CYEnablePrinting(YES)`/`CYEnablePrinting(NO)` を呼んでください。
+* iOS 12において、通信中に表示される回転ウィジェットで表示乱れが発生する問題に対応しました。
+
+本バージョンから iOS 12 / Xcode 10 対応となります。Xcode 10 をお使いの場合、iOS 12 で実行する場合は、本バージョン以降をご利用ください。
+
 ## 5.3.3 (2018-09-06)
 
-支払方法選択画面のキャンセル押下で `coineyViewControllerDidCancel` が呼び出されない問題に対応しました。
+* 支払方法選択画面のキャンセル押下で `coineyViewControllerDidCancel` が呼び出されない問題に対応しました。
 * 磁気カード決済で、売上詳細画面に表示乱れが発生するバグを修正しました。
 * WeChat Payのレシートに、レシートコメントが印刷されない問題に対応しました。
 
