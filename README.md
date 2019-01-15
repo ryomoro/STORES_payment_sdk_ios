@@ -404,6 +404,14 @@ iPhone で実行すると、下記のようになります。
     func done() {
         self.dismiss(animated: true, completion: nil)
     }
+    
+ログイン済みでないと使用できませんので、ログイン状態が不明な場合は、以下のように`+[CTAuthenticationViewController CYCheckAuthenticationStatus:inViewController:]` でラップしてください。
+
+    [CYCheckAuthenticationStatus:^{
+        CYLookUpTransaction(...
+        ...
+    }
+    inViewController:viewController];
 
 ## レシート印刷
 

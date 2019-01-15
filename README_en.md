@@ -397,6 +397,14 @@ You can use a transaction's unique identifier to query the corresponding CYTrans
     func done() {
         self.dismiss(animated: true, completion: nil)
     }
+    
+Please make sure you are authenticated before calling `CYLookUpTransaction`, by using `+[CYAuthenticationViewController CYCheckAuthenticationStatus:inViewController:]` as follows:
+
+    [CYCheckAuthenticationStatus:^{
+        CYLookUpTransaction(...
+        ...
+    }
+    inViewController:viewController];
 
 ## Receipt Printing
 
