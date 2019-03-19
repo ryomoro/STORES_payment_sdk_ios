@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC44047020ABD38B00BDF4D6 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44046F20ABD38B00BDF4D6 /* libxml2.tbd */; };
 		FAA76C6A1EADF5DD00ACD5A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA76C691EADF5DD00ACD5A1 /* AppDelegate.swift */; };
 		FAA76C6F1EADF5DD00ACD5A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA76C6D1EADF5DD00ACD5A1 /* Main.storyboard */; };
 		FAA76C711EADF5DD00ACD5A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA76C701EADF5DD00ACD5A1 /* Assets.xcassets */; };
@@ -36,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC44047020ABD38B00BDF4D6 /* libxml2.tbd in Frameworks */,
 				FAC5587B1EAF16B50045C109 /* CoineyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

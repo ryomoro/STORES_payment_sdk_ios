@@ -19,7 +19,7 @@ CoineyKit をご利用いただき、ありがとうございます。ご要望�
 あらかじめ [git-lfs](https://git-lfs.github.com) をインストールし、 `git lfs install` を実行してください。git-lfs がないと、リポジトリを正しくクローンできません。
 
  * CoineyKit (このリポジトリを `git clone` してください)
- * Xcode 9
+ * Xcode 10
  * Coineyターミナル (購入については、 <coineykitsupport@coiney.com> までお問い合わせください)
 
 ## プロジェクトのセットアップ
@@ -44,9 +44,7 @@ Git をお使いでしたら、更新しやすいように、submodule として
 
 ![Configurations](.readme_images/configuration.png)
 
-ターゲットの General 設定を開き、`CoineyKit.framework` および下記ライブラリをリンクするようにします。
-
- * libxml2.tbd
+ターゲットの General 設定を開き、`CoineyKit.framework` をリンクします。
 
 ![Libraries and Frameworks](.readme_images/frameworks-libs.png)
 

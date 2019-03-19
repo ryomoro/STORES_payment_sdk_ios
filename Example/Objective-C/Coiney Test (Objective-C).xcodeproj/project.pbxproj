@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC44047420ABD6FF00BDF4D6 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44047320ABD6FF00BDF4D6 /* libxml2.tbd */; };
 		FA52A3281EADEBC800BFB90A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A3271EADEBC800BFB90A /* main.m */; };
 		FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A32A1EADEBC800BFB90A /* CTAppDelegate.m */; };
 		FA52A3311EADEBC800BFB90A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA52A32F1EADEBC800BFB90A /* Main.storyboard */; };
@@ -40,7 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC44047420ABD6FF00BDF4D6 /* libxml2.tbd in Frameworks */,
 				FAC5587D1EAF17B40045C109 /* CoineyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

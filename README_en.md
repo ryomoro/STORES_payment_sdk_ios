@@ -19,7 +19,7 @@ You can find complete sample apps, written in Swift and Objective-C, in the `Exa
  This repository uses git-lfs. Please install it using homebrew or download it from here: <https://git-lfs.github.com>.
 
  * CoineyKit (Clone this repo after installing git-lfs.)
- * Xcode 9
+ * Xcode 10
  * Coiney Terminal; to purchase one, please contact us at <coineykitsupport@coiney.com>.
 
 ## Setting up your project
@@ -39,9 +39,7 @@ Drag and drop `CoineyKit.xcconfig` and `CoineyKitResources.bundle` into the proj
 
 ![Configurations](.readme_images/configuration.png)
 
-Go to your target's General settings, and add `CoineyKit.framework`, as well as the following:
-
- * libxml2.tbd
+Go to your target's General settings, and add `CoineyKit.framework` to "Linked Frameworks and Libraries."
 
 ![Libraries and Frameworks](.readme_images/frameworks-libs.png)
 

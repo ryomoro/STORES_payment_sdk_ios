@@ -4,5 +4,5 @@ SDKROOT = iphoneos
 CLANG_ENABLE_MODULES = YES
 CLANG_MODULES_AUTOLINK = YES
 
-OTHER_LDFLAGS = $(inherited) -all_load -lz -lc++
+OTHER_LDFLAGS = $(inherited) -all_load -lz -lxml2 -lc++
 OTHER_CXXFLAGS = $(inherited) -fcxx-modules
