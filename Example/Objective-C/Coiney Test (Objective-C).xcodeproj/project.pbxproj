@@ -124,7 +124,7 @@
 		FA52A31B1EADEBC800BFB90A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = Coiney;
 				TargetAttributes = {
 					FA52A3221EADEBC800BFB90A = {
@@ -136,7 +136,7 @@
 			};
 			buildConfigurationList = FA52A31E1EADEBC800BFB90A /* Build configuration list for PBXProject "Coiney Test (Objective-C)" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -204,6 +204,7 @@
 			baseConfigurationReference = FAC558821EAF1D6C0045C109 /* CoineyKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -261,6 +262,7 @@
 			baseConfigurationReference = FAC558821EAF1D6C0045C109 /* CoineyKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
