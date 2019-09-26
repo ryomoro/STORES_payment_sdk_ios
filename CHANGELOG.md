@@ -1,3 +1,8 @@
+## 5.3.5 (2019-09-26)
+
+* プリンター一覧で、プリンターが重複する問題を修正しました。
+* Reachabilityを使用している場合、シンボル衝突が発生する問題を修正しました。
+
 ## 5.3.4 (2018-10-18)
 
 * `CYEnablePrinting(NO)` で `EASession` を閉じるようにしました。これにより、POSとCoineyKitでプリンターを共有できるようになりました。プリンターを共有する場合、 CoineyKitでの決済前後に都度 `CYEnablePrinting(YES)`/`CYEnablePrinting(NO)` を呼んでください。
