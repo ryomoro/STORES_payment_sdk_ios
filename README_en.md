@@ -424,8 +424,6 @@ By enabling printing in CoineyKit, paper receipts can be printed at the receipt 
 3. Pair your iPhone or iPad with a supported printer through the Bluetooth system settings.  See coiney.com for a list of supported printers.
 4. Make a transaction to get to the receipt view.  You will see a [Print Receipt] button.
 
-Note: CoineyKit does not currently support the Star Micronics SM-L200.
-
 Note: If you plan to implement receipt printing in your own app, do not call `CYEnablePrinting(YES)`, since the printer's `EASession` cannot be shared.
 
 ## Submitting Your App for Review

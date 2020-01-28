@@ -432,9 +432,7 @@ iPhone で実行すると、下記のようになります。
 
 3. iPadまたはiPhoneのBluetooth設定から、対応プリンターとペアリングします。対応機種はcoiney.comをご参照ください。
 
-注1: BLE接続のスター精密SM-L200につきましては、現在CoineyKitでは非対応です。
-
-注2: 自社アプリでレシート印刷を実装する場合は、 `CYEnablePrinting(YES)` を呼ばないでください。 `EASession` をCoineyKitと共有できないためです。
+注1: 自社アプリでレシート印刷を実装する場合は、 `CYEnablePrinting(YES)` を呼ばないでください。 `EASession` をCoineyKitと共有できないためです。
 
 ## App Review への申請
 
