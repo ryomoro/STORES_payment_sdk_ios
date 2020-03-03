@@ -24,6 +24,8 @@
 	<string>For security purposes, ${PRODUCT_NAME} needs access to your location.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>${PRODUCT_NAME} needs access to the camera.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>ターミナルおよびプリンターに接続するため、Bluetoothを使用します。</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
