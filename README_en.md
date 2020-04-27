@@ -4,6 +4,12 @@
 
 Thanks for showing interest in CoineyKit. We work hard to make it as easy to integrate as possible, but if you have any issues at all, please create a ticket using our [Issue Tracker](https://github.com/Coiney-SDK/CoineyKit-iOS/issues).
 
+## Announcement: Service Name Change from Coiney to STORES Terminal ( 2020-04-27 )
+
+Starting April 27, 2020, Coiney Inc. will change the name of its cashless store service, Coiney, to STORES Terminal.
+
+The SDK will be renamed to "STORES Terminal SDK" in a future release, but the latest version of the SDK will continue to be available as "CoineyKit".
+
 -------
 
 # Example Application
