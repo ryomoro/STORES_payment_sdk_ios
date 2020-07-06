@@ -6,6 +6,12 @@
 
 @implementation CTViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [CYKit prepareInController:self];
+}
+
 - (IBAction)makePayment:(id)aSender
 {
     NSString *memo = _productNameField.text;

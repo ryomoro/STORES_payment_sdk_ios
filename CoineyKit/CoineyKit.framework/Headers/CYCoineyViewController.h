@@ -41,6 +41,15 @@
 /// ユーザーが決済をキャンセルした際に呼ばれます。
 /// \param aController 呼び出し元の `CYCoineyViewController`
 - (void)coineyViewControllerDidCancel:(CYCoineyViewController * _Nonnull)aController;
+
+/// \~english
+/// Called when it is unknown whether the card was successfully charged.
+/// \param aController The originating Coiney controller
+/// \~japanese
+/// 交通系電子マネーで引き去り処理の成否が不明な場合に呼ばれます。
+/// \param aController 呼び出し元の `CYCoineyViewController`
+- (void)         coineyViewController:(CYCoineyViewController * _Nonnull)aController
+didCompleteWithUnconfirmedTransaction:(id<CYTransaction> _Nonnull)aTransaction;
 @end
 
 /// \~english

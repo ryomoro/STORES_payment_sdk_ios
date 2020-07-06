@@ -8,6 +8,12 @@ class CTViewController: UIViewController {
     @IBOutlet weak var productNameField: UITextField!
     @IBOutlet weak var productPriceField: UITextField!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        CYKit.prepare(in: self)
+    }
+    
     // MARK: - IB Actions
     
     @IBAction func makePayment(_ sender: UIButton)

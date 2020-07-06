@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thincaResource version="1.3.0">
+  <common>
+    <commonPrimaryUri>https://rpay.thincacloud.com/common-shop/</commonPrimaryUri>
+    <authUri>https://rpay.thincacloud.com/auth-shop/terminalIf.jsp</authUri>
+    <start>準備中です…</start>
+    <errorCodes>&#xA;[{brandCode}] エラーコード：{errorCode}</errorCodes>
+    <buttonName id="1">リトライ</buttonName>
+    <buttonName id="2">支払確認</buttonName>
+    <buttonName id="3">入金確認</buttonName>
+    <buttonName id="4">取消確認</buttonName>
+    <buttonName id="5">終了する</buttonName>
+    <buttonName id="90">キャンセル</buttonName>
+    <buttonName id="91">残高照会</buttonName>
+    <companyName id="77322">JCB</companyName>
+    <companyName id="99663">iD</companyName>
+  </common>
+  <brand code="9999">
+    <message id="37">端末初期認証処理が完了しました</message>
+    <message id="38">端末初期認証処理に失敗した事業者があります{errorCodes}</message>
+    <message id="39">端末初期認証処理に失敗しました&#xA;エラーコード：{errorCode}</message>
+    <message id="40">電子マネーブランド選択中</message>
+    <message id="41">電子マネーリスト取得に失敗しました&#xA;エラーコード：{errorCode}</message>
+    <message id="45">端末初期認証処理中</message>
+    <message id="97">決済が&#xA;完了しませんでした</message>
+    <message id="98" option="0">ただいまお取扱いできません&#xA;しばらくお待ちください</message>
+    <message id="98" option="1">ただいまお取扱いできません&#xA;取引結果を確認してください</message>
+    <message id="99">ただいま&#xA;お取扱いできません</message>
+    <sound id="99">9999-02-99.wav</sound>
+  </brand>
+  <brand code="3">
+    <name>iD</name>
+    <icon>0003-01-00.png</icon>
+    <message id="2" option="0">しばらくお待ちください</message>
+    <message id="3" option="0">お取り扱いできません</message>
+    <message id="4" option="0">このカードはご利用できません</message>
+    <message id="5" option="0">カードを1枚にして&#xA;もう一度かざしてください</message>
+    <message id="6" option="0">カードがかざされませんでした</message>
+    <message id="7" option="0">最初のカードを&#xA;かざしてください</message>
+    <message id="15" option="0">取引は完了していません</message>
+    <message id="16" option="0">取引を終了します</message>
+    <message id="30" option="0">カードをかざしてください</message>
+    <message id="32" option="0">もう一度同じカードを&#xA;かざしてください</message>
+    <message id="35" option="0">有効期限切れカードです</message>
+    <message id="37" option="0">暗証番号を入力してください</message>
+    <message id="38" option="0">オンライン通信中です</message>
+    <message id="39" option="0">iDアプリでパスワード入力し、&#xA;再度かざしてください</message>
+    <message id="41" option="0">暗証番号が違います。&#xA;再入力してください</message>
+    <message id="42" option="0">暗証番号入力タイムアウトです</message>
+    <message id="8" option="1">取引が不明な状態で終了しました&#xA;アラームレシートを印字します&#xA;所定の運用に従って下さい</message>
+    <message id="11" option="1">初期処理が完了しました</message>
+    <message id="12" option="1">初期処理が失敗しました</message>
+    <message id="13" option="1">撤去処理が完了しました</message>
+    <message id="14" option="1">撤去処理が失敗しました</message>
+    <message id="17" option="1">直前取引内容要求が完了しました</message>
+    <message id="18" option="1">直前取引内容要求が失敗しました</message>
+    <message id="40" option="1">取消返品処理が失敗しました</message>
+    <amount id="1">iD 支払</amount>
+    <amount id="4">iD 支払取消</amount>
+    <sound id="0">0003-02-00.wav</sound>
+    <sound id="1">0003-02-01.wav</sound>
+    <sound id="2">0003-02-02.wav</sound>
+    <sound id="3">0003-02-03.wav</sound>
+    <history id="1">支払</history>
+    <history id="2">支払取消</history>
+  </brand>
+  <brand code="4">
+    <name>QUICPay</name>
+    <icon>0004-01-01.png</icon>
+    <message id="2" option="0">しばらくお待ちください</message>
+    <message id="3" option="0">お取り扱いできません</message>
+    <message id="4" option="0">このカードはご利用できません</message>
+    <message id="5" option="0">カードを1枚にして&#xA;もう一度かざしてください</message>
+    <message id="6" option="0">カードがかざされませんでした</message>
+    <message id="7" option="0">最初のカードを&#xA;かざしてください</message>
+    <message id="15" option="0">取引は完了していません</message>
+    <message id="16" option="0">取引を終了します</message>
+    <message id="30" option="0">カードをかざしてください</message>
+    <message id="32" option="0">もう一度同じカードを&#xA;かざしてください</message>
+    <message id="35" option="0">有効期限切れカードです</message>
+    <message id="38" option="0">オンライン通信中です</message>
+    <message id="8" option="1">取引が不明な状態で終了しました&#xA;アラームレシートを印字します&#xA;所定の運用に従って下さい</message>
+    <message id="11" option="1">初期処理が完了しました</message>
+    <message id="12" option="1">初期処理が失敗しました</message>
+    <message id="13" option="1">撤去処理が完了しました</message>
+    <message id="14" option="1">撤去処理が失敗しました</message>
+    <message id="17" option="1">直前取引内容要求が完了しました</message>
+    <message id="18" option="1">直前取引内容要求が失敗しました</message>
+    <message id="21" option="1">中間計処理が完了しました</message>
+    <message id="22" option="1">中間計処理が失敗しました</message>
+    <message id="40" option="1">取消返品処理が失敗しました</message>
+    <amount id="1">QUICPay 支払</amount>
+    <amount id="4">QUICPay 支払取消</amount>
+    <sound id="0">0004-02-00.wav</sound>
+    <sound id="1">0004-02-01.wav</sound>
+    <history id="1">支払</history>
+    <history id="2">支払取消</history>
+  </brand>
+  <brand code="5">
+    <name>交通系</name>
+    <icon>0005-01-00.png</icon>
+    <message id="2" option="0">しばらく&#xA;お待ちください</message>
+    <message id="3" option="0">お取り扱いできません</message>
+    <message id="4" option="0">このカードは&#xA;ご利用できません</message>
+    <message id="4" option="1">このカードはご利用できません</message>
+    <message id="5" option="0">カードを1枚にして&#xA;もう一度タッチしてください</message>
+    <message id="5" option="1">カードを1枚にして&#xA;もう一度タッチしてください</message>
+    <message id="6" option="0">カードが&#xA;タッチされませんでした</message>
+    <message id="6" option="1">カードがタッチされませんでした</message>
+    <message id="15" option="0">取引は&#xA;完了していません</message>
+    <message id="16" option="0">決済が完了しませんでした</message>
+    <message id="17" option="0">カードが違います</message>
+    <message id="17" option="1">異なるカードがタッチされました</message>
+    <message id="18" option="0">ご利用時の&#xA;カードと異なります</message>
+    <message id="18" option="1">ご利用時のカードと異なります</message>
+    <message id="19" option="0">複数枚のカードを検知&#xA;カードを&#xA;1枚にしてください</message>
+    <message id="19" option="1">複数枚のカードを検知&#xA;カードを1枚にしてください</message>
+    <message id="20" option="0">タッチしてください&#xA;交通系 残高照会</message>
+    <message id="20" option="1">交通系 残高照会&#xA;カードをタッチしてください</message>
+    <message id="25" option="0">交通系 残高照会&#xA;有効期限切れカードです</message>
+    <message id="25" option="1">交通系 残高照会&#xA;有効期限切れカードです</message>
+    <message id="30" option="0">タッチしてください</message>
+    <message id="30" option="1">カードをタッチしてください</message>
+    <message id="32" option="0">再度タッチしてください</message>
+    <message id="32" option="1">もう一度、タッチしてください</message>
+    <message id="35" option="0">有効期限切れカードです</message>
+    <message id="35" option="1">有効期限切れカードです</message>
+    <message id="36" option="0">残高不足です</message>
+    <message id="40" option="0">カードを&#xA;タッチしてください</message>
+    <message id="40" option="1">カードをタッチしてください</message>
+    <message id="42" option="0">再度タッチしてください</message>
+    <message id="42" option="1">もう一度、タッチしてください</message>
+    <message id="45" option="0">有効期限切れカードです</message>
+    <message id="45" option="1">有効期限切れカードです</message>
+    <message id="46" option="0">これ以上&#xA;チャージできません</message>
+    <message id="46" option="1">これ以上チャージできません</message>
+    <message id="50" option="0">交通系 履歴照会&#xA;カードを&#xA;タッチしてください</message>
+    <message id="50" option="1">交通系 履歴照会&#xA;カードをタッチしてください</message>
+    <message id="55" option="0">交通系 履歴照会&#xA;有効期限切れカードです</message>
+    <message id="55" option="1">交通系 履歴照会&#xA;有効期限切れカードです</message>
+    <message id="60" option="0">カードを&#xA;タッチしてください</message>
+    <message id="60" option="1">カードをタッチしてください</message>
+    <message id="62" option="0">再度タッチしてください</message>
+    <message id="62" option="1">もう一度、タッチしてください</message>
+    <message id="65" option="0">有効期限切れカードです</message>
+    <message id="65" option="1">有効期限切れカードです</message>
+    <message id="70" option="0">カードを&#xA;タッチしてください</message>
+    <message id="70" option="1">カードをタッチしてください</message>
+    <message id="72" option="0">再度タッチしてください</message>
+    <message id="72" option="1">もう一度、タッチしてください</message>
+    <message id="75" option="0">有効期限切れカードです</message>
+    <message id="75" option="1">有効期限切れカードです</message>
+    <message id="8" option="1">取引が不明な状態で終了しました&#xA;アラームレシートを印字します&#xA;所定の運用に従って下さい</message>
+    <message id="13" option="1">撤去処理が完了しました</message>
+    <message id="14" option="1">撤去処理が失敗しました</message>
+    <amount id="1">交通系支払</amount>
+    <amount id="2" option="0">交通系チャージ</amount>
+    <amount id="2" option="1">交通系チャージ</amount>
+    <amount id="3">交通系残高</amount>
+    <amount id="4">交通系支払取消</amount>
+    <amount id="5" option="0">交通系チャージ取消</amount>
+    <amount id="5" option="1">交通系チャージ取消</amount>
+    <sound id="0">0005-02-00.wav</sound>
+    <sound id="1">0005-02-01.wav</sound>
+    <sound id="2">9999-02-01.wav</sound>
+    <sound id="3">0005-02-03.wav</sound>
+    <history id="1">物販</history>
+    <history id="2">交通</history>
+  </brand>
+  <brand code="6">
+    <name>WAON</name>
+    <icon>0006-01-00.png</icon>
+    <message id="1" option="0">お取り扱いできません</message>
+    <message id="2" option="0">WAONカードではありません</message>
+    <message id="3" option="0">カードを1枚にして&#xA;もう一度タッチしてください</message>
+    <message id="4" option="0">異なるカードがタッチされました</message>
+    <message id="5" option="0">このカードはご利用できません&#xA;カード裏面（携帯はアプリ内）のWAONの各コールセンターにお問い合わせください</message>
+    <message id="6" option="0">これ以上チャージできません</message>
+    <message id="7" option="0">取引が完了しませんでした</message>
+    <message id="8" option="0">取引が不明な状態で終了しました&#xA;アラームレシートを印字します&#xA;カードの残高を確認してください</message>
+    <message id="9" option="0">中止されました</message>
+    <message id="10" option="0">WAON残高照会&#xA;カードをタッチしてください</message>
+    <message id="11" option="0">WAON残高照会&#xA;再度カードをタッチしてください</message>
+    <message id="12" option="0">WAON残高照会&#xA;処理中です</message>
+    <message id="20" option="0">WAON取引履歴照会&#xA;カードをタッチしてください</message>
+    <message id="21" option="0">WAON取引履歴照会&#xA;再度カードをタッチしてください</message>
+    <message id="22" option="0">WAON取引履歴照会&#xA;処理中です</message>
+    <message id="30" option="0">WAON支払&#xA;カードをタッチしてください</message>
+    <message id="31" option="0">WAON支払&#xA;再度カードをタッチしてください</message>
+    <message id="32" option="0">WAON支払&#xA;処理中です</message>
+    <message id="33" option="0">このカードには特典がつきます</message>
+    <message id="34" option="0">残高不足です</message>
+    <message id="35" option="0">残高不足です&#xA;オートチャージはしていません</message>
+    <message id="37" option="0">オートチャージはしていません</message>
+    <message id="40" option="0">WAON支払取消&#xA;カードをタッチしてください</message>
+    <message id="41" option="0">WAON支払取消&#xA;再度カードをタッチしてください</message>
+    <message id="42" option="0">WAON支払取消&#xA;処理中です</message>
+    <message id="43" option="0">直前の支払以外は取消できません</message>
+    <message id="50" option="0">WAON返品&#xA;カードをタッチしてください</message>
+    <message id="51" option="0">WAON返品&#xA;再度カードをタッチしてください</message>
+    <message id="52" option="0">WAON返品&#xA;処理中です</message>
+    <message id="53" option="0">返品できません</message>
+    <message id="54" option="0">残高が上限を超えるため&#xA;返品できません</message>
+    <message id="60" option="0">WAON現金チャージ&#xA;カードをタッチしてください</message>
+    <message id="61" option="0">WAON現金チャージ&#xA;再度カードをタッチしてください</message>
+    <message id="62" option="0">WAON現金チャージ&#xA;処理中です</message>
+    <message id="70" option="0">WAON現金チャージ取消&#xA;カードをタッチしてください</message>
+    <message id="71" option="0">WAON現金チャージ取消&#xA;再度カードをタッチしてください</message>
+    <message id="72" option="0">WAON現金チャージ取消&#xA;処理中です</message>
+    <message id="73" option="0">直前の現金チャージ以外は&#xA;取消できません</message>
+    <message id="80" option="0">WAONポイントチャージ&#xA;カードをタッチしてください</message>
+    <message id="81" option="0">WAONポイントチャージ&#xA;再度カードをタッチしてください</message>
+    <message id="82" option="0">WAONポイントチャージ&#xA;処理中です</message>
+    <message id="83" option="0">ポイント残高不足です</message>
+    <message id="84" option="0">このカードは&#xA;ポイントが利用できません</message>
+    <message id="91" option="0">撤去処理が失敗しました</message>
+    <message id="92" option="0">撤去処理が完了しました</message>
+    <amount id="1">WAON 支払</amount>
+    <amount id="2">WAON チャージ</amount>
+    <amount id="3">WAON 残高</amount>
+    <amount id="4">WAON 支払取消</amount>
+    <amount id="5">WAON チャージ取消</amount>
+    <amount id="6">WAON ポイント</amount>
+    <amount id="7">WAON オートチャージ</amount>
+    <sound id="0">0006-02-00.wav</sound>
+    <sound id="1">0006-02-01.wav</sound>
+    <sound id="2">9999-02-01.wav</sound>
+    <pointBonus>内ボーナスポイント対象</pointBonus>
+    <pointPowered>内ポイント{pointPowered}倍対象</pointPowered>
+    <pointExpiration>内{pointExpYear}年{pointExpMonth}月末日まで有効</pointExpiration>
+    <pointExpirationMessage>有効期限を過ぎるとポイントが無効になります。お早めにご利用下さい。</pointExpirationMessage>
+    <pointMessage id="50001">JMB WAONはマイルがつきます。</pointMessage>
+    <pointMessage>このWAONカードはポイント対象外です。</pointMessage>
+    <history id="1">支払</history>
+    <history id="2">返品</history>
+    <history id="3" option="0">チャージ</history>
+    <history id="3" option="1">チャージ(現金)</history>
+    <history id="3" option="2">チャージ(クレジット)</history>
+    <history id="3" option="3">チャージ(銀行口座)</history>
+    <history id="3" option="4">チャージ(ポイント)</history>
+    <history id="3" option="5">チャージ(ポイント)</history>
+    <history id="3" option="6">チャージ(ポイント)</history>
+    <history id="3" option="7">チャージ(ダウンロード)</history>
+    <history id="3">チャージ</history>
+    <history id="4" option="0">チャージ</history>
+    <history id="4" option="1">チャージ(現金)</history>
+    <history id="4" option="2">チャージ(クレジット)</history>
+    <history id="4" option="3">チャージ(銀行口座)</history>
+    <history id="4" option="4">チャージ(ポイント)</history>
+    <history id="4" option="5">チャージ(ポイント)</history>
+    <history id="4" option="6">チャージ(ポイント)</history>
+    <history id="4" option="7">チャージ(ダウンロード)</history>
+    <history id="4">チャージ</history>
+    <history id="5">チャージ取消</history>
+    <history id="7" option="0">支払＋オートチャージ</history>
+    <history id="7" option="2">支払＋オートチャージ(クレジット)</history>
+    <history id="7" option="3">支払＋オートチャージ(銀行口座)</history>
+    <history id="7">支払＋オートチャージ</history>
+    <history id="8" option="0">支払＋オートチャージ</history>
+    <history id="8" option="2">支払＋オートチャージ(クレジット)</history>
+    <history id="8" option="3">支払＋オートチャージ(銀行口座)</history>
+    <history id="8">支払＋オートチャージ</history>
+    <history id="10">支払取消</history>
+    <history id="12" option="0">オートチャージ</history>
+    <history id="12" option="2">オートチャージ(クレジット)</history>
+    <history id="12" option="3">オートチャージ(銀行口座)</history>
+    <history id="12">オートチャージ</history>
+    <history id="13" option="0">オートチャージ</history>
+    <history id="13" option="2">オートチャージ(クレジット)</history>
+    <history id="13" option="3">オートチャージ(銀行口座)</history>
+    <history id="13">オートチャージ</history>
+    <history>その他</history>
+  </brand>
+  <brand code="7">
+    <name>nanaco</name>
+    <icon>0001-01-00.png</icon>
+    <message id="1" option="0">お取り扱いできません</message>
+    <message id="2" option="0">nanacoカードではありません</message>
+    <message id="3" option="0">異なるカードがタッチされました</message>
+    <message id="4" option="0">カードを1枚にしてもう一度タッチしてください</message>
+    <message id="5" option="0">このnanacoはお取扱いできません</message>
+    <message id="6" option="0">取引が完了しませんでした</message>
+    <message id="7" option="0">取引が不明な状態で終了しました&#xA;(アラームレシートを印字します)&#xA;カードの残高を確認してください</message>
+    <message id="10" option="0">nanaco残高確認&#xA;カードをタッチしてください</message>
+    <message id="11" option="0">nanaco残高確認&#xA;もう一度、タッチしてください</message>
+    <message id="12" option="0">nanaco残高確認&#xA;カードを離さないでください</message>
+    <message id="13" option="0">nanaco残高確認&#xA;ありがとうございました</message>
+    <message id="20" option="0">nanaco履歴確認&#xA;カードをタッチしてください</message>
+    <message id="21" option="0">nanaco履歴確認&#xA;もう一度、タッチしてください</message>
+    <message id="22" option="0">nanaco履歴確認&#xA;カードを離さないでください</message>
+    <message id="23" option="0">nanaco履歴確認&#xA;ありがとうございました</message>
+    <message id="30" option="0">nanaco支払&#xA;カードをタッチしてください</message>
+    <message id="31" option="0">nanaco支払&#xA;もう一度、タッチしてください</message>
+    <message id="32" option="0">nanaco支払&#xA;カードを離さないでください</message>
+    <message id="33" option="0">nanaco支払&#xA;ありがとうございました</message>
+    <message id="34" option="0">残高不足です</message>
+    <message id="60" option="0">nanaco現金チャージ&#xA;カードをタッチしてください</message>
+    <message id="61" option="0">nanaco現金チャージ&#xA;もう一度、タッチしてください</message>
+    <message id="62" option="0">nanaco現金チャージ&#xA;カードを離さないでください</message>
+    <message id="63" option="0">nanaco現金チャージ&#xA;ありがとうございました</message>
+    <message id="64" option="0">これ以上チャージできません</message>
+    <message id="90" option="0">撤去処理が失敗しました</message>
+    <message id="91" option="0">撤去処理が完了しました</message>
+    <amount id="1">nanaco支払</amount>
+    <amount id="2">nanacoチャージ</amount>
+    <amount id="3">nanaco残高</amount>
+    <amount id="4">nanaco支払取消</amount>
+    <amount id="5">nanacoチャージ取消</amount>
+    <sound id="0">0001-02-00.wav</sound>
+    <sound id="1">0007-02-01.wav</sound>
+    <sound id="2">9999-02-01.wav</sound>
+    <history id="53">機種変更引継</history>
+    <history id="71">支払</history>
+    <history id="92">預り分反映</history>
+    <history id="94">預り分反映</history>
+    <history id="111">チャージ</history>
+    <history id="112">チャージ／預り分反映</history>
+    <history id="115">チャージ</history>
+    <history id="116">チャージ／預り分反映</history>
+    <history id="119">チャージ</history>
+    <history id="131">ポイント→マネー交換</history>
+    <history id="133">ポイント→マネー交換</history>
+    <history>その他</history>
+  </brand>
+  <result>
+    <filter brandCode="9997" errorCode="304" />
+    <ioEvent>{"deviceType":1, "deviceNumber":0,"actionType":0,"sendData":[39,13,0,3,7,-40]}</ioEvent>
+    <ioEvent>{"deviceType":1, "deviceNumber":1,"actionType":0,"sendData":[39,13,0,3,7,-40]}</ioEvent>
+    <ioEvent>{"deviceType":3, "deviceNumber":0,"actionType":1}</ioEvent>
+    <resultEvent wait="2000" />
+  </result>
+  <result>
+    <filter brandCode="9997" errorCode="403" />
+    <ioEvent>{"deviceType":1, "deviceNumber":0,"actionType":0,"sendData":[39,13,0,2,7,-40]}</ioEvent>
+    <ioEvent>{"deviceType":1, "deviceNumber":1,"actionType":0,"sendData":[39,13,0,2,7,-40]}</ioEvent>
+    <ioEvent>{"deviceType":3, "deviceNumber":0,"actionType":1}</ioEvent>
+    <resultEvent wait="2000" />
+  </result>
+  <result>
+    <filter brandCode="9997" />
+    <ioEvent>{"deviceType":1, "deviceNumber":0,"actionType":1}</ioEvent>
+    <ioEvent>{"deviceType":1, "deviceNumber":1,"actionType":1}</ioEvent>
+    <ioEvent>{"deviceType":3, "deviceNumber":0,"actionType":1}</ioEvent>
+    <resultEvent wait="2000" />
+  </result>
+  <result>
+    <filter brandCode="2" resultCode="114" resultCodeExtended="127" forceCheckCard="1" />
+    <resultEvent wait="2000">
+      <button id="902" name="1" />
+      <button id="903" name="91" />
+    </resultEvent>
+  </result>
+  <result>
+    <filter brandCode="2" resultCode="114" forceCheckCard="1" />
+    <resultEvent wait="2000">
+      <button id="903" name="91" />
+    </resultEvent>
+  </result>
+  <result>
+    <filter brandCode="2" resultCode="114" resultCodeExtended="109" />
+    <filter brandCode="2" resultCode="114" resultCodeExtended="121" />
+    <filter brandCode="2" resultCode="114" resultCodeExtended="127" />
+    <resultEvent wait="2000">
+      <button id="3" name="5" />
+    </resultEvent>
+  </result>
+  <result>
+    <filter resultCode="114" resultCodeExtended="103" />
+    <filter branchCode="11" resultCode="0" />
+    <resultEvent wait="0" />
+  </result>
+  <result>
+    <filter errorCode="101" />
+    <filter errorCode="404" />
+    <resultEvent wait="500" />
+  </result>
+  <result>
+    <filter brandCode="5" resultCode="0" />
+    <filter brandCode="7" resultCode="0" />
+    <resultEvent wait="2000" />
+  </result>
+  <result>
+    <filter brandCode="5" resultCode="114" />
+    <filter brandCode="7" resultCode="114" />
+    <resultEvent wait="5000" />
+  </result>
+  <result>
+    <filter resultCode="0" />
+    <filter resultCode="114" />
+    <resultEvent wait="3500" />
+  </result>
+  <result>
+    <filter brandCode="5" />
+    <ioEvent>{"timeout":10,"deviceType":1,"deviceNumber":0,"actionType":0,"sendData":[39,15,0,0,97,11,-72],"screen":true}</ioEvent>
+    <ioEvent>{"timeout":10,"deviceType":16,"deviceNumber":0,"actionType":1,"sendData":[],"screen":true}</ioEvent>
+    <ioEvent>{"timeout":10,"deviceType":1,"deviceNumber":1,"actionType":0,"sendData":[39,15,0,0,97,11,-72]}</ioEvent>
+    <ioEvent>{"timeout":10,"deviceType":16,"deviceNumber":1,"actionType":1,"sendData":[]}</ioEvent>
+    <ioEvent>{"timeout":10,"deviceType":2,"deviceNumber":0,"actionType":0,"sendData":[0,5,1,-1,-1]}</ioEvent>
+    <ioEvent>{"timeout":10,"deviceType":3,"deviceNumber":0,"actionType":0,"sendData":[39,15,7,-48]}</ioEvent>
+    <resultEvent wait="5000" />
+  </result>
+  <result>
+    <filter />
+    <ioEvent>{"timeout":10,"deviceType":1,"deviceNumber":0,"actionType":0,"sendData":[39,15,0,0,99,11,-72],"screen":true}</ioEvent>
+    <ioEvent>{"timeout":10,"deviceType":16,"deviceNumber":0,"actionType":1,"sendData":[],"screen":true}</ioEvent>
+    <ioEvent>{"timeout":10,"deviceType":1,"deviceNumber":1,"actionType":0,"sendData":[39,15,0,0,99,11,-72]}</ioEvent>
+    <ioEvent>{"timeout":10,"deviceType":16,"deviceNumber":1,"actionType":1,"sendData":[]}</ioEvent>
+    <ioEvent>{"timeout":10,"deviceType":2,"deviceNumber":0,"actionType":0,"sendData":[39,15,99,-1,-1]}</ioEvent>
+    <ioEvent>{"timeout":10,"deviceType":3,"deviceNumber":0,"actionType":0,"sendData":[39,15,7,-48]}</ioEvent>
+    <resultEvent wait="3500" />
+  </result>
+</thincaResource>
+
