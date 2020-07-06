@@ -4,6 +4,33 @@
 
 Thanks for showing interest in CoineyKit. We work hard to make it as easy to integrate as possible, but if you have any issues at all, please create a ticket using our [Issue Tracker](https://github.com/Coiney-SDK/CoineyKit-iOS/issues).
 
+## SDK E-money Payment Support Release (2020-07-07)
+
+The STORES Terminal SDK (formerly CoineyKit) now supports e-money as a payment option. ※ The e-money payment option will not be available for semi-self and self-checkout systems.
+
+**1. E-money payment guidelines**
+- The transaction amount must be between 100 yen and 20,000 yen. 
+
+- E-money payments cannot be refunded through the SDK. To refund an e-money payment, please refund via cash.
+
+- Please install the STORES Terminal app to perform the following e-money operations: 
+  - Checking the balance on a transit IC card (i.e. Suica, PASMO)
+  - Checking the status of unconfirmed transactions. If a transaction ends in an unconfirmed state, please confirm the transaction status through the STORES Terminal app.
+
+- The SDK does not support recharging the balance on a transit IC card.
+
+- E-money payment support is only available for iOS SDK.
+
+
+**2. Test accounts for development**
+
+- We will be able to provide test accounts for development. If you are interested in working with test accounts, please let us know at stores_terminal_sdk@hey.jp.
+
+**3. E-money payment precautions**
+- For more details and precautions on integrating e-money payments in to your app, please contact us at the e-mail address above.
+
+****
+
 ## Announcement: Service Name Change from Coiney to STORES Terminal ( 2020-04-27 )
 
 Starting April 27, 2020, Coiney Inc. will change the name of its cashless store service, Coiney, to STORES Terminal.
