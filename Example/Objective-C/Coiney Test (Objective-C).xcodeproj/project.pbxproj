@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A304507A248A181400EE2CD1 /* TCMPayment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3045079248A181400EE2CD1 /* TCMPayment.framework */; };
+		A304507B248A181400EE2CD1 /* TCMPayment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3045079248A181400EE2CD1 /* TCMPayment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A304508B248A31BD00EE2CD1 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A304508A248A31BD00EE2CD1 /* Dummy.swift */; };
 		FA52A3281EADEBC800BFB90A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A3271EADEBC800BFB90A /* main.m */; };
 		FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A32A1EADEBC800BFB90A /* CTAppDelegate.m */; };
 		FA52A3311EADEBC800BFB90A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA52A32F1EADEBC800BFB90A /* Main.storyboard */; };
@@ -17,7 +20,24 @@
 		FAC5587F1EAF17BB0045C109 /* CoineyKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FAC5587E1EAF17BB0045C109 /* CoineyKitResources.bundle */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A304507C248A181400EE2CD1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A304507B248A181400EE2CD1 /* TCMPayment.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A3045079248A181400EE2CD1 /* TCMPayment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TCMPayment.framework; path = ../../CoineyKit/CoineyKit.framework/Frameworks/TCMPayment.framework; sourceTree = "<group>"; };
+		A3045087248A300000EE2CD1 /* Coiney Test (Objective-C)-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coiney Test (Objective-C)-Bridging-Header.h"; sourceTree = "<group>"; };
+		A304508A248A31BD00EE2CD1 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		DC44047320ABD6FF00BDF4D6 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		FA52A3231EADEBC800BFB90A /* Coiney Test (Objective-C).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coiney Test (Objective-C).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA52A3271EADEBC800BFB90A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A304507A248A181400EE2CD1 /* TCMPayment.framework in Frameworks */,
 				FAC5587D1EAF17B40045C109 /* CoineyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +94,8 @@
 				FA52A3321EADEBC800BFB90A /* Assets.xcassets */,
 				FAC5587E1EAF17BB0045C109 /* CoineyKitResources.bundle */,
 				FA52A3261EADEBC800BFB90A /* Supporting Files */,
+				A3045087248A300000EE2CD1 /* Coiney Test (Objective-C)-Bridging-Header.h */,
+				A304508A248A31BD00EE2CD1 /* Dummy.swift */,
 			);
 			path = "Coiney Test (Objective-C)";
 			sourceTree = "<group>";
@@ -92,6 +115,7 @@
 		FA52A3401EADF0CB00BFB90A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A3045079248A181400EE2CD1 /* TCMPayment.framework */,
 				DC44047320ABD6FF00BDF4D6 /* libxml2.tbd */,
 				FAC5587C1EAF17B40045C109 /* CoineyKit.framework */,
 			);
@@ -108,6 +132,8 @@
 				FA52A31F1EADEBC800BFB90A /* Sources */,
 				FA52A3201EADEBC800BFB90A /* Frameworks */,
 				FA52A3211EADEBC800BFB90A /* Resources */,
+				A3FCD8F12490C79100BC99AC /* Remove Simulator Architectures */,
+				A304507C248A181400EE2CD1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,6 +192,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A3FCD8F12490C79100BC99AC /* Remove Simulator Architectures */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Remove Simulator Architectures";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes i386 and x86_64 architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\n    FRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\n    FRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\n    echo \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n    echo $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n    \n    FRAMEWORK_TMP_PATH=\"$FRAMEWORK_EXECUTABLE_PATH-tmp\"\n    \n    case \"${TARGET_BUILD_DIR}\" in\n        *\"iphonesimulator\")\n            echo \"Skip simulator target\"\n            ;;\n        *)\n            if $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"i386\") ; then\n                lipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"i386\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n                echo \"i386 architecture removed\"\n                rm \"$FRAMEWORK_EXECUTABLE_PATH\"\n                mv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n            fi\n            if $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"x86_64\") ; then\n                lipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"x86_64\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n                echo \"x86_64 architecture removed\"\n                rm \"$FRAMEWORK_EXECUTABLE_PATH\"\n                mv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n            fi\n            ;;\n    esac\n    \n    echo \"Completed for executable $FRAMEWORK_EXECUTABLE_PATH\"\n    echo $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n    \ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA52A31F1EADEBC800BFB90A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -173,6 +220,7 @@
 			files = (
 				FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */,
 				FA52A3281EADEBC800BFB90A /* main.m in Sources */,
+				A304508B248A31BD00EE2CD1 /* Dummy.swift in Sources */,
 				FA52A33F1EADED0E00BFB90A /* CTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,15 +362,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/../../CoineyKit",
+					"$(PROJECT_DIR)/../../CoineyKit/CoineyKit.framework/Frameworks",
 				);
 				INFOPLIST_FILE = "Coiney Test (Objective-C)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Coiney.Coiney-Test--Objective-C-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coiney Test (Objective-C)/Coiney Test (Objective-C)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -333,15 +385,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/../../CoineyKit",
+					"$(PROJECT_DIR)/../../CoineyKit/CoineyKit.framework/Frameworks",
 				);
 				INFOPLIST_FILE = "Coiney Test (Objective-C)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Coiney.Coiney-Test--Objective-C-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coiney Test (Objective-C)/Coiney Test (Objective-C)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
