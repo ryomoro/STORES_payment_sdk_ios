@@ -11,7 +11,8 @@
 typedef NS_ENUM(int64_t, CYPaymentMethod) {
     CYPaymentMethodUnknown,
     CYPaymentMethodCreditCard,
-    CYPaymentMethodWechatPay
+    CYPaymentMethodWechatPay,
+    CYPaymentMethodEmoney
 };
 
 /// \~english
@@ -20,7 +21,8 @@ typedef NS_ENUM(int64_t, CYPaymentMethod) {
 /// 決済方法の集合を表します。
 typedef NS_OPTIONS(int64_t, CYPaymentMethodMask) {
     CYPaymentMethodMaskCreditCard = 1 << CYPaymentMethodCreditCard,
-    CYPaymentMethodMaskWechatPay  = 1 << CYPaymentMethodWechatPay
+    CYPaymentMethodMaskWechatPay  = 1 << CYPaymentMethodWechatPay,
+    CYPaymentMethodMaskEmoney     = 1 << CYPaymentMethodEmoney
 };
 
 /// \~english
@@ -95,6 +97,15 @@ typedef NS_OPTIONS(int64_t, CYCardBrandMask) {
     CYCardBrandMaskSaison     = 1 << CYSaison
 };
 
+typedef NS_ENUM(int64_t, CYEmoneyBrand) {
+    CYUnknownEmoneyBrand,
+    CYEmoneyTransport
+};
+
+typedef NS_OPTIONS(int64_t, CYEmoneyBrandMask) {
+    CYEmoneyBrandMaskTransport = 1 << CYEmoneyTransport
+};
+
 typedef NS_ENUM(int64_t, CYFinancingType) {
     CYFinancingNone,
     CYFinancingRevolving,
@@ -166,6 +177,19 @@ static inline NSString * _Nonnull NSStringFromCYCardbrand(CYCardBrand const aCar
         case CYDiscover:   return @"Discover";
         case CYSaison:     return @"Saison";
         case CYUnknownCardBrand:
+            return @"Unknown";
+    }
+}
+
+/// \~english
+/// Converts a CYEmoneyBrand to a string for display
+/// \~japanese
+/// 表示のため `CYEmoneyBrand` を文字列に変換します。
+static inline NSString * _Nonnull NSStringFromCYEmoneyBrand(CYEmoneyBrand const aEmoneyBrand)
+{
+    switch(aEmoneyBrand) {
+        case CYEmoneyTransport: return @"Transport";
+        case CYUnknownEmoneyBrand:
             return @"Unknown";
     }
 }

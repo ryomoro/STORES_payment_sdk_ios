@@ -21,6 +21,7 @@
 ///
 /// ライセンス情報については、info\@coiney.com までお問い合わせください。
 
+#import <CoineyKit/CYKit.h>
 #import <CoineyKit/CYTypes.h>
 #import <CoineyKit/CYCoineyViewController.h>
 #import <CoineyKit/CYContainerViewController.h>
@@ -28,6 +29,9 @@
 #import <CoineyKit/CYPrinting.h>
 #import <CoineyKit/CYTransactionViewController.h>
 #import <CoineyKit/CYTransaction.h>
+#import <CoineyKit/CYCreditCardTransaction.h>
+#import <CoineyKit/CYEmoneyTransaction.h>
+#import <CoineyKit/CYWechatPayTransaction.h>
 #import <CoineyKit/CYAPIError.h>
 
 FOUNDATION_EXPORT double CoineyKitVersionNumber;
