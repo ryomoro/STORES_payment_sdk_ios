@@ -52,7 +52,7 @@ You can find complete sample apps, written in Swift and Objective-C, in the `Exa
  This repository uses git-lfs. Please install it using homebrew or download it from here: <https://git-lfs.github.com>.
 
  * CoineyKit (Clone this repo after installing git-lfs.)
- * Xcode 10
+ * Xcode 11
  * Coiney Terminal; to purchase one, please contact us at <coineykitsupport@coiney.com>.
 
 ## Setting up your project
