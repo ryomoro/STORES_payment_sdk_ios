@@ -120,8 +120,8 @@
 				FAA76C621EADF5DD00ACD5A1 /* Sources */,
 				FAA76C631EADF5DD00ACD5A1 /* Frameworks */,
 				FAA76C641EADF5DD00ACD5A1 /* Resources */,
-				A3FCD8EC2490C0D500BC99AC /* Remove Simulator Architectures */,
 				A3FCD8F02490C29100BC99AC /* Embed Frameworks */,
+				A3FCD8EC2490C0D500BC99AC /* Remove Simulator Architectures */,
 			);
 			buildRules = (
 			);

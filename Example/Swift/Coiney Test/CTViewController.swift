@@ -33,6 +33,41 @@ class CTViewController: UIViewController {
     {
         CYAuthenticationViewController.deauthenticate()
     }
+
+    // Private methods
+    
+    private func convertTransaction(transaction: CYTransaction) {
+        switch transaction {
+        case let creditCardTransaction as CYCreditCardTransaction:
+            print("\(creditCardTransaction)")
+        case let wechatPayTransaction as CYWechatPayTransaction:
+            print("\(wechatPayTransaction)")
+        case let emoneyTransaction as CYEmoneyTransaction:
+            print("\(emoneyTransaction)")
+        default:
+            break
+        }
+    }
+    
+    private func lookUpTransaction(transactionId: String) {
+        CYLookUpTransaction(transactionId) { (transaction, error) in
+            guard let transaction = transaction else {
+                print("Transaction ID \(transactionId) doesn't exist! Wrong account, maybe? error = \(String(describing: error))")
+                return
+            }
+            self.convertTransaction(transaction: transaction)
+        }
+    }
+
+    private func lookUpEmoneyTransaction(transactionId: String) {
+        CYLookUpEmoneyTransaction(transactionId) { (transaction, error) in
+            guard let transaction = transaction else {
+                print("Transaction ID \(transactionId) doesn't exist! Wrong account, maybe? error = \(String(describing: error))")
+                return
+            }
+            self.convertTransaction(transaction: transaction)
+        }
+    }
 }
 
 extension CTViewController : CYCoineyViewControllerDelegate {
@@ -41,6 +76,12 @@ extension CTViewController : CYCoineyViewControllerDelegate {
                               didComplete aTransaction: CYTransaction)
     {
         print("Completed transaction: \(aTransaction)")
+        
+        if aTransaction is CYEmoneyTransaction {
+            self.lookUpEmoneyTransaction(transactionId: aTransaction.identifier)
+        } else {
+            self.lookUpTransaction(transactionId: aTransaction.identifier)
+        }
         
         self.dismiss(animated: true, completion: {
             let transactionViewController = CYTransactionViewController.init(transaction: aTransaction,
