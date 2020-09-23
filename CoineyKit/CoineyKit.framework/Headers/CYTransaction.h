@@ -96,6 +96,19 @@ void CYLookUpTransaction(NSString * _Nonnull aIdentifier,
                          CYTransactionLookupBlock _Nonnull aCompletionBlock);
 
 /// \~english
+/// Queries Coiney for a given e-money transaction identifier and if found, passes it to the completion block.
+/// If none is found nil is passed for the transaction.
+/// \param aIdentifier The identifier of the transaction to look up
+/// \param aCompletionBlock A block to be executed upon completion
+/// \~japanese
+/// 渡したIDを元に電子マネー決済を参照し、ブロックを実行します。
+/// 一致するものがあれば `CYTransaction` オブジェクトを、なければ `nil` をブロックに渡します。
+/// \param aIdentifier 参照する決済ID
+/// \param aCompletionBlock 参照後に実行するブロック
+void CYLookUpEmoneyTransaction(NSString * _Nonnull aIdentifier,
+                               CYTransactionLookupBlock _Nonnull aCompletionBlock);
+
+/// \~english
 /// Minimum and maximum transaction amounts.
 /// \~japanese
 /// 決済の最低額 (¥100) と最高額 (¥9,999,999)

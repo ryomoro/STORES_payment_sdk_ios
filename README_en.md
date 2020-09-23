@@ -497,6 +497,46 @@ Please make sure you are authenticated before calling `CYLookUpTransaction`, by 
 inViewController:viewController];
 ```
 
+Cast `CYTransaction` object to the object for each payment method
+refer to more detailed transaction information.
+
+
+### Objective-C
+
+```objective-c
+if ( [aTransaction conformsToProtocol:@protocol(CYCreditCardTransaction)] ) {
+    id<CYCreditCardTransaction> cardTransaction = (id<CYCreditCardTransaction>)aTransaction;
+    // Credit Card Transaction
+    NSLog(@"Credit Card%@", cardTransaction);
+} else if ( [aTransaction conformsToProtocol:@protocol(CYWechatPayTransaction)] ) {
+    id<CYWechatPayTransaction> wechatPayTransaction = (id<CYWechatPayTransaction>)aTransaction;
+    // WeChatPay Transaction
+    NSLog(@"WeChatPay %@", wechatPayTransaction);
+}  else if ( [aTransaction conformsToProtocol:@protocol(CYEmoneyTransaction)] ) {
+    id<CYEmoneyTransaction> emoneyTransaction = (id<CYEmoneyTransaction>)aTransaction;
+    // E-Money Transaction
+    NSLog(@"Emoney %@", emoneyTransaction);
+}
+```
+
+### Swift
+
+```swift
+switch transaction {
+case let creditCardTransaction as CYCreditCardTransaction:
+    // Credit Card Transaction
+    print("\(creditCardTransaction)")
+case let wechatPayTransaction as CYWechatPayTransaction:
+    // WeChatPay Transaction
+    print("\(wechatPayTransaction)")
+case let emoneyTransaction as CYEmoneyTransaction:
+    // E-Money Transaction
+    print("\(emoneyTransaction)")
+default:
+    break
+}
+```
+
 ## Receipt Printing
 
 By enabling printing in CoineyKit, paper receipts can be printed at the receipt and transaction detail views.  Printing is disabled by default.  Follow these steps to use CoineyKit's receipt printing feature:

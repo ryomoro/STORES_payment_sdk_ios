@@ -30,10 +30,49 @@
     [CYAuthenticationViewController deauthenticate];
 }
 
+- (void)convertTransaction:(id<CYTransaction>)aTransaction {
+    if ( [aTransaction conformsToProtocol:@protocol(CYCreditCardTransaction)] ) {
+        id<CYCreditCardTransaction> cardTransaction = (id<CYCreditCardTransaction>)aTransaction;
+        NSLog(@"Credit Card%@", cardTransaction);
+    } else if ( [aTransaction conformsToProtocol:@protocol(CYWechatPayTransaction)] ) {
+        id<CYWechatPayTransaction> wechatPayTransaction = (id<CYWechatPayTransaction>)aTransaction;
+        NSLog(@"WeChatPay %@", wechatPayTransaction);
+    }  else if ( [aTransaction conformsToProtocol:@protocol(CYEmoneyTransaction)] ) {
+        id<CYEmoneyTransaction> emoneyTransaction = (id<CYEmoneyTransaction>)aTransaction;
+        NSLog(@"Emoney %@", emoneyTransaction);
+    }
+}
+
+- (void)lookUpTransaction:(NSString *)transactionId {
+    CYLookUpTransaction(transactionId, ^(id<CYTransaction> transaction, NSError *error) {
+        if(!transaction) {
+            NSLog(@"Transaction ID %@ doesn't exist! Wrong account, maybe?", transactionId);
+        } else {
+            [self convertTransaction:transaction];
+        }
+    });
+}
+
+- (void)lookUpEmoneyTransaction:(NSString *)transactionId {
+    CYLookUpEmoneyTransaction(transactionId, ^(id<CYTransaction> transaction, NSError *error) {
+        if(!transaction) {
+            NSLog(@"Transaction ID %@ doesn't exist! Wrong account, maybe?", transactionId);
+        } else {
+            [self convertTransaction:transaction];
+        }
+    });
+}
+
 - (void)coineyViewController:(CYCoineyViewController *)aController
       didCompleteTransaction:(id<CYTransaction>)aTransaction
 {
     NSLog(@"Completed transaction: %@", aTransaction);
+
+    if ( [aTransaction conformsToProtocol:@protocol(CYEmoneyTransaction)] ) {
+        [self lookUpEmoneyTransaction:aTransaction.identifier];
+    } else {
+        [self lookUpTransaction:aTransaction.identifier];
+    }
 
     [self dismissViewControllerAnimated:YES completion:^{
         CYTransactionViewController *transactionViewController =

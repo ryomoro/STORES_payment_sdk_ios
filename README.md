@@ -504,6 +504,45 @@ func done() {
 inViewController:viewController];
 ```
 
+取得した`CYTransaction` オブジェクトを決済方法毎のオブジェクトにキャストして
+より詳細な取引情報を参照することもできます。
+
+### Objective-C
+
+```objective-c
+if ( [aTransaction conformsToProtocol:@protocol(CYCreditCardTransaction)] ) {
+    id<CYCreditCardTransaction> cardTransaction = (id<CYCreditCardTransaction>)aTransaction;
+    // クレジットカード決済
+    NSLog(@"Credit Card%@", cardTransaction);
+} else if ( [aTransaction conformsToProtocol:@protocol(CYWechatPayTransaction)] ) {
+    id<CYWechatPayTransaction> wechatPayTransaction = (id<CYWechatPayTransaction>)aTransaction;
+    // WeChatPay決済
+    NSLog(@"WeChatPay %@", wechatPayTransaction);
+}  else if ( [aTransaction conformsToProtocol:@protocol(CYEmoneyTransaction)] ) {
+    id<CYEmoneyTransaction> emoneyTransaction = (id<CYEmoneyTransaction>)aTransaction;
+    // 電子マネー決済
+    NSLog(@"Emoney %@", emoneyTransaction);
+}
+```
+
+### Swift
+
+```swift
+switch transaction {
+case let creditCardTransaction as CYCreditCardTransaction:
+    // クレジットカード決済
+    print("\(creditCardTransaction)")
+case let wechatPayTransaction as CYWechatPayTransaction:
+    // WeChatPay決済
+    print("\(wechatPayTransaction)")
+case let emoneyTransaction as CYEmoneyTransaction:
+    // 電子マネー決済
+    print("\(emoneyTransaction)")
+default:
+    break
+}
+```
+
 ## レシート印刷
 
 印刷機能をオンにすると、決済完了画面および取引詳細画面に [レシートを印刷] ボタンが表示され、レシートを印刷できます。デフォルトはオフです。
