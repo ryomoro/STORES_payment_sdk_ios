@@ -4,6 +4,12 @@
 
 Thanks for showing interest in CoineyKit. We work hard to make it as easy to integrate as possible, but if you have any issues at all, please create a ticket using our [Issue Tracker](https://github.com/Coiney-SDK/CoineyKit-iOS/issues).
 
+## Announcement: Service Name Change from STORES Terminal to STORES Payments ( 2020-11-27 )
+
+Starting November 27, 2020, Coiney Inc. will change the name of its cashless store service, STORES Terminal, to STORES Payments.
+
+The SDK will be renamed to "STORES Payments SDK" in a future release, but the latest version of the SDK will continue to be available as "CoineyKit".
+
 ## SDK E-money Payment Support Release (2020-07-07)
 
 The STORES Terminal SDK (formerly CoineyKit) now supports e-money as a payment option. ※ The e-money payment option will not be available for semi-self and self-checkout systems.
@@ -31,14 +37,6 @@ The STORES Terminal SDK (formerly CoineyKit) now supports e-money as a payment o
 
 ****
 
-## Announcement: Service Name Change from Coiney to STORES Terminal ( 2020-04-27 )
-
-Starting April 27, 2020, Coiney Inc. will change the name of its cashless store service, Coiney, to STORES Terminal.
-
-The SDK will be renamed to "STORES Terminal SDK" in a future release, but the latest version of the SDK will continue to be available as "CoineyKit".
-
--------
-
 # Example Application
 
 ## What we are going to create
@@ -52,7 +50,7 @@ You can find complete sample apps, written in Swift and Objective-C, in the `Exa
  This repository uses git-lfs. Please install it using homebrew or download it from here: <https://git-lfs.github.com>.
 
  * CoineyKit (Clone this repo after installing git-lfs.)
- * Xcode 11
+ * Xcode 12
  * Coiney Terminal; to purchase one, please contact us at <coineykitsupport@coiney.com>.
 
 ## Setting up your project

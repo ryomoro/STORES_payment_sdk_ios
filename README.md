@@ -4,6 +4,11 @@
 
 CoineyKit をご利用いただき、ありがとうございます。ご要望やバグ報告の際は、お手数ですが [GitHub issue](https://github.com/Coiney-SDK/CoineyKit-iOS/issues) を作成いただきますようお願い致します。
 
+## サービス名称変更のお知らせ 〜「STORES ターミナル」から「STORES 決済」へ 〜 ( 2020-11-27 )
+
+コイニー株式会社は、2020年11月27日より順次、サービス名称を「STORES 決済」に変更いたします。
+
+「CoineyKit」は今後のリリースにて「STORES 決済 SDK」へ名称が変更になる予定ですが、現在最新版のSDKは「CoineyKit」の名称で引き続きご利用が可能です。
 
 ## 電子マネー決済対応版SDK公開のお知らせ（2020−07−07）
 
@@ -32,13 +37,6 @@ STORESターミナルSDK（旧CoineyKit）で、電子マネー決済の利用�
 
 ****
 
-## サービス名称変更のお知らせ 〜「Coiney」から「STORESターミナル」へ〜 ( 2020-04-27 )
-
-コイニー株式会社は、2020年4月27日より順次、お店のキャッシュレスサービス「Coiney（コイニー）」のサービス名称を、「STORES（ストアーズ）ターミナル」に変更いたします。
-
-「CoineyKit」は今後のリリースにて「STORESターミナルSDK」へ名称が変更になりますが、現在最新版の SDK は旧サービス名称表記のまま引き続きご利用可能です。
-
--------
 
 # サンプルアプリ
 
@@ -53,7 +51,7 @@ STORESターミナルSDK（旧CoineyKit）で、電子マネー決済の利用�
 あらかじめ [git-lfs](https://git-lfs.github.com) をインストールし、 `git lfs install` を実行してください。git-lfs がないと、リポジトリを正しくクローンできません。
 
  * CoineyKit (このリポジトリを `git clone` してください)
- * Xcode 11
+ * Xcode 12
  * Coineyターミナル (購入については、 <coineykitsupport@coiney.com> までお問い合わせください)
 
 ## プロジェクトのセットアップ
