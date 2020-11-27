@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A304507A248A181400EE2CD1 /* TCMPayment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3045079248A181400EE2CD1 /* TCMPayment.framework */; };
 		A304507B248A181400EE2CD1 /* TCMPayment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3045079248A181400EE2CD1 /* TCMPayment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A304508B248A31BD00EE2CD1 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A304508A248A31BD00EE2CD1 /* Dummy.swift */; };
 		FA52A3281EADEBC800BFB90A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A3271EADEBC800BFB90A /* main.m */; };
 		FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A32A1EADEBC800BFB90A /* CTAppDelegate.m */; };
 		FA52A3311EADEBC800BFB90A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA52A32F1EADEBC800BFB90A /* Main.storyboard */; };
@@ -36,10 +35,8 @@
 
 /* Begin PBXFileReference section */
 		A3045079248A181400EE2CD1 /* TCMPayment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TCMPayment.framework; path = ../../CoineyKit/CoineyKit.framework/Frameworks/TCMPayment.framework; sourceTree = "<group>"; };
-		A3045087248A300000EE2CD1 /* Coiney Test (Objective-C)-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coiney Test (Objective-C)-Bridging-Header.h"; sourceTree = "<group>"; };
-		A304508A248A31BD00EE2CD1 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		DC44047320ABD6FF00BDF4D6 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		FA52A3231EADEBC800BFB90A /* Coiney Test (Objective-C).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coiney Test (Objective-C).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA52A3231EADEBC800BFB90A /* Coiney Test Objective-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coiney Test Objective-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA52A3271EADEBC800BFB90A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA52A3291EADEBC800BFB90A /* CTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAppDelegate.h; sourceTree = "<group>"; };
 		FA52A32A1EADEBC800BFB90A /* CTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTAppDelegate.m; sourceTree = "<group>"; };
@@ -79,7 +76,7 @@
 		FA52A3241EADEBC800BFB90A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA52A3231EADEBC800BFB90A /* Coiney Test (Objective-C).app */,
+				FA52A3231EADEBC800BFB90A /* Coiney Test Objective-C.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,8 +91,6 @@
 				FA52A3321EADEBC800BFB90A /* Assets.xcassets */,
 				FAC5587E1EAF17BB0045C109 /* CoineyKitResources.bundle */,
 				FA52A3261EADEBC800BFB90A /* Supporting Files */,
-				A3045087248A300000EE2CD1 /* Coiney Test (Objective-C)-Bridging-Header.h */,
-				A304508A248A31BD00EE2CD1 /* Dummy.swift */,
 			);
 			path = "Coiney Test (Objective-C)";
 			sourceTree = "<group>";
@@ -125,9 +120,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA52A3221EADEBC800BFB90A /* Coiney Test (Objective-C) */ = {
+		FA52A3221EADEBC800BFB90A /* Coiney Test Objective-C */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA52A33A1EADEBC800BFB90A /* Build configuration list for PBXNativeTarget "Coiney Test (Objective-C)" */;
+			buildConfigurationList = FA52A33A1EADEBC800BFB90A /* Build configuration list for PBXNativeTarget "Coiney Test Objective-C" */;
 			buildPhases = (
 				FA52A31F1EADEBC800BFB90A /* Sources */,
 				FA52A3201EADEBC800BFB90A /* Frameworks */,
@@ -139,9 +134,9 @@
 			);
 			dependencies = (
 			);
-			name = "Coiney Test (Objective-C)";
+			name = "Coiney Test Objective-C";
 			productName = "Coiney Test (Objective-C)";
-			productReference = FA52A3231EADEBC800BFB90A /* Coiney Test (Objective-C).app */;
+			productReference = FA52A3231EADEBC800BFB90A /* Coiney Test Objective-C.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -150,7 +145,7 @@
 		FA52A31B1EADEBC800BFB90A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = Coiney;
 				TargetAttributes = {
 					FA52A3221EADEBC800BFB90A = {
@@ -173,7 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA52A3221EADEBC800BFB90A /* Coiney Test (Objective-C) */,
+				FA52A3221EADEBC800BFB90A /* Coiney Test Objective-C */,
 			);
 		};
 /* End PBXProject section */
@@ -220,7 +215,6 @@
 			files = (
 				FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */,
 				FA52A3281EADEBC800BFB90A /* main.m in Sources */,
-				A304508B248A31BD00EE2CD1 /* Dummy.swift in Sources */,
 				FA52A33F1EADED0E00BFB90A /* CTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +267,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -283,6 +278,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator14.2]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -331,6 +327,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -341,6 +338,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator14.2]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -374,7 +372,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Coiney.Coiney-Test--Objective-C-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Coiney Test (Objective-C)/Coiney Test (Objective-C)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -397,7 +394,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Coiney.Coiney-Test--Objective-C-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Coiney Test (Objective-C)/Coiney Test (Objective-C)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -414,7 +410,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA52A33A1EADEBC800BFB90A /* Build configuration list for PBXNativeTarget "Coiney Test (Objective-C)" */ = {
+		FA52A33A1EADEBC800BFB90A /* Build configuration list for PBXNativeTarget "Coiney Test Objective-C" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA52A33B1EADEBC800BFB90A /* Debug */,
