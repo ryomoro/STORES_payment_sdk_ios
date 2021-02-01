@@ -30,7 +30,7 @@ The STORES Terminal SDK (formerly CoineyKit) now supports e-money as a payment o
 
 **2. Test accounts for development**
 
-- We will be able to provide test accounts for development. If you are interested in working with test accounts, please let us know at stores_terminal_sdk@hey.jp.
+- We will be able to provide test accounts for development. If you are interested in working with test accounts, please let us know at coineykitsupport@coiney.com .
 
 **3. E-money payment precautions**
 - For more details and precautions on integrating e-money payments in to your app, please contact us at the e-mail address above.
