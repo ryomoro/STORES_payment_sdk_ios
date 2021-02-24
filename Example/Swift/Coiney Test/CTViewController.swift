@@ -5,8 +5,8 @@ class CTViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var productNameField: UITextField!
-    @IBOutlet weak var productPriceField: UITextField!
+    @IBOutlet weak var memoTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -18,8 +18,15 @@ class CTViewController: UIViewController {
     
     @IBAction func makePayment(_ sender: UIButton)
     {
-        let memo = productNameField.text ?? ""
-        let amount = Int64(productPriceField.text!) ?? 0
+        guard let amountString = priceTextField.text,
+              let amount = Int64(amountString),
+              amount > 0 else {
+            return
+        }
+        memoTextField.resignFirstResponder()
+        priceTextField.resignFirstResponder()
+
+        let memo = memoTextField.text ?? ""
         
         // Create an instance of the Coiney payment controller.
         let coineyController = CYCoineyViewController.init(amount: amount, memo: memo)
@@ -31,10 +38,16 @@ class CTViewController: UIViewController {
     
     @IBAction func deauthenticate(_ sender: UIButton)
     {
+        memoTextField.resignFirstResponder()
+        priceTextField.resignFirstResponder()
         CYAuthenticationViewController.deauthenticate()
     }
 
     // Private methods
+    
+    @objc private func done() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     private func convertTransaction(transaction: CYTransaction) {
         switch transaction {
@@ -90,7 +103,7 @@ extension CTViewController : CYCoineyViewControllerDelegate {
             transactionViewController.navigationItem.rightBarButtonItem =
                 UIBarButtonItem.init(barButtonSystemItem: .done,
                                      target: self,
-                                     action: #selector(self.coineyViewControllerDidCancel(_:)))
+                                     action: #selector(self.done))
             
             let navigationController = UINavigationController.init(rootViewController: transactionViewController)
             navigationController.modalPresentationStyle = .formSheet
@@ -99,6 +112,12 @@ extension CTViewController : CYCoineyViewControllerDelegate {
     }
     
     func coineyViewControllerDidCancel(_ aController: CYCoineyViewController)
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    func coineyViewController(_ aController: CYCoineyViewController,
+                              didCompleteWithUnconfirmedTransaction aTransaction: CYTransaction)
     {
         self.dismiss(animated: true, completion: nil)
     }
