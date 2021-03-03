@@ -1,3 +1,16 @@
+## 6.8.0 (2021-03-03)
+
+- 対応プリンターを追加しました。
+  - スター精密（mC-Print3）、EPSON（TM-m30II-H、TM-m30II-S）の3機種に対応しました。
+
+
+- 電子マネー決済で処理未了発生時にdelegate method `coineyViewController:didCompleteWithUnconfirmedTransaction:` が呼ばれない不具合を修正しました。
+
+
+- その他、軽微な修正をしました。
+
+
+
 ## 6.6.2 (2020-11-27)
 - Xcode12に対応しました。
   - Xcode12以降のバージョンでビルドする場合は、本バージョン以降をご利用ください。

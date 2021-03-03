@@ -14,8 +14,14 @@
 
 - (IBAction)makePayment:(id)aSender
 {
-    NSString *memo = _productNameField.text;
-    NSInteger amount = [_productPriceField.text integerValue];
+    NSString *memo = _memoTextField.text;
+    NSInteger amount = [_priceTextField.text integerValue];
+    if (amount <= 0) {
+        return;
+    }
+
+    [self.memoTextField resignFirstResponder];
+    [self.priceTextField resignFirstResponder];
 
     // Create an instance of the Coiney payment controller.
     CYCoineyViewController * coineyController = [[CYCoineyViewController alloc] initWithAmount:amount memo:memo];
@@ -63,6 +69,12 @@
     });
 }
 
+- (void)done {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// MARK: - CYCoineyViewControllerDelegate
+
 - (void)coineyViewController:(CYCoineyViewController *)aController
       didCompleteTransaction:(id<CYTransaction>)aTransaction
 {
@@ -81,7 +93,7 @@
         transactionViewController.navigationItem.rightBarButtonItem =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                           target:self
-                                                          action:@selector(coineyViewControllerDidCancel:)];
+                                                          action:@selector(done)];
         UINavigationController *navigationController =
             [[UINavigationController alloc] initWithRootViewController:transactionViewController];
         navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
@@ -92,5 +104,14 @@
 - (void)coineyViewControllerDidCancel:(CYCoineyViewController *)aController
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// E-money Unconfirmed Transaction
+- (void)coineyViewController:(CYCoineyViewController * _Nonnull)aController
+        didCompleteWithUnconfirmedTransaction:(id<CYTransaction> _Nonnull)aTransaction {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+    NSLog(@"Unconfirmed transaction: %@", aTransaction);
 }
 @end

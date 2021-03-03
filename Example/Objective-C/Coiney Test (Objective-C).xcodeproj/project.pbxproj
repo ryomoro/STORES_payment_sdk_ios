@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A304507A248A181400EE2CD1 /* TCMPayment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3045079248A181400EE2CD1 /* TCMPayment.framework */; };
 		A304507B248A181400EE2CD1 /* TCMPayment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3045079248A181400EE2CD1 /* TCMPayment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A30DBB07258B5C2C0079F37D /* DummySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30DBB06258B5C2C0079F37D /* DummySwift.swift */; };
 		FA52A3281EADEBC800BFB90A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A3271EADEBC800BFB90A /* main.m */; };
 		FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52A32A1EADEBC800BFB90A /* CTAppDelegate.m */; };
 		FA52A3311EADEBC800BFB90A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA52A32F1EADEBC800BFB90A /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		A3045079248A181400EE2CD1 /* TCMPayment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TCMPayment.framework; path = ../../CoineyKit/CoineyKit.framework/Frameworks/TCMPayment.framework; sourceTree = "<group>"; };
+		A30DBAEE258B57D40079F37D /* Coiney Test Objective-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coiney Test Objective-C-Bridging-Header.h"; sourceTree = "<group>"; };
+		A30DBB06258B5C2C0079F37D /* DummySwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummySwift.swift; sourceTree = "<group>"; };
 		DC44047320ABD6FF00BDF4D6 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		FA52A3231EADEBC800BFB90A /* Coiney Test Objective-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coiney Test Objective-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA52A3271EADEBC800BFB90A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 				FA52A3321EADEBC800BFB90A /* Assets.xcassets */,
 				FAC5587E1EAF17BB0045C109 /* CoineyKitResources.bundle */,
 				FA52A3261EADEBC800BFB90A /* Supporting Files */,
+				A30DBAEE258B57D40079F37D /* Coiney Test Objective-C-Bridging-Header.h */,
+				A30DBB06258B5C2C0079F37D /* DummySwift.swift */,
 			);
 			path = "Coiney Test (Objective-C)";
 			sourceTree = "<group>";
@@ -150,7 +155,7 @@
 				TargetAttributes = {
 					FA52A3221EADEBC800BFB90A = {
 						CreatedOnToolsVersion = 8.3.1;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1220;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -213,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A30DBB07258B5C2C0079F37D /* DummySwift.swift in Sources */,
 				FA52A32B1EADEBC800BFB90A /* CTAppDelegate.m in Sources */,
 				FA52A3281EADEBC800BFB90A /* main.m in Sources */,
 				FA52A33F1EADED0E00BFB90A /* CTViewController.m in Sources */,
@@ -298,6 +304,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -352,6 +359,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
@@ -372,6 +380,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Coiney.Coiney-Test--Objective-C-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coiney Test (Objective-C)/Coiney Test Objective-C-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -394,6 +403,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Coiney.Coiney-Test--Objective-C-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coiney Test (Objective-C)/Coiney Test Objective-C-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
