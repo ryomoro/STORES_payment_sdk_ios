@@ -8,8 +8,14 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
+    
+    // If you want to use it in staff operation checkout mode,
+    // please execute  prepare by the following method.
     [CYKit prepareInController:self];
+
+    // If you want to use it in semi self checkout mode,
+    // please execute  prepare by the following method.
+    // [CYKit prepareForSemiSelfCheckoutModeInController:self];
 }
 
 - (IBAction)makePayment:(id)aSender

@@ -11,7 +11,13 @@ class CTViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        // If you want to use it in staff operation checkout mode,
+        // please execute  prepare by the following method.
         CYKit.prepare(in: self)
+
+        // If you want to use it in semi self checkout mode,
+        // please execute  prepare by the following method.
+//         CYKit.prepareForSemiSelfCheckoutMode(in: self)
     }
     
     // MARK: - IB Actions
