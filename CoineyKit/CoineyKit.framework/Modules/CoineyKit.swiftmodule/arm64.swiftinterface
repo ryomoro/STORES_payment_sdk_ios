@@ -1,0 +1,31 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CoineyKit
+@_exported import CoineyKit
+import Foundation
+import Network
+import Swift
+@objc public enum ConnectionType : Swift.Int {
+  case wifi
+  case cellular
+  case wiredEthernet
+  case loopback
+  case other
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 12.0, *)
+public class Networks : ObjectiveC.NSObject {
+  @objc public static let shared: CoineyKit.Networks
+  @objc deinit
+  @objc public func start()
+  @objc public func stop()
+  @objc public func currentConnectionType() -> CoineyKit.ConnectionType
+  @objc public func currentConnectionTypeString() -> Swift.String
+}
+extension CoineyKit.ConnectionType : Swift.Equatable {}
+extension CoineyKit.ConnectionType : Swift.Hashable {}
+extension CoineyKit.ConnectionType : Swift.RawRepresentable {}
