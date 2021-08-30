@@ -7,23 +7,33 @@ If you have any further questions feel free to email < coineykitsupport@coiney.c
 
 ****
 
-- [Announcement](#Announcement)
-- [CoineyKit API Document](#CoineyKitAPIDocument)
-- [Example Application](#ExampleApplication)
-  - [What we are going to create](#Whatwearegoingtocreate)
-  - [What you need](#Whatyouneed)
-  - [Setting up your project](#Settingupyourproject)
-  - [Initialization of SDK](#InitializationofSDK)
-  - [Making our first payment](#Makingourfirstpayment)
-  - [Get notified of the transaction status](#Getnotifiedofthetransactionstatus)
-  - [Show the details of a transaction](#Showthedetailsofatransaction)
-  - [Looking up a transaction](#Lookingupatransaction)
-  - [Receipt Printing](#ReceiptPrinting)
-- [Submitting Your App for Review](#SubmittingYourAppforReview)
-- [Contact Us](#ContactUs)
+- [Announcement](#announcement)
+- [CoineyKit API Document](#coineykit-api-document)
+- [Example Application](#example-application)
+  - [What we are going to create](#what-we-are-going-to-create)
+  - [What you need](#what-you-need)
+  - [Setting up your project](#setting-up-your-project)
+  - [Initialization of SDK](#initialization-of-sdk)
+  - [Making our first payment](#making-our-first-payment)
+  - [Get notified of the transaction status](#get-notified-of-the-transaction-status)
+  - [Show the details of a transaction](#show-the-details-of-a-transaction)
+  - [Looking up a transaction](#looking-up-a-transaction)
+  - [Receipt Printing](#receipt-printing)
+  - [Send Receipt via E-Mail](#send-receipt-via-e-mail)
+- [About semi-self checkout mode](#about-semi-self-checkout-mode )
+- [Submitting Your App for Review](#submitting-your-app-for-review)
+- [Contact Us](#contact-us)
 
 
 ## Announcement
+
+### SDK Semi-self checkout Support Release (2021-08-31)
+
+With the STORES Payments SDK, it is now possible to support Semi-self checkout for e-money payments.
+* Full self-checkout (unmanned checkout, etc.) is not supported.
+Please check [here](https://hey.jp/news/info/2021-08-31-selfsdk.html) for detailed explanations and contact us if you have any questions.
+
+****
 
 ### STORES Payment is Dropping Support for iOS 11 and below（ 2021-03-03 ）
 We're discontinuing support for iOS 11 and older to improve our service and safety.
@@ -37,6 +47,7 @@ We're discontinuing support for iOS 11 and older to improve our service and safe
 ````
 
 Please use iOS 12 or later from now on.
+
 
 ### Announcement of Merger ( 2021-01-01 )
 I would like to inform you that we will be mergered with parent company hey Inc.
@@ -120,7 +131,9 @@ Go to your target's General settings, and add `CoineyKit.framework`and `TCMPayme
 
 ![Libraries and Frameworks](.readme_images/frameworks-libs2.png)
 
-#### External Accessory Protocol for STORES Payments Terminal
+#### Add to Info.plist
+
+- External Accessory Protocol for STORES Payments Terminal
 
 For your app to connect to a STORES Payments Terminal for IC and magstripe transactions, we need to add `com.coiney.Coiney` to the list of supported accessory protocols.  Add the following to your `Info.plist` file:
 
@@ -131,13 +144,35 @@ For your app to connect to a STORES Payments Terminal for IC and magstripe trans
 </array>
 ```
 
+- for Bluetooth Usage
+
+```xml
+<key>NSBluetoothAlwaysUsageDescription</key>
+<string>{String displayed when getting permission for Bluetooth connection}</string>
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>{String displayed when getting permission for Bluetooth connection}</string>
+```
+
+- for Locacation Usage
+```xml
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>{String displayed when getting permission for location}</string>
+```
+
+- for Camera Usage (for WeChatPay)
+```xml
+<key>NSCameraUsageDescription</key>
+<string>{String displayed when getting permission for camera}</string>
+```
 
 
 ### Initialization of SDK
 
-Call the prepare method to initialize CoineyKit.
+Call the `prepare` method to initialize CoineyKit.
 Please pass the ViewController that uses CoineyKit as an argument to the prepare method.
-Note: Avoid calling the prepare method before the ViewController is displayed, as CoineyKit may not work properly. (i.e. Don't call the prepare method from viewDidLoad().)
+
+Note1: Avoid calling the prepare method before the ViewController is displayed, as CoineyKit may not work properly. (i.e. Don't call the prepare method from viewDidLoad().)
+Note 2: User `prepareForSemiSelfCheckoutModeInController` when using in **semi-self checkout mode**.
 
 #### Objective-C
 
@@ -155,7 +190,6 @@ Open up `ViewController.m` and make it look like:
 ```
 
 
-
 #### Swift
 
 Open up `ViewController.swift` and make it look like:
@@ -167,6 +201,33 @@ override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
     CYKit.prepare(in: self)
+}
+```
+
+for **semi-self checkout mode** make it look like:
+
+#### Objective-C
+
+ViewController.m
+
+```objective-c
+(void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+
+  [CYKit prepareForSemiSelfCheckoutModeInController:self];
+}
+```
+
+#### Swift
+
+##### ViewController.swift
+
+```swift
+override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    CYKit.prepareForSemiSelfCheckoutMode(in: self)
 }
 ```
 
@@ -635,7 +696,84 @@ By enabling printing in CoineyKit, paper receipts can be printed at the receipt 
 3. Pair your iPhone or iPad with a supported printer through the Bluetooth system settings.  See coiney.com for a list of supported printers.
 4. Make a transaction to get to the receipt view.  You will see a [Print Receipt] button.
 
-Note: If you plan to implement receipt printing in your own app, do not call `CYEnablePrinting(YES)`, since the printer's `EASession` cannot be shared.
+Note: If you plan to implement receipt printing in your own app, do not call `CYEnablePrinting(true)`, since the printer's `EASession` cannot be shared.
+
+### Send Receipt via E-Mail
+
+When you enable the feature send receipt email , the Send by Email TextField appears on the payment completion screen and transaction details screen, then you can send the receipt to the email address you entered.
+This feature is **disabled** by default.
+
+
+To turn it on, call `CYKit.setEnableSendReceipt(true)` at app launch, in `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions`.
+
+#### Objective-C
+
+```objective-c
+[CYKit setEnableSendReceipt: YES];
+```
+
+#### Swift
+
+```swift
+CYKit.setEnableSendReceipt(true)
+```
+
+## About semi-self checkout mode 
+
+### ※To use semi-self checkout mode in CoineyKit, it is necessary that the device is connected with a Wired LAN.
+
+### ※When using semi-self checkout, be sure to use CoineyKit v6.9.0 or later in semi-self checkout mode.
+
+Please see [Initialization of SDK](#initialization-of-sdk) here for how to use in semi-self checkout mode.
+
+### Differences in semi-self checkout behavior
+
+
+When you enable semi-self checkout mode in CoineyKit, the following points are different from the staff operation type (normal mode).
+
+
+
+#### The description when STORES Payments Terminal is not connected
+
+
+The description when STORES Payments Terminal is not connected on the credit card / e-money payment view is different from normal mode.
+
+
+
+![App screenshot](.readme_images/20210513-134202.png)
+
+
+
+#### Add E-money balance check
+
+
+The e-money balance check button is displayed on the payment method select view.
+
+
+![App screenshot](.readme_images/20210513-134345.png)
+
+
+
+#### Unconfirmed transactions of e-money
+View that is displayed when e-money payment unconfirmed transactions is different.
+
+
+- In case of staff operation mode (normal mode)
+
+When e-money unconfirmed transactions occurs, automatically moves to the unconfirmed transactions details view and confirms the success or failure of the transaction by checking the balance.
+
+  <img src=".readme_images/unconfirmed_staff.gif" alt="App screenshot" width="200" />
+
+
+- In case of semi-self checkout mode
+
+No automatic view transition is performed after e-money unconfirmed transactions occurs in order to prevent malfunction by the customer.
+
+When the staff presses and holds the ![warning icon](.readme_images/WarningIconLarge.png) icon, a circle is drawn and the color of the circle becomes darker, and then the staff releases finger, move to  e-money unconfirmed transactions view.
+
+Other features after the view transition are the same as those of the staff operation mode (normal mode).
+
+  <img src=".readme_images/unconfirmed_semi-self.gif" alt="App screenshot" width=200 />
 
 ### Submitting Your App for Review
 

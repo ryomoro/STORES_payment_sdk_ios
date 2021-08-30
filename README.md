@@ -9,7 +9,7 @@ CoineyKit をご利用いただき、ありがとうございます。
 ****
 
 - [お知らせ](#お知らせ)
-- [CoineyKit API Document](#CoineyKitAPIDocument)
+- [CoineyKit API Document](#coineykit-api-document)
 - [サンプルアプリ](#サンプルアプリ)
   - [目的](#目的)
   - [必要なもの](#必要なもの)
@@ -17,14 +17,23 @@ CoineyKit をご利用いただき、ありがとうございます。
   - [初期化をする](#初期化をする)
   - [決済をする](#決済をする)
   - [結果の通知を受け取る](#結果の通知を受け取る)
-  - [取引詳細の表示・売上取消](#取引詳細の表示・売上取消)
+  - [取引詳細の表示・売上取消](#取引詳細の表示売上取消)
   - [取引履歴の参照](#取引履歴の参照)
   - [レシート印刷](#レシート印刷)
-- [App Review への申請](#AppReviewへの申請)
+  - [レシートメール送信](#レシートメール送信)
+- [セミセルフレジについて](#セミセルフレジについて)
+- [App Review への申請](#app-review-への申請)
 - [お問い合わせ](#お問い合わせ)
 
 
 ## お知らせ
+### 2021−08−31 : 電子マネー決済のセミセルフレジ対応SDK公開のお知らせ
+STORES決済SDKで、電子マネーの決済もセミセルフレジ対応が可能となりました。※フルセルフレジ（無人レジ等）には非対応です。
+詳細の説明は[こちら](https://hey.jp/news/info/2021-08-31-selfsdk.html)をご確認いただき、ご不明点ありましたらお問い合わせください。
+
+
+****
+
 ### 2021-03-03：iOS 11.4.1以下 のサポート終了について
 STORES 決済 ではサービス改善と安全性向上のため、定期的なOSサポートバージョンの見直しをしております。
 この度、2021年03月31日に、以下のiOS / iPadOSにおける STORES 決済アプリ および STORES 決済 SDK のサポートを終了いたします。
@@ -138,13 +147,40 @@ BluetoothでSTORES 決済端末に接続し、ICや磁気カード決済をす�
 </array>
 ```
 
+Bluetoothでの接続の許可を取得する為に `NSBluetoothAlwaysUsageDescription` 及び `NSBluetoothPeripheralUsageDescription` を Info.plistに追加します。
+
+
+```xml
+<key>NSBluetoothAlwaysUsageDescription</key>
+<string>{Bluetooth接続のパーミッション取得時に表示される任意の文字列}</string>
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>{Bluetooth接続のパーミッション取得時に表示される任意の文字列}</string>
+```
+
+決済処理で位置情報を取得する必要がある為 `NSLocationWhenInUseUsageDescription` を Info.plistに追加します。
+
+```xml
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>位置情報のパーミッション取得時に表示される任意の文字列}</string>
+```
+
+WechatPay 決済を利用する場合は `NSCameraUsageDescription` を Info.plistに追加します。
+
+```xml
+<key>NSCameraUsageDescription</key>
+<string>{カメラのパーミッション取得時に表示される任意の文字列}</string>
+```
 
 
 ### 初期化をする
 
-CoineyKitを初期化するために prepare メソッドを呼んでください。
+CoineyKitを初期化するために `prepare` メソッドを呼んでください。
 また、引数にはCoineyKitを使用する画面のViewControllerを渡してください。
-注) viewDidLoad() など、画面が表示する前に prepare メソッドを呼び出すと正常に動作しない場合があります。
+
+注1) viewDidLoad() など、画面が表示する前に `prepare` メソッドを呼び出すと正常に動作しない場合があります。
+
+注2) **セミセルフレジモード** で使用する場合は `prepareForSemiSelfCheckoutModeInController`を使用してください。
+
 
 #### Objective-C
 
@@ -175,6 +211,32 @@ override func viewDidAppear(_ animated: Bool) {
 }
 ```
 
+**セミセルフレジモード** で使用する場合は下記のコードを貼り付けてください。
+
+#### Objective-C
+
+ViewController.m
+
+```objective-c
+(void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+
+  [CYKit prepareForSemiSelfCheckoutModeInController:self];
+}
+```
+
+#### Swift
+
+##### ViewController.swift
+
+```swift
+override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    CYKit.prepareForSemiSelfCheckoutMode(in: self)
+}
+```
 
 ### 決済をする
 
@@ -643,7 +705,93 @@ default:
 
 3. iPadまたはiPhoneのBluetooth設定から、対応プリンターとペアリングします。対応機種はcoiney.comをご参照ください。
 
-注1: 自社アプリでレシート印刷を実装する場合は、 `CYEnablePrinting(YES)` を呼ばないでください。 `EASession` をCoineyKitと共有できないためです。
+注1: 自社アプリでレシート印刷を実装する場合は、 `CYEnablePrinting(true)` を呼ばないでください。 `EASession` をCoineyKitと共有できないためです。
+
+
+
+### レシートメール送信
+
+メール送信をオンにすると、決済完了画面および取引詳細画面に [メールで送信] TextFieldが表示され、レシートを入力したメールアドレスに送信できます。デフォルトは **オフ**です。
+
+オンにするにはアプリ起動時に  `CYKit.setEnableSendReceipt(true)`を呼んでください。
+
+
+
+#### Objective-C
+
+```objective-c
+[CYKit setEnableSendReceipt: YES];
+```
+
+#### Swift
+
+```swift
+CYKit.setEnableSendReceipt(true)
+```
+
+
+
+## セミセルフレジについて
+
+### ※セミセルフレジモードでCoineyKitをご利用になる際は 有線LAN接続でのご利用が必須となります。
+
+
+### ※セミセルフレジをご利用の際は、必ず CoineyKit v6.9.0 以降をセミセルフレジモードでご利用ください。
+セミセルフレジモードでのご利用方法はこちらの [実装方法](#初期化をする)をご確認ください。
+
+### セミセルフレジの挙動の違いについて
+
+セミセルフレジモードてCoineyKitを使用すると、以下の点が係員操作型(通常モード)と異なります。
+
+
+
+#### 決済画面・決済端末未接続時の表示
+
+クレジットカード・電子マネー 決済画面で決済端末に未接続の時の表示文字列が変更されます。
+
+
+
+![App screenshot](.readme_images/20210513-134202.png)
+
+
+
+#### 電子マネー残高照会画面への導線追加
+
+
+決済方法選択画面に電子マネー残高照会画面を表示するボタンが追加されます。
+
+
+
+![App screenshot](.readme_images/20210513-134345.png)
+
+
+
+#### 電子マネー処理未了発生画面、及び操作方法
+電子マネー決済で処理未了が発生した際に表示される画面が異なります。
+
+
+
+- 係員操作型(通常モード)の場合
+
+  処理未了が発生すると自動的に処理未了詳細画面に遷移し、残高照会をする事で決済の成功 / 失敗を確認します。
+
+  <img src=".readme_images/unconfirmed_staff.gif" alt="App screenshot" width="200" />
+
+
+
+
+
+- セミセルフレジの場合
+
+  処理未了発生後、顧客による誤動作を防ぐ目的で自動で画面遷移はしません。
+
+   ![warning icon](.readme_images/WarningIconLarge.png)アイコンを係員が長押しし、円が描画され、円の色が濃くなった後に指を離すことで
+
+  処理未了詳細画面に遷移します。
+
+  画面遷移後の残高照会等は係員操作型(通常モード)とと同様です。
+
+  <img src=".readme_images/unconfirmed_semi-self.gif" alt="App screenshot" width=200 />
 
 ## App Review への申請
 
