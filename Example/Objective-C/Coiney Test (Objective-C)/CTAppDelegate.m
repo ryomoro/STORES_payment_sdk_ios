@@ -6,6 +6,7 @@
 didFinishLaunchingWithOptions:(NSDictionary *)aOptions
 {
     CYEnablePrinting(YES);
+    [CYKit setEnableSendReceipt: YES];
     return YES;
 }
 @end

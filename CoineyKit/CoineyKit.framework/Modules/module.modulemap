@@ -4,3 +4,8 @@ framework module CoineyKit {
   export *
   module * { export * }
 }
+
+module CoineyKit.Swift {
+    header "CoineyKit-Swift.h"
+    requires objc
+}

@@ -194,3 +194,6 @@ static inline NSString * _Nonnull NSStringFromCYEmoneyBrand(CYEmoneyBrand const 
     }
 }
 
+extern NSNotificationName _Nonnull const kCYPaymentCompletedNotification;
+extern NSString * _Nonnull const kCYPaymentCompletedUserInfoTransactionKey;
+
