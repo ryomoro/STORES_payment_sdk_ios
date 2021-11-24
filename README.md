@@ -105,7 +105,7 @@ CoineyKit API仕様は下記リンクのドキュメントをご確認くださ�
 あらかじめ [git-lfs](https://git-lfs.github.com) をインストールし、 `git lfs install` を実行してください。git-lfs がないと、リポジトリを正しくクローンできません。
 
  * CoineyKit (このリポジトリを `git clone` してください)
- * Xcode 12
+ * Xcode 13
  * STORES 決済端末 (購入については、 <coineykitsupport@coiney.com> までお問い合わせください)
 
 ###  プロジェクトのセットアップ
