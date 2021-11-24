@@ -113,6 +113,15 @@ extension CTViewController : CYCoineyViewControllerDelegate {
             
             let navigationController = UINavigationController.init(rootViewController: transactionViewController)
             navigationController.modalPresentationStyle = .formSheet
+            
+            if #available(iOS 15.0, *) {
+                let appearance = UINavigationBarAppearance()
+                appearance.backgroundColor = UIColor.lightGray
+                appearance.titleTextAttributes = [.foregroundColor: UIColor.darkText]
+                navigationController.navigationBar.standardAppearance = appearance
+                navigationController.navigationBar.scrollEdgeAppearance = appearance
+            }
+            
             self.present(navigationController, animated: true, completion: nil)
         })
     }

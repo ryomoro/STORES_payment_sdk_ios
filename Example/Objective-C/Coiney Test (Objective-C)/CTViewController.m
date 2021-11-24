@@ -102,6 +102,15 @@
                                                           action:@selector(done)];
         UINavigationController *navigationController =
             [[UINavigationController alloc] initWithRootViewController:transactionViewController];
+
+        if (@available(iOS 15.0, *)) {
+            UINavigationBarAppearance *appearance = [UINavigationBarAppearance new];
+            appearance.backgroundColor = UIColor.lightGrayColor;
+            appearance.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.blackColor};
+            navigationController.navigationBar.standardAppearance = appearance;
+            navigationController.navigationBar.scrollEdgeAppearance = appearance;
+        }
+
         navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
         [self presentViewController:navigationController animated:YES completion:nil];
     }];
