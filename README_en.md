@@ -23,6 +23,7 @@ If you have any further questions feel free to email < coineykitsupport@coiney.c
 - [About semi-self checkout mode](#about-semi-self-checkout-mode )
 - [Submitting Your App for Review](#submitting-your-app-for-review)
 - [Contact Us](#contact-us)
+- [License](#license)
 
 
 ## Announcement
@@ -784,3 +785,6 @@ And that's it!
 ## Contact Us
 If you have any further questions feel free to email <coineykitsupport@coiney.com>.
 
+## License
+
+This software is provided under the [Developer license](https://coiney.com/legal/sdk/).

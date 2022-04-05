@@ -24,6 +24,7 @@ CoineyKit をご利用いただき、ありがとうございます。
 - [セミセルフレジについて](#セミセルフレジについて)
 - [App Review への申請](#app-review-への申請)
 - [お問い合わせ](#お問い合わせ)
+- [使用許諾契約・ライセンス契約](#使用許諾契約ライセンス契約)
 
 
 ## お知らせ
@@ -161,7 +162,7 @@ Bluetoothでの接続の許可を取得する為に `NSBluetoothAlwaysUsageDescr
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
-<string>位置情報のパーミッション取得時に表示される任意の文字列}</string>
+<string>{位置情報のパーミッション取得時に表示される任意の文字列}</string>
 ```
 
 WechatPay 決済を利用する場合は `NSCameraUsageDescription` を Info.plistに追加します。
@@ -800,3 +801,7 @@ Apple のアプリ審査を受けるにあたり、STORES 決済端末の MFi �
 ## お問い合わせ
 
 ご質問・ご要望等は、<coineykitsupport@coiney.com> までお問い合わせください。
+
+## 使用許諾契約・ライセンス契約
+
+当ソフトウェアは『[デベロッパー規約](https://coiney.com/legal/sdk/)』に基いてライセンス提供しております。
