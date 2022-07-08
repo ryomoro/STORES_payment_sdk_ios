@@ -28,6 +28,16 @@ If you have any further questions feel free to email < coineykitsupport@coiney.c
 
 ## Announcement
 
+### SDK Contactless Payments Support Release (2022-07-08)
+
+New SDK `STORES Payments SDK` is now available.
+This new SDK supports contactless payments.
+For more information, please click [here](https://github.com/Coiney-SDK/STORESPaymentsSDK-iOS).
+
+※We are planning to add new features in the new `STORES Payments SDK`, so please consider migrating to the new SDK if you wish to continue using the SDK.
+
+****
+
 ### SDK Semi-self checkout Support Release (2021-08-31)
 
 With the STORES Payments SDK, it is now possible to support Semi-self checkout for e-money payments.
