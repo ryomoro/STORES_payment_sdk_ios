@@ -34,7 +34,7 @@ New SDK `STORES Payments SDK` is now available.
 This new SDK supports contactless payments.
 For more information, please click [here](https://github.com/Coiney-SDK/STORESPaymentsSDK-iOS).
 
-※We are planning to add new features in the new `STORES Payments SDK`, so please consider migrating to the new SDK if you wish to continue using the SDK.
+※We are planning to add new features in the new `STORES Payments SDK`, so please consider migrating to the new SDK to continue to have access to the latest features.
 
 ****
 
